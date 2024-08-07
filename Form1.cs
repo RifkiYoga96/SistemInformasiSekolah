@@ -117,12 +117,21 @@ namespace SistemInformasiSekolah
 
         private void txtNamaLengkap_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtNamaLengkap_Click(object sender, EventArgs e)
         {
             txtNamaLengkap.BackColor = Color.White;
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

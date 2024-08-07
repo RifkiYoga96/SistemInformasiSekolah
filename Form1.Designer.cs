@@ -31,6 +31,7 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            button1 = new Button();
             panel2 = new Panel();
             label113 = new Label();
             label18 = new Label();
@@ -44,7 +45,6 @@
             label13 = new Label();
             txtAlamatSiswa = new TextBox();
             panel1 = new Panel();
-            button9 = new Button();
             comboAgamaSiswa = new ComboBox();
             comboYatim = new ComboBox();
             txtJumSauKan = new TextBox();
@@ -76,6 +76,7 @@
             panel3 = new Panel();
             label1 = new Label();
             tabPage3 = new TabPage();
+            button2 = new Button();
             panel4 = new Panel();
             dataGridView1 = new DataGridView();
             label64 = new Label();
@@ -143,8 +144,8 @@
             label20 = new Label();
             label19 = new Label();
             tabPage4 = new TabPage();
+            button3 = new Button();
             panel6 = new Panel();
-            button8 = new Button();
             radioMatiIbu = new RadioButton();
             radioAsingWali = new RadioButton();
             radioHidupIbu = new RadioButton();
@@ -224,6 +225,7 @@
             txtPendidikanIbu = new TextBox();
             label65 = new Label();
             tabPage5 = new TabPage();
+            button4 = new Button();
             panel8 = new Panel();
             label117 = new Label();
             label110 = new Label();
@@ -237,10 +239,6 @@
             label105 = new Label();
             label104 = new Label();
             label90 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             panel2.SuspendLayout();
@@ -271,7 +269,7 @@
             tabControl1.Margin = new Padding(2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1052, 975);
+            tabControl1.Size = new Size(1052, 976);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -280,10 +278,11 @@
             tabPage1.Margin = new Padding(2);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(2);
-            tabPage1.Size = new Size(1044, 886);
+            tabPage1.Size = new Size(1044, 811);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "ListData";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
             // tabPage2
             // 
@@ -295,13 +294,27 @@
             tabPage2.Margin = new Padding(2);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(2);
-            tabPage2.Size = new Size(1044, 942);
+            tabPage2.Size = new Size(1044, 811);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Data Personal";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Blue;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(908, 890);
+            button1.Name = "button1";
+            button1.Size = new Size(128, 44);
+            button1.TabIndex = 35;
+            button1.Text = "Save";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
+            panel2.AutoScroll = true;
             panel2.BackColor = Color.LightGray;
             panel2.Controls.Add(label113);
             panel2.Controls.Add(label18);
@@ -425,9 +438,9 @@
             // 
             // panel1
             // 
+            panel1.AutoScroll = true;
             panel1.BackColor = Color.LightGray;
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(button9);
             panel1.Controls.Add(comboAgamaSiswa);
             panel1.Controls.Add(comboYatim);
             panel1.Controls.Add(txtJumSauKan);
@@ -461,16 +474,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(518, 831);
             panel1.TabIndex = 3;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(313, 523);
-            button9.Name = "button9";
-            button9.Size = new Size(94, 29);
-            button9.TabIndex = 35;
-            button9.Text = "button9";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
             // 
             // comboAgamaSiswa
             // 
@@ -771,10 +774,23 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Margin = new Padding(2);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1044, 942);
+            tabPage3.Size = new Size(1044, 811);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Kesehatan & Pendidikan";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Blue;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(908, 890);
+            button2.Name = "button2";
+            button2.Size = new Size(128, 44);
+            button2.TabIndex = 36;
+            button2.Text = "Save";
+            button2.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -1484,15 +1500,27 @@
             tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(2);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1044, 942);
+            tabPage4.Size = new Size(1044, 943);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Data Orang Tua / Wali";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.Blue;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(908, 890);
+            button3.Name = "button3";
+            button3.Size = new Size(128, 44);
+            button3.TabIndex = 36;
+            button3.Text = "Save";
+            button3.UseVisualStyleBackColor = false;
+            // 
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
-            panel6.Controls.Add(button8);
             panel6.Controls.Add(radioMatiIbu);
             panel6.Controls.Add(radioAsingWali);
             panel6.Controls.Add(radioHidupIbu);
@@ -1532,16 +1560,6 @@
             panel6.Size = new Size(518, 831);
             panel6.TabIndex = 8;
             panel6.Paint += panel6_Paint;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(70, 721);
-            button8.Name = "button8";
-            button8.Size = new Size(94, 29);
-            button8.TabIndex = 155;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
             // 
             // radioMatiIbu
             // 
@@ -2339,10 +2357,23 @@
             tabPage5.Location = new Point(4, 29);
             tabPage5.Margin = new Padding(2);
             tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(1044, 942);
+            tabPage5.Size = new Size(1044, 811);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Setelah Lulus";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Blue;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(908, 890);
+            button4.Name = "button4";
+            button4.Size = new Size(128, 44);
+            button4.TabIndex = 36;
+            button4.Text = "Save";
+            button4.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
@@ -2482,63 +2513,12 @@
             label90.Text = "Keterangan Setelah Lulus";
             label90.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Blue;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(908, 890);
-            button1.Name = "button1";
-            button1.Size = new Size(128, 44);
-            button1.TabIndex = 35;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Blue;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(908, 890);
-            button2.Name = "button2";
-            button2.Size = new Size(128, 44);
-            button2.TabIndex = 36;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Blue;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(908, 890);
-            button3.Name = "button3";
-            button3.Size = new Size(128, 44);
-            button3.TabIndex = 36;
-            button3.Text = "Save";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.Blue;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(908, 890);
-            button4.Name = "button4";
-            button4.Size = new Size(128, 44);
-            button4.TabIndex = 36;
-            button4.Text = "Save";
-            button4.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1052, 975);
+            AutoScroll = true;
+            ClientSize = new Size(1052, 976);
             Controls.Add(tabControl1);
             Margin = new Padding(2);
             Name = "Form1";
@@ -2779,8 +2759,6 @@
         private RadioButton radioHidupIbu;
         private Label label45;
         private TextBox txtTahunMatiIbu;
-        private Button button8;
-        private Button button9;
         private Button button1;
         private Button button2;
         private Button button3;
