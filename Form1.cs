@@ -9,6 +9,7 @@ namespace SistemInformasiSekolah
         {
             InitializeComponent();
             ListAgama();
+            Yatim();
         }
 
         public void ListAgama()
@@ -18,6 +19,19 @@ namespace SistemInformasiSekolah
             comboAgamaAyah.DataSource = new List<string>(Agama);
             comboAgamaIbu.DataSource = new List<string>(Agama);
             comboAgamaWali.DataSource = new List<string>(Agama);
+            comboAgamaSiswa.DataSource = new List<string>(Agama);
+        }
+
+        public void Goldar()
+        {
+            List<string> golongan = new List<string>() { "AB", "A", "B", "O" };
+            comboGolDar.DataSource = golongan;
+        }
+        public void Yatim()
+        {
+            List<string> Ytm = new List<string>() { "Lengkap", "Yatim", "Piatu", "Yatim Piatu" };
+
+            comboYatim.DataSource = new List<string>(Ytm);
         }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -53,12 +67,6 @@ namespace SistemInformasiSekolah
 
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioTidak_CheckedChanged(object sender, EventArgs e)
         {
             txtJikaYa.ReadOnly = true;
@@ -68,12 +76,6 @@ namespace SistemInformasiSekolah
         {
             txtJikaYa.ReadOnly = false;
         }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void radioHidupAyah_CheckedChanged(object sender, EventArgs e)
         {
             if (radioHidupAyah.Checked)
@@ -97,12 +99,6 @@ namespace SistemInformasiSekolah
                 txtTahunMatiIbu.ReadOnly = false;
             }
         }
-
-        private void txtNoHPWali_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button8_Click(object sender, EventArgs e)
         {
             if (txtNoHPWali.Text == "")
@@ -114,24 +110,11 @@ namespace SistemInformasiSekolah
                 MessageBox.Show("aaa");
             }
         }
-
-        private void txtNamaLengkap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtNamaLengkap_Click(object sender, EventArgs e)
         {
             txtNamaLengkap.BackColor = Color.White;
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
