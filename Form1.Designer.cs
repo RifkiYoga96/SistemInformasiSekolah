@@ -241,7 +241,9 @@
             label105 = new Label();
             label104 = new Label();
             label90 = new Label();
+            dataGridView2 = new DataGridView();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -257,6 +259,7 @@
             panel7.SuspendLayout();
             tabPage5.SuspendLayout();
             panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -276,6 +279,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(dataGridView2);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Margin = new Padding(2);
             tabPage1.Name = "tabPage1";
@@ -2534,6 +2538,16 @@
             label90.Text = "Keterangan Setelah Lulus";
             label90.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(13, 29);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(1023, 590);
+            dataGridView2.TabIndex = 0;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -2546,6 +2560,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -2568,6 +2583,7 @@
             tabPage5.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -2786,5 +2802,6 @@
         private Label label50;
         private TextBox textBox1;
         private DateTimePicker dateTimePicker1;
+        private DataGridView dataGridView2;
     }
 }

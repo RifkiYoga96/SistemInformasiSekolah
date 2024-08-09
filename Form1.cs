@@ -4,12 +4,20 @@ namespace SistemInformasiSekolah
 {
     public partial class Form1 : Form
     {
+        private DbDal db;
 
         public Form1()
         {
+            db = new DbDal();
             InitializeComponent();
             ListAgama();
             Yatim();
+            loadSiswa();
+        }
+
+        public void loadSiswa()
+        {
+            dataGridView1.DataSource = db.ListSiswa();
         }
 
         public void ListAgama()
