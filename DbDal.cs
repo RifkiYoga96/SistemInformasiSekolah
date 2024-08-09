@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Dynamic;
 using System.Linq;
+using System.Runtime.InteropServices.ObjectiveC;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,6 +27,14 @@ namespace SistemInformasiSekolah
             using var koneksi = new SqlConnection(connstr);
             var siswa = koneksi.Query<SiswaModel>(sql);
             return siswa;
+        }
+
+
+        public int TemplateIUD(string sql, object parameter)
+        {
+            using var koneksi = new SqlConnection(connstr);
+            var data = koneksi.Execute(sql,parameter);
+            return data;
         }
     }
 }
