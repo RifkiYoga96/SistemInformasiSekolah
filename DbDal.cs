@@ -29,7 +29,6 @@ namespace SistemInformasiSekolah
             return siswa;
         }
 
-
         public int TemplateIUD(string sql, object parameter)
         {
             using var koneksi = new SqlConnection(connstr);
