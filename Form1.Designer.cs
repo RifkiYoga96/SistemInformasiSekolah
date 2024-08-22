@@ -30,29 +30,31 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            dataGridView2 = new DataGridView();
             tabPage2 = new TabPage();
             button1 = new Button();
             panel2 = new Panel();
+            jarakSekolahNumeric = new NumericUpDown();
+            SiswaIDtxt = new TextBox();
+            statusTinggalCombo = new ComboBox();
             label113 = new Label();
             label18 = new Label();
             txtTransportasi = new TextBox();
             label15 = new Label();
             label16 = new Label();
-            txtJarak = new TextBox();
             txtNoHpRumah = new TextBox();
             label17 = new Label();
-            txtTinggalDengan = new TextBox();
             label13 = new Label();
             txtAlamatSiswa = new TextBox();
             panel1 = new Panel();
+            JumSauAngNumeric = new NumericUpDown();
+            JumSauTiNumeric = new NumericUpDown();
+            JumSauKanNumeric = new NumericUpDown();
+            AnakKeNumeric = new NumericUpDown();
             label50 = new Label();
-            textBox1 = new TextBox();
+            txtNamaPanggil = new TextBox();
             comboAgamaSiswa = new ComboBox();
             comboYatim = new ComboBox();
-            txtJumSauKan = new TextBox();
-            txtAnakKe = new TextBox();
-            txtJumSauTi = new TextBox();
-            txtJumSauAng = new TextBox();
             txtBahasa = new TextBox();
             txtNIKSiswa = new TextBox();
             label114 = new Label();
@@ -80,7 +82,7 @@
             tabPage3 = new TabPage();
             button2 = new Button();
             panel4 = new Panel();
-            dateTimePicker1 = new DateTimePicker();
+            tglTamatBelajar = new DateTimePicker();
             dataGridView1 = new DataGridView();
             label64 = new Label();
             txtAkhirPendidikIJAZAH = new TextBox();
@@ -107,10 +109,13 @@
             label43 = new Label();
             txtKesenian = new TextBox();
             panel5 = new Panel();
+            ORadio = new RadioButton();
+            ABRadio = new RadioButton();
+            BRadio = new RadioButton();
+            ARadio = new RadioButton();
             numericUpTB = new NumericUpDown();
             numericTB = new NumericUpDown();
             label115 = new Label();
-            comboGolDar = new ComboBox();
             tglDiterima = new DateTimePicker();
             label30 = new Label();
             txtLamaBelajar = new TextBox();
@@ -122,7 +127,6 @@
             txtLulusanDari = new TextBox();
             label27 = new Label();
             label39 = new Label();
-            label38 = new Label();
             radioTidak = new RadioButton();
             label21 = new Label();
             radioYa = new RadioButton();
@@ -241,12 +245,17 @@
             label105 = new Label();
             label104 = new Label();
             label90 = new Label();
-            dataGridView2 = new DataGridView();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage2.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)jarakSekolahNumeric).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)JumSauAngNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)JumSauTiNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)JumSauKanNumeric).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AnakKeNumeric).BeginInit();
             panel3.SuspendLayout();
             tabPage3.SuspendLayout();
             panel4.SuspendLayout();
@@ -259,7 +268,6 @@
             panel7.SuspendLayout();
             tabPage5.SuspendLayout();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -288,6 +296,16 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "ListData";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(13, 29);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(1023, 590);
+            dataGridView2.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -321,15 +339,16 @@
             // 
             panel2.AutoScroll = true;
             panel2.BackColor = Color.LightGray;
+            panel2.Controls.Add(jarakSekolahNumeric);
+            panel2.Controls.Add(SiswaIDtxt);
+            panel2.Controls.Add(statusTinggalCombo);
             panel2.Controls.Add(label113);
             panel2.Controls.Add(label18);
             panel2.Controls.Add(txtTransportasi);
             panel2.Controls.Add(label15);
             panel2.Controls.Add(label16);
-            panel2.Controls.Add(txtJarak);
             panel2.Controls.Add(txtNoHpRumah);
             panel2.Controls.Add(label17);
-            panel2.Controls.Add(txtTinggalDengan);
             panel2.Controls.Add(label13);
             panel2.Controls.Add(txtAlamatSiswa);
             panel2.Location = new Point(526, 54);
@@ -337,6 +356,29 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(518, 815);
             panel2.TabIndex = 4;
+            // 
+            // jarakSekolahNumeric
+            // 
+            jarakSekolahNumeric.Location = new Point(239, 202);
+            jarakSekolahNumeric.Name = "jarakSekolahNumeric";
+            jarakSekolahNumeric.Size = new Size(232, 27);
+            jarakSekolahNumeric.TabIndex = 16;
+            // 
+            // SiswaIDtxt
+            // 
+            SiswaIDtxt.Location = new Point(231, 436);
+            SiswaIDtxt.Margin = new Padding(2);
+            SiswaIDtxt.Name = "SiswaIDtxt";
+            SiswaIDtxt.Size = new Size(240, 27);
+            SiswaIDtxt.TabIndex = 29;
+            // 
+            // statusTinggalCombo
+            // 
+            statusTinggalCombo.FormattingEnabled = true;
+            statusTinggalCombo.Location = new Point(239, 164);
+            statusTinggalCombo.Name = "statusTinggalCombo";
+            statusTinggalCombo.Size = new Size(232, 28);
+            statusTinggalCombo.TabIndex = 16;
             // 
             // label113
             // 
@@ -352,7 +394,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(48, 256);
+            label18.Location = new Point(48, 243);
             label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
             label18.Size = new Size(169, 20);
@@ -361,7 +403,7 @@
             // 
             // txtTransportasi
             // 
-            txtTransportasi.Location = new Point(239, 251);
+            txtTransportasi.Location = new Point(239, 238);
             txtTransportasi.Margin = new Padding(2);
             txtTransportasi.Name = "txtTransportasi";
             txtTransportasi.PlaceholderText = "  Sepeda, Motor";
@@ -371,7 +413,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(48, 217);
+            label15.Location = new Point(48, 204);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
             label15.Size = new Size(115, 20);
@@ -388,14 +430,6 @@
             label16.TabIndex = 29;
             label16.Text = "Nomor HP rumah :";
             // 
-            // txtJarak
-            // 
-            txtJarak.Location = new Point(239, 214);
-            txtJarak.Margin = new Padding(2);
-            txtJarak.Name = "txtJarak";
-            txtJarak.Size = new Size(232, 27);
-            txtJarak.TabIndex = 17;
-            // 
             // txtNoHpRumah
             // 
             txtNoHpRumah.Location = new Point(239, 127);
@@ -407,21 +441,12 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(48, 164);
+            label17.Location = new Point(53, 167);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(187, 40);
+            label17.Size = new Size(110, 20);
             label17.TabIndex = 30;
-            label17.Text = "Tinggal dengan orang tua/\r\nSaudara/di Asrama :";
-            // 
-            // txtTinggalDengan
-            // 
-            txtTinggalDengan.Location = new Point(239, 164);
-            txtTinggalDengan.Margin = new Padding(2);
-            txtTinggalDengan.Multiline = true;
-            txtTinggalDengan.Name = "txtTinggalDengan";
-            txtTinggalDengan.Size = new Size(232, 40);
-            txtTinggalDengan.TabIndex = 16;
+            label17.Text = "Status Tinggal :";
             // 
             // label13
             // 
@@ -447,14 +472,14 @@
             panel1.AutoScroll = true;
             panel1.BackColor = Color.LightGray;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(JumSauAngNumeric);
+            panel1.Controls.Add(JumSauTiNumeric);
+            panel1.Controls.Add(JumSauKanNumeric);
+            panel1.Controls.Add(AnakKeNumeric);
             panel1.Controls.Add(label50);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtNamaPanggil);
             panel1.Controls.Add(comboAgamaSiswa);
             panel1.Controls.Add(comboYatim);
-            panel1.Controls.Add(txtJumSauKan);
-            panel1.Controls.Add(txtAnakKe);
-            panel1.Controls.Add(txtJumSauTi);
-            panel1.Controls.Add(txtJumSauAng);
             panel1.Controls.Add(txtBahasa);
             panel1.Controls.Add(txtNIKSiswa);
             panel1.Controls.Add(label114);
@@ -483,6 +508,34 @@
             panel1.Size = new Size(518, 815);
             panel1.TabIndex = 3;
             // 
+            // JumSauAngNumeric
+            // 
+            JumSauAngNumeric.Location = new Point(229, 394);
+            JumSauAngNumeric.Name = "JumSauAngNumeric";
+            JumSauAngNumeric.Size = new Size(240, 27);
+            JumSauAngNumeric.TabIndex = 10;
+            // 
+            // JumSauTiNumeric
+            // 
+            JumSauTiNumeric.Location = new Point(229, 358);
+            JumSauTiNumeric.Name = "JumSauTiNumeric";
+            JumSauTiNumeric.Size = new Size(240, 27);
+            JumSauTiNumeric.TabIndex = 9;
+            // 
+            // JumSauKanNumeric
+            // 
+            JumSauKanNumeric.Location = new Point(229, 322);
+            JumSauKanNumeric.Name = "JumSauKanNumeric";
+            JumSauKanNumeric.Size = new Size(240, 27);
+            JumSauKanNumeric.TabIndex = 8;
+            // 
+            // AnakKeNumeric
+            // 
+            AnakKeNumeric.Location = new Point(229, 286);
+            AnakKeNumeric.Name = "AnakKeNumeric";
+            AnakKeNumeric.Size = new Size(240, 27);
+            AnakKeNumeric.TabIndex = 7;
+            // 
             // label50
             // 
             label50.AutoSize = true;
@@ -493,13 +546,13 @@
             label50.TabIndex = 28;
             label50.Text = "Nama Panggilan :";
             // 
-            // textBox1
+            // txtNamaPanggil
             // 
-            textBox1.Location = new Point(229, 80);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 27);
-            textBox1.TabIndex = 27;
+            txtNamaPanggil.Location = new Point(229, 80);
+            txtNamaPanggil.Margin = new Padding(2);
+            txtNamaPanggil.Name = "txtNamaPanggil";
+            txtNamaPanggil.Size = new Size(240, 27);
+            txtNamaPanggil.TabIndex = 27;
             // 
             // comboAgamaSiswa
             // 
@@ -512,46 +565,14 @@
             // comboYatim
             // 
             comboYatim.FormattingEnabled = true;
-            comboYatim.Location = new Point(229, 431);
+            comboYatim.Location = new Point(229, 430);
             comboYatim.Name = "comboYatim";
             comboYatim.Size = new Size(240, 28);
             comboYatim.TabIndex = 11;
             // 
-            // txtJumSauKan
-            // 
-            txtJumSauKan.Location = new Point(229, 321);
-            txtJumSauKan.Margin = new Padding(2);
-            txtJumSauKan.Name = "txtJumSauKan";
-            txtJumSauKan.Size = new Size(240, 27);
-            txtJumSauKan.TabIndex = 8;
-            // 
-            // txtAnakKe
-            // 
-            txtAnakKe.Location = new Point(229, 285);
-            txtAnakKe.Margin = new Padding(2);
-            txtAnakKe.Name = "txtAnakKe";
-            txtAnakKe.Size = new Size(240, 27);
-            txtAnakKe.TabIndex = 7;
-            // 
-            // txtJumSauTi
-            // 
-            txtJumSauTi.Location = new Point(229, 357);
-            txtJumSauTi.Margin = new Padding(2);
-            txtJumSauTi.Name = "txtJumSauTi";
-            txtJumSauTi.Size = new Size(240, 27);
-            txtJumSauTi.TabIndex = 9;
-            // 
-            // txtJumSauAng
-            // 
-            txtJumSauAng.Location = new Point(229, 393);
-            txtJumSauAng.Margin = new Padding(2);
-            txtJumSauAng.Name = "txtJumSauAng";
-            txtJumSauAng.Size = new Size(240, 27);
-            txtJumSauAng.TabIndex = 10;
-            // 
             // txtBahasa
             // 
-            txtBahasa.Location = new Point(229, 469);
+            txtBahasa.Location = new Point(229, 467);
             txtBahasa.Margin = new Padding(2);
             txtBahasa.Name = "txtBahasa";
             txtBahasa.Size = new Size(240, 27);
@@ -559,7 +580,7 @@
             // 
             // txtNIKSiswa
             // 
-            txtNIKSiswa.Location = new Point(229, 506);
+            txtNIKSiswa.Location = new Point(229, 503);
             txtNIKSiswa.Margin = new Padding(2);
             txtNIKSiswa.Name = "txtNIKSiswa";
             txtNIKSiswa.Size = new Size(240, 27);
@@ -591,12 +612,12 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(47, 425);
+            label11.Location = new Point(47, 434);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(128, 40);
+            label11.Size = new Size(165, 20);
             label11.TabIndex = 22;
-            label11.Text = "Anak Yatim/Piatu/\r\nYatim Piatu";
+            label11.Text = "Keberadaan Orang Tua:";
             // 
             // label8
             // 
@@ -702,7 +723,7 @@
             // 
             // txtKewarganegara
             // 
-            txtKewarganegara.Location = new Point(229, 249);
+            txtKewarganegara.Location = new Point(229, 250);
             txtKewarganegara.Margin = new Padding(2);
             txtKewarganegara.Name = "txtKewarganegara";
             txtKewarganegara.Size = new Size(240, 27);
@@ -763,7 +784,6 @@
             txtNamaLengkap.Name = "txtNamaLengkap";
             txtNamaLengkap.Size = new Size(240, 27);
             txtNamaLengkap.TabIndex = 0;
-            txtNamaLengkap.Click += txtNamaLengkap_Click;
             // 
             // panel3
             // 
@@ -820,7 +840,7 @@
             // panel4
             // 
             panel4.BackColor = Color.LightGray;
-            panel4.Controls.Add(dateTimePicker1);
+            panel4.Controls.Add(tglTamatBelajar);
             panel4.Controls.Add(dataGridView1);
             panel4.Controls.Add(label64);
             panel4.Controls.Add(txtAkhirPendidikIJAZAH);
@@ -852,15 +872,15 @@
             panel4.Size = new Size(518, 815);
             panel4.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // tglTamatBelajar
             // 
-            dateTimePicker1.CustomFormat = "   yyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(249, 578);
-            dateTimePicker1.Margin = new Padding(2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(230, 27);
-            dateTimePicker1.TabIndex = 95;
+            tglTamatBelajar.CustomFormat = "   yyy";
+            tglTamatBelajar.Format = DateTimePickerFormat.Custom;
+            tglTamatBelajar.Location = new Point(249, 578);
+            tglTamatBelajar.Margin = new Padding(2);
+            tglTamatBelajar.Name = "tglTamatBelajar";
+            tglTamatBelajar.Size = new Size(230, 27);
+            tglTamatBelajar.TabIndex = 95;
             // 
             // dataGridView1
             // 
@@ -1108,10 +1128,13 @@
             // 
             panel5.BackColor = Color.LightGray;
             panel5.BorderStyle = BorderStyle.Fixed3D;
+            panel5.Controls.Add(ORadio);
+            panel5.Controls.Add(ABRadio);
+            panel5.Controls.Add(BRadio);
+            panel5.Controls.Add(ARadio);
             panel5.Controls.Add(numericUpTB);
             panel5.Controls.Add(numericTB);
             panel5.Controls.Add(label115);
-            panel5.Controls.Add(comboGolDar);
             panel5.Controls.Add(tglDiterima);
             panel5.Controls.Add(label30);
             panel5.Controls.Add(txtLamaBelajar);
@@ -1123,7 +1146,6 @@
             panel5.Controls.Add(txtLulusanDari);
             panel5.Controls.Add(label27);
             panel5.Controls.Add(label39);
-            panel5.Controls.Add(label38);
             panel5.Controls.Add(radioTidak);
             panel5.Controls.Add(label21);
             panel5.Controls.Add(radioYa);
@@ -1151,6 +1173,50 @@
             panel5.Size = new Size(518, 815);
             panel5.TabIndex = 5;
             // 
+            // ORadio
+            // 
+            ORadio.AutoSize = true;
+            ORadio.Location = new Point(407, 38);
+            ORadio.Name = "ORadio";
+            ORadio.Size = new Size(41, 24);
+            ORadio.TabIndex = 99;
+            ORadio.TabStop = true;
+            ORadio.Text = "O";
+            ORadio.UseVisualStyleBackColor = true;
+            // 
+            // ABRadio
+            // 
+            ABRadio.AutoSize = true;
+            ABRadio.Location = new Point(352, 38);
+            ABRadio.Name = "ABRadio";
+            ABRadio.Size = new Size(49, 24);
+            ABRadio.TabIndex = 98;
+            ABRadio.TabStop = true;
+            ABRadio.Text = "AB";
+            ABRadio.UseVisualStyleBackColor = true;
+            // 
+            // BRadio
+            // 
+            BRadio.AutoSize = true;
+            BRadio.Location = new Point(307, 38);
+            BRadio.Name = "BRadio";
+            BRadio.Size = new Size(39, 24);
+            BRadio.TabIndex = 97;
+            BRadio.TabStop = true;
+            BRadio.Text = "B";
+            BRadio.UseVisualStyleBackColor = true;
+            // 
+            // ARadio
+            // 
+            ARadio.AutoSize = true;
+            ARadio.Location = new Point(261, 38);
+            ARadio.Name = "ARadio";
+            ARadio.Size = new Size(40, 24);
+            ARadio.TabIndex = 96;
+            ARadio.TabStop = true;
+            ARadio.Text = "A";
+            ARadio.UseVisualStyleBackColor = true;
+            // 
             // numericUpTB
             // 
             numericUpTB.Location = new Point(262, 208);
@@ -1175,14 +1241,6 @@
             label115.Size = new Size(222, 20);
             label115.TabIndex = 95;
             label115.Text = " NB: *Kosongi Yang Tidak Perlu";
-            // 
-            // comboGolDar
-            // 
-            comboGolDar.FormattingEnabled = true;
-            comboGolDar.Location = new Point(262, 37);
-            comboGolDar.Name = "comboGolDar";
-            comboGolDar.Size = new Size(216, 28);
-            comboGolDar.TabIndex = 0;
             // 
             // tglDiterima
             // 
@@ -1285,16 +1343,6 @@
             label39.TabIndex = 30;
             label39.Text = "Berat Badan (kg) :";
             // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Location = new Point(262, 114);
-            label38.Margin = new Padding(2, 0, 2, 0);
-            label38.Name = "label38";
-            label38.Size = new Size(70, 20);
-            label38.TabIndex = 28;
-            label38.Text = "Isi Jika Ya";
-            // 
             // radioTidak
             // 
             radioTidak.AutoSize = true;
@@ -1306,7 +1354,6 @@
             radioTidak.TabStop = true;
             radioTidak.Text = "Tidak";
             radioTidak.UseVisualStyleBackColor = true;
-            radioTidak.CheckedChanged += radioTidak_CheckedChanged;
             // 
             // label21
             // 
@@ -1329,7 +1376,6 @@
             radioYa.TabStop = true;
             radioYa.Text = "Ya";
             radioYa.UseVisualStyleBackColor = true;
-            radioYa.CheckedChanged += radioYa_CheckedChanged;
             // 
             // txtAlasanPindah
             // 
@@ -1433,6 +1479,7 @@
             txtJikaYa.Location = new Point(262, 136);
             txtJikaYa.Margin = new Padding(2);
             txtJikaYa.Name = "txtJikaYa";
+            txtJikaYa.PlaceholderText = "   Isi Jika Ya";
             txtJikaYa.Size = new Size(216, 27);
             txtJikaYa.TabIndex = 4;
             // 
@@ -1616,7 +1663,6 @@
             radioHidupIbu.TabIndex = 4;
             radioHidupIbu.Text = "Masih Hidup";
             radioHidupIbu.UseVisualStyleBackColor = true;
-            radioHidupIbu.CheckedChanged += radioHidupIbu_CheckedChanged;
             // 
             // label45
             // 
@@ -1971,7 +2017,6 @@
             radioHidupAyah.TabStop = true;
             radioHidupAyah.Text = "Masih Hidup";
             radioHidupAyah.UseVisualStyleBackColor = true;
-            radioHidupAyah.CheckedChanged += radioHidupAyah_CheckedChanged;
             // 
             // txtNIKAyah
             // 
@@ -2538,16 +2583,6 @@
             label90.Text = "Keterangan Setelah Lulus";
             label90.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(13, 29);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(1023, 590);
-            dataGridView2.TabIndex = 0;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -2561,11 +2596,17 @@
             Text = "Form1";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage2.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)jarakSekolahNumeric).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)JumSauAngNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)JumSauTiNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)JumSauKanNumeric).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AnakKeNumeric).EndInit();
             panel3.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -2583,7 +2624,6 @@
             tabPage5.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -2621,10 +2661,8 @@
         private Label label14;
         private Label label15;
         private Label label16;
-        private TextBox txtJarak;
         private TextBox txtNoHpRumah;
         private Label label17;
-        private TextBox txtTinggalDengan;
         private Label label18;
         private TextBox txtTransportasi;
         private Panel panel4;
@@ -2637,7 +2675,6 @@
         private Label label37;
         private Label label35;
         private TextBox txtPenyakitDiderita;
-        private Label label38;
         private RadioButton radioTidak;
         private RadioButton radioYa;
         private TextBox txtJikaYa;
@@ -2731,7 +2768,6 @@
         private Label label116;
         private Label label117;
         private NumericUpDown numericTB;
-        private ComboBox comboGolDar;
         private NumericUpDown numericUpTB;
         private RadioButton radioAsingAyah;
         private RadioButton radioWNIAyah;
@@ -2780,10 +2816,6 @@
         private Label label72;
         private Label label73;
         private TextBox txtPendidikanIbu;
-        private TextBox txtJumSauKan;
-        private TextBox txtAnakKe;
-        private TextBox txtJumSauTi;
-        private TextBox txtJumSauAng;
         private TextBox txtBahasa;
         private TextBox txtNIKSiswa;
         private ComboBox comboYatim;
@@ -2800,8 +2832,19 @@
         private Button button3;
         private Button button4;
         private Label label50;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox txtNamaPanggil;
+        private DateTimePicker tglTamatBelajar;
         private DataGridView dataGridView2;
+        private ComboBox statusTinggalCombo;
+        private RadioButton ORadio;
+        private RadioButton ABRadio;
+        private RadioButton BRadio;
+        private RadioButton ARadio;
+        private TextBox SiswaIDtxt;
+        private NumericUpDown JumSauAngNumeric;
+        private NumericUpDown JumSauTiNumeric;
+        private NumericUpDown JumSauKanNumeric;
+        private NumericUpDown AnakKeNumeric;
+        private NumericUpDown jarakSekolahNumeric;
     }
 }

@@ -12,9 +12,15 @@ namespace SistemInformasiSekolah
 {
     public class DbDal
     {
-        private const string connstr = "Server=(local);Database=SekolahKu;Trusted_Connection=True;TrustServerCertificate=True";
+        public static string DB()
+        {
+            return $"Server=(local);Database=SekolahKu;Trusted_Connection=True;TrustServerCertificate=True";
+        }
+        
+            
 
-        public IEnumerable<SiswaModel> ListSiswa()
+        
+/*        public IEnumerable<SiswaModel> ListSiswa()
         {
             string sql = @"SELECT * FROM Siswa";
             using var koneksi = new SqlConnection(connstr);
@@ -34,6 +40,6 @@ namespace SistemInformasiSekolah
             using var koneksi = new SqlConnection(connstr);
             var data = koneksi.Execute(sql,parameter);
             return data;
-        }
+        }*/
     }
 }
