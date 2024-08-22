@@ -15,28 +15,29 @@ namespace SistemInformasiSekolah.Dal
         public int Insert(SiswaModel siswa)
         {
             string sql = @"INSERT INTO Siswa(
-                                NamaLengkap,NamaPanggil,Gender,TmpLahir,Agama
+                                NamaLengkap,NamaPanggil,Gender,TmpLahir,TglLahir,Agama,
                                 Kewarganegaraan,NIK,AnakKe,JmlhSdrKandung,JmlhSdrTiri,
                                 JmlhSdrAngkat,YatimPiatu,Bahasa,Alamat,NoTelp,TngglDengan,
                                 JrkKeSekolah,TransportSekolah)
                             OUTPUT INSERTED.SiswaId
                             VALUES(
-                                 @NamaLengkap,@NamaPanggil,@Gender,@TmpLahir,@Agama,
-                                 @Kemarganegaraan,@NIK,@AnakKe,@JmlhSdrKandung,@JmlhSdrTiri,
+                                 @NamaLengkap,@NamaPanggil,@Gender,@TmpLahir,@TglLahir,@Agama,
+                                 @Kewarganegaraan,@NIK,@AnakKe,@JmlhSdrKandung,@JmlhSdrTiri,
                                  @JmlhSdrAngkat,@YatimPiatu,@Bahasa,@Alamat,@NoTelp,@TngglDengan,
                                  @JrkKeSekolah,@TransportSekolah)";
 
-            DynamicParameters param = new DynamicParameters();
+            var param = new DynamicParameters();
             param.Add("@NamaLengkap",siswa.NamaLengkap, DbType.String);
             param.Add("@NamaPanggil",siswa.NamaPanggil, DbType.String);
             param.Add("@Gender",siswa.Gender, DbType.Int16);
             param.Add("@TmpLahir",siswa.TmpLahir, DbType.String);
-            param.Add("@TglLahir",siswa.TglLahir, DbType.Date);
+            param.Add("@TglLahir",siswa.TglLahir, DbType.DateTime);
             param.Add("@Agama",siswa.Agama, DbType.String);
             param.Add("@Kewarganegaraan",siswa.Kewarganegaraan, DbType.String);
             param.Add("@NIK",siswa.NIK, DbType.String);
-            param.Add("@AnakKe",siswa.TmpLahir, DbType.Int16);
+            param.Add("@AnakKe",siswa.AnakKe, DbType.Int16);
             param.Add("@JmlhSdrKandung",siswa.JmlhSdrKandung, DbType.Int16);
+            param.Add("@JmlhSdrTiri",siswa.JmlhSdrTiri, DbType.Int16);
             param.Add("@JmlhSdrAngkat",siswa.JmlhSdrAngkat, DbType.Int16);
             param.Add("@YatimPiatu",siswa.YatimPiatu, DbType.String);
             param.Add("@Bahasa",siswa.Bahasa, DbType.String);
@@ -47,7 +48,7 @@ namespace SistemInformasiSekolah.Dal
             param.Add("@TransportSekolah",siswa.TransportSekolah, DbType.String);
 
             using var koneksi = new SqlConnection(DbDal.DB());
-            var data = koneksi.Execute(sql,param);
+            var data = koneksi.QuerySingle<int>(sql,param);
             return data;
         }
 
@@ -96,18 +97,18 @@ namespace SistemInformasiSekolah.Dal
             var data = koneksi.Execute(sql,param);
         }
 
-        public IEnumerable<SiswaModel> GetData(int SiswaId)
+        public SiswaModel? GetData(int SiswaId)
         {
             string sql = @"SELECT * FROM Siswa WHERE SiswaId=@SiswaId";
             using var koneksi = new SqlConnection(DbDal.DB());
-            var get = koneksi.QuerySingleOrDefault(sql, new {SiswaId=SiswaId});
+            var get = koneksi.QuerySingleOrDefault<SiswaModel>(sql, new {SiswaId=SiswaId});
             return get;
         } 
-        public IEnumerable<SiswaModel> ListData(int SiswaId)
+        public IEnumerable<SiswaModel> ListData()
         {
-            string sql = @"SELECT * FROM Siswa WHERE SiswaId=@SiswaId";
+            string sql = @"SELECT * FROM Siswa";
             using var koneksi = new SqlConnection(DbDal.DB());
-            var listSiswa = koneksi.Query<SiswaModel>(sql, new {SiswaId=SiswaId});
+            var listSiswa = koneksi.Query<SiswaModel>(sql);
             return listSiswa;
         }
     }

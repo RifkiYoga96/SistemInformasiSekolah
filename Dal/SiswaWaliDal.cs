@@ -31,7 +31,7 @@ namespace SistemInformasiSekolah.Dal
                 dp.Add("@JenisWali", siswaWali.JenisWali, DbType.String);
                 dp.Add("@Nama", siswaWali.Nama, DbType.String);
                 dp.Add("@TmpLahir", siswaWali.TmpLahir, DbType.String);
-                dp.Add("@TglLahir", siswaWali.TglLahir, DbType.Date);
+                dp.Add("@TglLahir", siswaWali.TglLahir, DbType.DateTime);
                 dp.Add("@Agama", siswaWali.Agama, DbType.String);
                 dp.Add("@Kewarga", siswaWali.Kewarga, DbType.String);
                 dp.Add("@Pendidikan", siswaWali.Pendidikan, DbType.String);
@@ -96,16 +96,39 @@ namespace SistemInformasiSekolah.Dal
             return cek;
         }
 
-        public SiswaWaliModel? GetData(int siswaId)
+        public IEnumerable<SiswaWaliModel> ListData()
+        {
+            const string sql = @"SELECT * FROM SiswaWali";
+            using var koneksi = new SqlConnection(DbDal.DB());
+            var get = koneksi.Query<SiswaWaliModel>(sql);
+            return get;
+        }
+
+        public int Delete(int siswaId)
+        {
+            const string sql = @"DELETE FROM SiswaWali WHERE SiswaId=@SiswaId";
+            
+            using var koneksi = new SqlConnection(DbDal.DB());
+            int cek = 0;
+                var dp = new DynamicParameters();
+                dp.Add("@SiswaId",siswaId,DbType.Int16);
+                var delete = koneksi.Execute(sql,dp);
+                cek++;
+            return cek;
+            
+        }
+
+    /*    public IEnumerable<SiswaWaliModel> ListData(int siswaId)
         {
             const string sql = @"SELECT * FROM SiswaWali WHERE SiswaId=@SiswaId";
             var dp = new DynamicParameters();
             dp.Add("@SiswaId",siswaId, DbType.Int16);
             var koneksi =  new SqlConnection(DbDal.DB());
-            var get = koneksi.QueryFirstOrDefault(sql,dp);
+            var get = koneksi.Query(sql,dp);
             return get;
-        }
+        }*/
 
         
     }
 }
+ 
