@@ -83,7 +83,7 @@
             button2 = new Button();
             panel4 = new Panel();
             tglTamatBelajar = new DateTimePicker();
-            dataGridView1 = new DataGridView();
+            BeasiswaGrid = new DataGridView();
             label64 = new Label();
             txtAkhirPendidikIJAZAH = new TextBox();
             label63 = new Label();
@@ -152,8 +152,16 @@
             tabPage4 = new TabPage();
             button3 = new Button();
             panel6 = new Panel();
+            txtNIKWali = new TextBox();
+            label52 = new Label();
+            txtNoKKWali = new TextBox();
+            label53 = new Label();
+            txtNIKIbu = new TextBox();
+            label38 = new Label();
             numericGajiIbu = new NumericUpDown();
+            txtNoKKIbu = new TextBox();
             numericGajiWali = new NumericUpDown();
+            label51 = new Label();
             radioMatiIbu = new RadioButton();
             radioAsingWali = new RadioButton();
             radioHidupIbu = new RadioButton();
@@ -259,7 +267,7 @@
             panel3.SuspendLayout();
             tabPage3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BeasiswaGrid).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpTB).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTB).BeginInit();
@@ -859,7 +867,7 @@
             // 
             panel4.BackColor = Color.LightGray;
             panel4.Controls.Add(tglTamatBelajar);
-            panel4.Controls.Add(dataGridView1);
+            panel4.Controls.Add(BeasiswaGrid);
             panel4.Controls.Add(label64);
             panel4.Controls.Add(txtAkhirPendidikIJAZAH);
             panel4.Controls.Add(label63);
@@ -889,32 +897,33 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(453, 611);
             panel4.TabIndex = 6;
+            panel4.Paint += panel4_Paint;
             // 
             // tglTamatBelajar
             // 
             tglTamatBelajar.CustomFormat = "   yyy";
             tglTamatBelajar.Format = DateTimePickerFormat.Custom;
-            tglTamatBelajar.Location = new Point(218, 434);
+            tglTamatBelajar.Location = new Point(218, 474);
             tglTamatBelajar.Margin = new Padding(2);
             tglTamatBelajar.Name = "tglTamatBelajar";
             tglTamatBelajar.Size = new Size(202, 23);
             tglTamatBelajar.TabIndex = 95;
             // 
-            // dataGridView1
+            // BeasiswaGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(67, 262);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(352, 71);
-            dataGridView1.TabIndex = 21;
+            BeasiswaGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            BeasiswaGrid.Location = new Point(67, 262);
+            BeasiswaGrid.Margin = new Padding(3, 2, 3, 2);
+            BeasiswaGrid.Name = "BeasiswaGrid";
+            BeasiswaGrid.RowHeadersWidth = 51;
+            BeasiswaGrid.RowTemplate.Height = 29;
+            BeasiswaGrid.Size = new Size(352, 101);
+            BeasiswaGrid.TabIndex = 21;
             // 
             // label64
             // 
             label64.AutoSize = true;
-            label64.Location = new Point(67, 460);
+            label64.Location = new Point(67, 500);
             label64.Margin = new Padding(2, 0, 2, 0);
             label64.Name = "label64";
             label64.Size = new Size(90, 15);
@@ -923,7 +932,7 @@
             // 
             // txtAkhirPendidikIJAZAH
             // 
-            txtAkhirPendidikIJAZAH.Location = new Point(218, 458);
+            txtAkhirPendidikIJAZAH.Location = new Point(218, 498);
             txtAkhirPendidikIJAZAH.Margin = new Padding(2);
             txtAkhirPendidikIJAZAH.Name = "txtAkhirPendidikIJAZAH";
             txtAkhirPendidikIJAZAH.Size = new Size(202, 23);
@@ -932,7 +941,7 @@
             // label63
             // 
             label63.AutoSize = true;
-            label63.Location = new Point(173, 437);
+            label63.Location = new Point(173, 477);
             label63.Margin = new Padding(2, 0, 2, 0);
             label63.Name = "label63";
             label63.Size = new Size(39, 15);
@@ -942,7 +951,7 @@
             // label62
             // 
             label62.AutoSize = true;
-            label62.Location = new Point(67, 437);
+            label62.Location = new Point(67, 477);
             label62.Margin = new Padding(2, 0, 2, 0);
             label62.Name = "label62";
             label62.Size = new Size(83, 15);
@@ -953,7 +962,7 @@
             // 
             label61.AutoSize = true;
             label61.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label61.Location = new Point(45, 416);
+            label61.Location = new Point(45, 456);
             label61.Margin = new Padding(2, 0, 2, 0);
             label61.Name = "label61";
             label61.Size = new Size(100, 15);
@@ -962,7 +971,7 @@
             // 
             // txtAlasanMeningalkanSekolah
             // 
-            txtAlasanMeningalkanSekolah.Location = new Point(218, 392);
+            txtAlasanMeningalkanSekolah.Location = new Point(218, 432);
             txtAlasanMeningalkanSekolah.Margin = new Padding(2);
             txtAlasanMeningalkanSekolah.Name = "txtAlasanMeningalkanSekolah";
             txtAlasanMeningalkanSekolah.Size = new Size(202, 23);
@@ -971,7 +980,7 @@
             // label60
             // 
             label60.AutoSize = true;
-            label60.Location = new Point(67, 394);
+            label60.Location = new Point(67, 434);
             label60.Margin = new Padding(2, 0, 2, 0);
             label60.Name = "label60";
             label60.Size = new Size(48, 15);
@@ -980,7 +989,7 @@
             // 
             // tglMeninggalkanSekolah
             // 
-            tglMeninggalkanSekolah.Location = new Point(218, 364);
+            tglMeninggalkanSekolah.Location = new Point(218, 404);
             tglMeninggalkanSekolah.Margin = new Padding(2);
             tglMeninggalkanSekolah.Name = "tglMeninggalkanSekolah";
             tglMeninggalkanSekolah.Size = new Size(202, 23);
@@ -989,7 +998,7 @@
             // label59
             // 
             label59.AutoSize = true;
-            label59.Location = new Point(66, 361);
+            label59.Location = new Point(66, 401);
             label59.Margin = new Padding(2, 0, 2, 0);
             label59.Name = "label59";
             label59.Size = new Size(127, 30);
@@ -1000,7 +1009,7 @@
             // 
             label58.AutoSize = true;
             label58.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label58.Location = new Point(45, 338);
+            label58.Location = new Point(45, 378);
             label58.Margin = new Padding(2, 0, 2, 0);
             label58.Name = "label58";
             label58.Size = new Size(131, 15);
@@ -1621,8 +1630,16 @@
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
+            panel6.Controls.Add(txtNIKWali);
+            panel6.Controls.Add(label52);
+            panel6.Controls.Add(txtNoKKWali);
+            panel6.Controls.Add(label53);
+            panel6.Controls.Add(txtNIKIbu);
+            panel6.Controls.Add(label38);
             panel6.Controls.Add(numericGajiIbu);
+            panel6.Controls.Add(txtNoKKIbu);
             panel6.Controls.Add(numericGajiWali);
+            panel6.Controls.Add(label51);
             panel6.Controls.Add(radioMatiIbu);
             panel6.Controls.Add(radioAsingWali);
             panel6.Controls.Add(radioHidupIbu);
@@ -1660,6 +1677,60 @@
             panel6.Size = new Size(453, 611);
             panel6.TabIndex = 8;
             // 
+            // txtNIKWali
+            // 
+            txtNIKWali.Location = new Point(201, 565);
+            txtNIKWali.Margin = new Padding(2);
+            txtNIKWali.Name = "txtNIKWali";
+            txtNIKWali.Size = new Size(224, 23);
+            txtNIKWali.TabIndex = 163;
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Location = new Point(45, 568);
+            label52.Margin = new Padding(2, 0, 2, 0);
+            label52.Name = "label52";
+            label52.Size = new Size(32, 15);
+            label52.TabIndex = 165;
+            label52.Text = "NIK :";
+            // 
+            // txtNoKKWali
+            // 
+            txtNoKKWali.Location = new Point(201, 541);
+            txtNoKKWali.Margin = new Padding(2);
+            txtNoKKWali.Name = "txtNoKKWali";
+            txtNoKKWali.Size = new Size(224, 23);
+            txtNoKKWali.TabIndex = 162;
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Location = new Point(43, 549);
+            label53.Margin = new Padding(2, 0, 2, 0);
+            label53.Name = "label53";
+            label53.Size = new Size(71, 15);
+            label53.TabIndex = 164;
+            label53.Text = "Nomor KK  :";
+            // 
+            // txtNIKIbu
+            // 
+            txtNIKIbu.Location = new Point(200, 226);
+            txtNIKIbu.Margin = new Padding(2);
+            txtNIKIbu.Name = "txtNIKIbu";
+            txtNIKIbu.Size = new Size(224, 23);
+            txtNIKIbu.TabIndex = 159;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(44, 229);
+            label38.Margin = new Padding(2, 0, 2, 0);
+            label38.Name = "label38";
+            label38.Size = new Size(32, 15);
+            label38.TabIndex = 161;
+            label38.Text = "NIK :";
+            // 
             // numericGajiIbu
             // 
             numericGajiIbu.Location = new Point(202, 48);
@@ -1667,12 +1738,30 @@
             numericGajiIbu.Size = new Size(224, 23);
             numericGajiIbu.TabIndex = 156;
             // 
+            // txtNoKKIbu
+            // 
+            txtNoKKIbu.Location = new Point(200, 202);
+            txtNoKKIbu.Margin = new Padding(2);
+            txtNoKKIbu.Name = "txtNoKKIbu";
+            txtNoKKIbu.Size = new Size(224, 23);
+            txtNoKKIbu.TabIndex = 158;
+            // 
             // numericGajiWali
             // 
-            numericGajiWali.Location = new Point(200, 394);
+            numericGajiWali.Location = new Point(201, 439);
             numericGajiWali.Name = "numericGajiWali";
             numericGajiWali.Size = new Size(224, 23);
             numericGajiWali.TabIndex = 155;
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Location = new Point(44, 205);
+            label51.Margin = new Padding(2, 0, 2, 0);
+            label51.Name = "label51";
+            label51.Size = new Size(71, 15);
+            label51.TabIndex = 160;
+            label51.Text = "Nomor KK  :";
             // 
             // radioMatiIbu
             // 
@@ -1688,7 +1777,7 @@
             // radioAsingWali
             // 
             radioAsingWali.AutoSize = true;
-            radioAsingWali.Location = new Point(277, 324);
+            radioAsingWali.Location = new Point(278, 369);
             radioAsingWali.Margin = new Padding(3, 2, 3, 2);
             radioAsingWali.Name = "radioAsingWali";
             radioAsingWali.Size = new Size(55, 19);
@@ -1720,7 +1809,7 @@
             // radioWNIWali
             // 
             radioWNIWali.AutoSize = true;
-            radioWNIWali.Location = new Point(209, 324);
+            radioWNIWali.Location = new Point(210, 369);
             radioWNIWali.Margin = new Padding(3, 2, 3, 2);
             radioWNIWali.Name = "radioWNIWali";
             radioWNIWali.Size = new Size(48, 19);
@@ -1740,7 +1829,7 @@
             // comboAgamaWali
             // 
             comboAgamaWali.FormattingEnabled = true;
-            comboAgamaWali.Location = new Point(201, 300);
+            comboAgamaWali.Location = new Point(202, 345);
             comboAgamaWali.Margin = new Padding(3, 2, 3, 2);
             comboAgamaWali.Name = "comboAgamaWali";
             comboAgamaWali.Size = new Size(225, 23);
@@ -1749,7 +1838,7 @@
             // label76
             // 
             label76.AutoSize = true;
-            label76.Location = new Point(41, 476);
+            label76.Location = new Point(42, 521);
             label76.Margin = new Padding(2, 0, 2, 0);
             label76.Name = "label76";
             label76.Size = new Size(136, 15);
@@ -1759,7 +1848,7 @@
             // label77
             // 
             label77.AutoSize = true;
-            label77.Location = new Point(41, 420);
+            label77.Location = new Point(42, 465);
             label77.Margin = new Padding(2, 0, 2, 0);
             label77.Name = "label77";
             label77.Size = new Size(92, 15);
@@ -1769,7 +1858,7 @@
             // label78
             // 
             label78.AutoSize = true;
-            label78.Location = new Point(41, 396);
+            label78.Location = new Point(42, 441);
             label78.Margin = new Padding(2, 0, 2, 0);
             label78.Name = "label78";
             label78.Size = new Size(130, 15);
@@ -1779,7 +1868,7 @@
             // label84
             // 
             label84.AutoSize = true;
-            label84.Location = new Point(43, 372);
+            label84.Location = new Point(44, 417);
             label84.Margin = new Padding(2, 0, 2, 0);
             label84.Name = "label84";
             label84.Size = new Size(64, 15);
@@ -1789,7 +1878,7 @@
             // label85
             // 
             label85.AutoSize = true;
-            label85.Location = new Point(43, 348);
+            label85.Location = new Point(44, 393);
             label85.Margin = new Padding(2, 0, 2, 0);
             label85.Name = "label85";
             label85.Size = new Size(72, 15);
@@ -1799,7 +1888,7 @@
             // label86
             // 
             label86.AutoSize = true;
-            label86.Location = new Point(42, 326);
+            label86.Location = new Point(43, 371);
             label86.Margin = new Padding(2, 0, 2, 0);
             label86.Name = "label86";
             label86.Size = new Size(107, 15);
@@ -1808,7 +1897,7 @@
             // 
             // txtNoHPWali
             // 
-            txtNoHPWali.Location = new Point(200, 473);
+            txtNoHPWali.Location = new Point(201, 517);
             txtNoHPWali.Margin = new Padding(2);
             txtNoHPWali.Name = "txtNoHPWali";
             txtNoHPWali.Size = new Size(225, 23);
@@ -1816,7 +1905,7 @@
             // 
             // txtAlamatWali
             // 
-            txtAlamatWali.Location = new Point(200, 418);
+            txtAlamatWali.Location = new Point(201, 463);
             txtAlamatWali.Margin = new Padding(2);
             txtAlamatWali.Multiline = true;
             txtAlamatWali.Name = "txtAlamatWali";
@@ -1825,7 +1914,7 @@
             // 
             // txtPekerjaanWali
             // 
-            txtPekerjaanWali.Location = new Point(200, 370);
+            txtPekerjaanWali.Location = new Point(201, 415);
             txtPekerjaanWali.Margin = new Padding(2);
             txtPekerjaanWali.Name = "txtPekerjaanWali";
             txtPekerjaanWali.Size = new Size(225, 23);
@@ -1833,7 +1922,7 @@
             // 
             // txtPendidikanWali
             // 
-            txtPendidikanWali.Location = new Point(200, 346);
+            txtPendidikanWali.Location = new Point(201, 391);
             txtPendidikanWali.Margin = new Padding(2);
             txtPendidikanWali.Name = "txtPendidikanWali";
             txtPendidikanWali.Size = new Size(225, 23);
@@ -1842,7 +1931,7 @@
             // label87
             // 
             label87.AutoSize = true;
-            label87.Location = new Point(44, 302);
+            label87.Location = new Point(45, 347);
             label87.Margin = new Padding(2, 0, 2, 0);
             label87.Name = "label87";
             label87.Size = new Size(51, 15);
@@ -1851,7 +1940,7 @@
             // 
             // tglLahirWali
             // 
-            tglLahirWali.Location = new Point(201, 276);
+            tglLahirWali.Location = new Point(202, 321);
             tglLahirWali.Margin = new Padding(2);
             tglLahirWali.Name = "tglLahirWali";
             tglLahirWali.Size = new Size(225, 23);
@@ -1860,7 +1949,7 @@
             // label88
             // 
             label88.AutoSize = true;
-            label88.Location = new Point(43, 256);
+            label88.Location = new Point(44, 301);
             label88.Margin = new Padding(2, 0, 2, 0);
             label88.Name = "label88";
             label88.Size = new Size(130, 15);
@@ -1869,7 +1958,7 @@
             // 
             // txtTempatLahirWali
             // 
-            txtTempatLahirWali.Location = new Point(201, 252);
+            txtTempatLahirWali.Location = new Point(202, 297);
             txtTempatLahirWali.Margin = new Padding(2);
             txtTempatLahirWali.Name = "txtTempatLahirWali";
             txtTempatLahirWali.Size = new Size(225, 23);
@@ -1879,7 +1968,7 @@
             // 
             label89.AutoSize = true;
             label89.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label89.Location = new Point(32, 207);
+            label89.Location = new Point(33, 252);
             label89.Margin = new Padding(2, 0, 2, 0);
             label89.Name = "label89";
             label89.Size = new Size(135, 15);
@@ -1889,7 +1978,7 @@
             // label98
             // 
             label98.AutoSize = true;
-            label98.Location = new Point(43, 230);
+            label98.Location = new Point(44, 275);
             label98.Margin = new Padding(2, 0, 2, 0);
             label98.Name = "label98";
             label98.Size = new Size(45, 15);
@@ -1898,7 +1987,7 @@
             // 
             // txtNamaWali
             // 
-            txtNamaWali.Location = new Point(201, 228);
+            txtNamaWali.Location = new Point(202, 273);
             txtNamaWali.Margin = new Padding(2);
             txtNamaWali.Name = "txtNamaWali";
             txtNamaWali.Size = new Size(225, 23);
@@ -2649,7 +2738,7 @@
             tabPage3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BeasiswaGrid).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpTB).EndInit();
@@ -2858,7 +2947,7 @@
         private TextBox txtNIKSiswa;
         private ComboBox comboYatim;
         private ComboBox comboAgamaSiswa;
-        private DataGridView dataGridView1;
+        private DataGridView BeasiswaGrid;
         private RadioButton radioMatiAyah;
         private RadioButton radioHidupAyah;
         private RadioButton radioMatiIbu;
@@ -2888,5 +2977,13 @@
         private NumericUpDown numericGajiIbu;
         private NumericUpDown numericGajiAyah;
         private NumericUpDown numericPendapatan;
+        private TextBox txtNIKWali;
+        private Label label52;
+        private TextBox txtNoKKWali;
+        private Label label53;
+        private TextBox txtNIKIbu;
+        private Label label38;
+        private TextBox txtNoKKIbu;
+        private Label label51;
     }
 }

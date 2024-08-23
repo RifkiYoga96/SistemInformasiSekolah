@@ -1,5 +1,6 @@
 using Dapper;
 using SistemInformasiSekolah.Dal;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Web;
 
@@ -14,18 +15,29 @@ namespace SistemInformasiSekolah
         private readonly SiswaLulusDal siswaLulusDal;
         private readonly SiswaBeasiswaDal siswaBeasiswaDal;
 
+        private readonly BindingSource beasiswaBinding;
+        private readonly BindingList<ListBeaDTO> beaSiswaList;
 
         public Form1()
         {
             InitializeComponent();
-            initCombo();
-            LoadData();
+           
             db = new DbDal();
             siswaDal = new SiswaDal();
             siswaRiwayatDal = new SiswaRiwayatDal();
             siswaLulusDal = new SiswaLulusDal();
             siswaWaliDal = new SiswaWaliDal();
             siswaBeasiswaDal = new SiswaBeasiswaDal();
+            beaSiswaList = new BindingList<ListBeaDTO>();
+            beasiswaBinding = new BindingSource
+            {
+                DataSource = beaSiswaList
+            };
+
+
+            initCombo();
+            LoadData();
+            InitGrid();
         }
 
         #region PROCEDURE_ISI
@@ -49,6 +61,16 @@ namespace SistemInformasiSekolah
             statusTinggalCombo.Items.Add("DI ASRAMA");
             statusTinggalCombo.SelectedIndex = 0;
         }
+
+
+        public void InitGrid()
+        {
+
+            BeasiswaGrid.DataSource = beasiswaBinding;
+          /*  BeasiswaGrid.Columns["Tahun"].Width = 50;
+            BeasiswaGrid.Columns["Kelas"].Width = 50;
+            BeasiswaGrid.Columns["Penyedia"].Width = 200;*/
+        }
         #endregion
 
         #region SAVE DATA
@@ -58,6 +80,7 @@ namespace SistemInformasiSekolah
             SaveSiswaRiwayat(siswaId);
             SaveSiswaWali(siswaId);
             SaveSiswaLulus(siswaId);
+            SaveBeasiswa(siswaId);
         }
 
         private int SaveSiswaPersonal()
@@ -183,6 +206,8 @@ namespace SistemInformasiSekolah
                 Penghasilan = (decimal)numericGajiIbu.Value,
                 Alamat = txtAlamatIbu.Text,
                 NoTelp = txtNoHPIbu.Text,
+                NoKK = txtNoKKIbu.Text,
+                NIK = txtNIKIbu.Text,
                 StatusHidup = radioHidupIbu.Checked ? "Masih Hidup" : "Sudah Meninggal"
             };
 
@@ -199,7 +224,9 @@ namespace SistemInformasiSekolah
                 Pekerjaan = txtPekerjaanWali.Text,
                 Penghasilan = (decimal)numericGajiWali.Value,
                 Alamat = txtAlamatWali.Text,
-                NoTelp = txtNoHPWali.Text
+                NoTelp = txtNoHPWali.Text,
+                NoKK = txtNoKKWali.Text,
+                NIK = txtNIKWali.Text,
             };
             var ListWali = new List<SiswaWaliModel>() { ayah, ibu, wali };
             /*
@@ -231,6 +258,26 @@ namespace SistemInformasiSekolah
                 siswaLulusDal.Update(siswalulus);
         }
 
+        private void SaveBeasiswa(int siswaId)
+        {
+            var listBeasiswa = new List<SiswaBeasiswaModel>();
+            siswaBeasiswaDal.Delete(siswaId);
+            foreach (var item in beaSiswaList)
+            {
+                var newItem = new SiswaBeasiswaModel
+                {
+                    SiswaId = siswaId,
+                    NoUrut = listBeasiswa.Count + 1,
+                    Kelas = item.Kelas,
+                    Tahun = item.Tahun,
+                    AsalBeasiswa = item.Penyedia
+                };
+                if ($"{newItem.Kelas}{newItem.Tahun}" == string.Empty)
+                    continue;
+                listBeasiswa.Add(newItem);
+            }
+            siswaBeasiswaDal.Insert(listBeasiswa);
+        }
         #endregion
 
         #region GET DATA
@@ -239,7 +286,7 @@ namespace SistemInformasiSekolah
 
             GetSiswa(siswaId);
         }
-         public void GetSiswa(int siswaId)
+        public void GetSiswa(int siswaId)
         {
             var siswa = siswaDal.GetData(siswaId);
             if (siswa is null)
@@ -277,6 +324,22 @@ namespace SistemInformasiSekolah
             jarakSekolahNumeric.Value = siswa.JrkKeSekolah;
             txtTransportasi.Text = siswa.TransportSekolah;
         }
+
+        private void GetSiswaBeasiswa(int siswaId)
+        {
+            var listBea = siswaBeasiswaDal.ListData(siswaId)?.ToList();
+            if (listBea is null)
+                return;
+
+            beaSiswaList.Clear();
+            listBea.ForEach(x => beaSiswaList.Add(new ListBeaDTO
+            {
+                No = x.NoUrut,
+                Kelas = x.Kelas,
+                Tahun = x.Tahun,
+                Penyedia = x.AsalBeasiswa
+            }));
+        }
         #endregion
 
         #region HELPER
@@ -302,10 +365,13 @@ namespace SistemInformasiSekolah
             SaveSiswa();
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_DoubleClick(object sender, EventArgs e)
         {
-           
-
+            var siswaID = dataGridView2.CurrentRow.Cells["SiswaId"].Value.ToString();
+            if (siswaID is null)
+                return;
+            GetData(int.Parse(siswaID));
+            tabControl1.SelectedIndex = 1;
         }
 
         public class ListDataModel
@@ -315,13 +381,26 @@ namespace SistemInformasiSekolah
             public string Alamat { get; set; }
         }
 
-        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+      public class ListBeaDTO
         {
-            var siswaID = dataGridView2.CurrentRow.Cells["SiswaId"].Value.ToString();
-            if (siswaID is null)
-                return;
-            GetData(int.Parse(siswaID));
-            tabControl1.SelectedIndex = 1;
+            public int No { get; set; }
+            public string Tahun { get; set; }
+            public string Kelas { get; set; }
+            public string Penyedia { get; set; }
+        }
+
+   
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
         }
     }
 }
