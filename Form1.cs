@@ -21,7 +21,7 @@ namespace SistemInformasiSekolah
         public Form1()
         {
             InitializeComponent();
-           
+
             db = new DbDal();
             siswaDal = new SiswaDal();
             siswaRiwayatDal = new SiswaRiwayatDal();
@@ -67,9 +67,9 @@ namespace SistemInformasiSekolah
         {
 
             BeasiswaGrid.DataSource = beasiswaBinding;
-          /*  BeasiswaGrid.Columns["Tahun"].Width = 50;
-            BeasiswaGrid.Columns["Kelas"].Width = 50;
-            BeasiswaGrid.Columns["Penyedia"].Width = 200;*/
+            /*  BeasiswaGrid.Columns["Tahun"].Width = 50;
+              BeasiswaGrid.Columns["Kelas"].Width = 50;
+              BeasiswaGrid.Columns["Penyedia"].Width = 200;*/
         }
         #endregion
 
@@ -137,7 +137,7 @@ namespace SistemInformasiSekolah
                 RiwayatPenyakit = txtPenyakitDiderita.Text,
                 KelainanJasmani = radioTidak.Checked ? "Tidak" : txtJikaYa.Text,
                 TinggiBdn = (int)numericTB.Value,
-                BeratBdn = (int)numericTB.Value,
+                BeratBdn = (int)numericBB.Value,
                 LulusanDr = txtLulusanDari.Text,
                 TglIjazah = tglIJAZAH.Value.Date,
                 NoIjazah = txtNoIJAZAH.Text,
@@ -283,8 +283,11 @@ namespace SistemInformasiSekolah
         #region GET DATA
         public void GetData(int siswaId)
         {
-
             GetSiswa(siswaId);
+            GetSiswaRiwayat(siswaId);
+            GetSiswaWali(siswaId);
+            GetSiswaLulus(siswaId);
+            GetSiswaBeasiswa(siswaId);
         }
         public void GetSiswa(int siswaId)
         {
@@ -325,6 +328,137 @@ namespace SistemInformasiSekolah
             txtTransportasi.Text = siswa.TransportSekolah;
         }
 
+        public void GetSiswaRiwayat(int SiswaId)
+        {
+            var siswaRiwayat = siswaRiwayatDal.GetData(SiswaId);
+            if (siswaRiwayat is null)
+            {
+                MessageBox.Show("Data not found");
+                return;
+            }
+            string goldar = siswaRiwayat.GolDarah;
+            if (goldar == "A") ARadio.Checked = true;
+            if (goldar == "B") BRadio.Checked = true;
+            if (goldar == "AB") ABRadio.Checked = true;
+            if (goldar == "O") ORadio.Checked = true;
+
+            txtPenyakitDiderita.Text = siswaRiwayat.RiwayatPenyakit;
+            if (siswaRiwayat.KelainanJasmani == "Tidak")
+            {
+                radioTidak.Checked = true;
+            }
+            else
+            {
+                radioYa.Checked = true;
+                txtJikaYa.Text = siswaRiwayat.KelainanJasmani;
+            }
+            numericTB.Value = siswaRiwayat.TinggiBdn;
+            numericBB.Value = siswaRiwayat.BeratBdn;
+            txtLulusanDari.Text = siswaRiwayat.LulusanDr;
+            tglIJAZAH.Value = siswaRiwayat.TglIjazah;
+            txtNoIJAZAH.Text = siswaRiwayat.NoIjazah;
+            txtLamaBelajar.Text = siswaRiwayat.LamaBljr;
+            txtDariSekolah.Text = siswaRiwayat.PindahanDr;
+            txtAlasanPindah.Text = siswaRiwayat.AlasanPindah;
+            txtDiterimaKelas.Text = siswaRiwayat.DiterimaTingkat;
+            txtKeahlian.Text = siswaRiwayat.KompKeahlian;
+            tglDiterima.Value = siswaRiwayat.TglDiterima;
+            txtKesenian.Text = siswaRiwayat.Kesenian;
+            txtOlahraga.Text = siswaRiwayat.Olahraga;
+            txtMasyarakat.Text = siswaRiwayat.Organisasi;
+            txtLainnya.Text = siswaRiwayat.Hobi;
+            txtCitacita.Text = siswaRiwayat.CitaCita;
+            tglMeninggalkanSekolah.Value = siswaRiwayat.TglTinggalSekolah;
+            txtAlasanMeningalkanSekolah.Text = siswaRiwayat.AlasanTinggal;
+            tglTamatBelajar.Value = siswaRiwayat.AkhirTamatBljr;
+            txtAkhirPendidikIJAZAH.Text = siswaRiwayat.AkhirNoIjazah;
+        }
+
+        public void GetSiswaWali(int siswaId)
+        {
+            var listWali = siswaWaliDal.GetData(siswaId);
+            if (listWali is null) return;
+
+            //Ayah
+            var ayah = listWali.FirstOrDefault(a => a.JenisWali == "Ayah");
+            if (ayah is null) return;
+            txtAyahNama.Text = ayah.Nama;
+            txtTempatLahirAyah.Text = ayah.TmpLahir;
+            tglLahirAyah.Value = ayah.TglLahir;
+            foreach (var item in comboAgamaAyah.Items)
+                if (item.ToString() == ayah.Agama)
+                    comboAgamaAyah.SelectedItem = item;
+            if (ayah.Kewarga == "WNI")
+                radioWNIAyah.Checked = true;
+            else if (ayah.Kewarga == "Asing")
+                radioAsingAyah.Checked = true;
+            txtPendidikanAyah.Text = ayah.Pendidikan;
+            txtPekerjaanAyah.Text = ayah.Pekerjaan;
+            numericGajiAyah.Value = ayah.Penghasilan;
+            txtAlamatAyah.Text = ayah.Alamat;
+            txtNoTelpAyah.Text = ayah.NoTelp;
+            txtNoKKayah.Text = ayah.NoKK;
+            txtNIKAyah.Text = ayah.NIK;
+            if (ayah.StatusHidup == "Masih Hidup")
+                radioHidupAyah.Checked = true;
+            else if (ayah.StatusHidup == "Sudah Meninggal")
+                radioMatiAyah.Checked = true;
+
+            //Ibu
+            var ibu = listWali.FirstOrDefault(a => a.JenisWali == "Ibu");
+            if (ibu is null) return;
+            txtNamaIbu.Text = ibu.Nama;
+            txtTempatLahirIbu.Text = ibu.TmpLahir;
+            tglLahirIbu.Value = ibu.TglLahir;
+            foreach (var item in comboAgamaIbu.Items)
+                if (item.ToString() == ibu.Agama)
+                    comboAgamaIbu.SelectedItem = item;
+            if (ibu.Kewarga == "WNI")
+                radioWNIIbu.Checked = true;
+            else if (ibu.Kewarga == "Asing")
+                radioAsingIbu.Checked = true;
+            txtPendidikanIbu.Text = ibu.Pendidikan;
+            txtPekerjaanIbu.Text = ibu.Pekerjaan;
+            numericGajiIbu.Value = ibu.Penghasilan;
+            txtAlamatIbu.Text = ibu.Alamat;
+            txtNoHPIbu.Text = ibu.NoTelp;
+            txtNoKKIbu.Text = ibu.NoKK;
+            txtNIKIbu.Text = ibu.NIK;
+            if (ibu.StatusHidup == "Masih Hidup")
+                radioHidupIbu.Checked = true;
+            else if (ibu.StatusHidup == "Sudah Meninggal")
+                radioMatiIbu.Checked = true;
+
+            //Wali
+            var wali = listWali.FirstOrDefault(a => a.JenisWali == "Wali");
+            if (wali is null) return;
+            txtNamaWali.Text = wali.Nama;
+            txtTempatLahirWali.Text = wali.TmpLahir;
+            tglLahirWali.Value = wali.TglLahir;
+            foreach (var item in comboAgamaWali.Items)
+                if (item.ToString() == wali.Agama)
+                    comboAgamaWali.SelectedItem = item;
+            if (wali.Kewarga == "WNI")
+                radioWNIWali.Checked = true;
+            else if (wali.Kewarga == "Asing")
+                radioAsingWali.Checked = true;
+            txtPendidikanWali.Text = wali.Pekerjaan;
+            numericGajiWali.Value = wali.Penghasilan;
+            txtAlamatWali.Text = wali.Alamat;
+            txtNoHPWali.Text = wali.NoTelp;
+            txtNoKKWali.Text = wali.NoKK;
+            txtNIKWali.Text = wali.NIK;
+        }
+
+        public void GetSiswaLulus(int siswaId)
+        {
+            var siswaLulus = siswaLulusDal.GetData(siswaId);
+            if (siswaLulus == null) return;
+            txtMelanjutkanDi.Text = siswaLulus.LanjutDi;
+            tglBekerja.Value = siswaLulus.TglMulaiKerja;
+            txtNamaPerusahaan.Text = siswaLulus.NamaPerusahaan;
+            numericPendapatan.Value = siswaLulus.Penghasilan;
+        }
         private void GetSiswaBeasiswa(int siswaId)
         {
             var listBea = siswaBeasiswaDal.ListData(siswaId)?.ToList();
@@ -343,6 +477,9 @@ namespace SistemInformasiSekolah
         #endregion
 
         #region HELPER
+
+        //Data Personal
+
 
         public void LoadData()
         {
@@ -381,7 +518,7 @@ namespace SistemInformasiSekolah
             public string Alamat { get; set; }
         }
 
-      public class ListBeaDTO
+        public class ListBeaDTO
         {
             public int No { get; set; }
             public string Tahun { get; set; }
@@ -389,17 +526,13 @@ namespace SistemInformasiSekolah
             public string Penyedia { get; set; }
         }
 
-   
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)
         {
 
         }
 
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
-
 
         }
     }

@@ -39,7 +39,7 @@ namespace SistemInformasiSekolah.Dal
             var dp = new DynamicParameters();
             dp.Add("@SiswaId", siswaLulus.SiswaId, System.Data.DbType.Int16);
             dp.Add("@LanjutDi", siswaLulus.LanjutDi, System.Data.DbType.String);
-            dp.Add("@TglMulaiBekerja", siswaLulus.TglMulaiKerja, System.Data.DbType.Date);
+            dp.Add("@TglMulaiKerja", siswaLulus.TglMulaiKerja, System.Data.DbType.Date);
             dp.Add("@NamaPerusahaan", siswaLulus.NamaPerusahaan, System.Data.DbType.String);
             dp.Add("@Penghasilan", siswaLulus.Penghasilan, System.Data.DbType.Decimal);
             int cek = 0;
@@ -53,7 +53,7 @@ namespace SistemInformasiSekolah.Dal
         {
             const string sql = @"SELECT * FROM SiswaLulus WHERE SiswaId=@SiswaId";
             using var koneksi = new SqlConnection(DbDal.DB());
-            var get = koneksi.QueryFirstOrDefault(sql, new {SiswaId=siswaId});
+            var get = koneksi.QueryFirstOrDefault<SiswaLulusModel>(sql, new {SiswaId=siswaId});
             return get;
         }
     }

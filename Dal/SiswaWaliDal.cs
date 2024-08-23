@@ -96,11 +96,11 @@ namespace SistemInformasiSekolah.Dal
             return cek;
         }
 
-        public IEnumerable<SiswaWaliModel> ListData()
+        public IEnumerable<SiswaWaliModel> GetData(int siswaId)
         {
-            const string sql = @"SELECT * FROM SiswaWali";
+            const string sql = @"SELECT * FROM SiswaWali WHERE SiswaId = @SiswaId";
             using var koneksi = new SqlConnection(DbDal.DB());
-            var get = koneksi.Query<SiswaWaliModel>(sql);
+            var get = koneksi.Query<SiswaWaliModel>(sql, new {SiswaId = siswaId});
             return get;
         }
 

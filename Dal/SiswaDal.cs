@@ -63,6 +63,7 @@ namespace SistemInformasiSekolah.Dal
                                 JrkKeSekolah=@JrkKeSekolah,TransportSekolah=@TransportSekolah
                             WHERE SiswaId=@SiswaId";
             DynamicParameters param = new DynamicParameters();
+            param.Add("@SiswaId", siswa.SiswaId, DbType.Int16);
             param.Add("@NamaLengkap", siswa.NamaLengkap, DbType.String);
             param.Add("@NamaPanggil", siswa.NamaPanggil, DbType.String);
             param.Add("@Gender", siswa.Gender, DbType.Int16);
@@ -71,8 +72,9 @@ namespace SistemInformasiSekolah.Dal
             param.Add("@Agama", siswa.Agama, DbType.String);
             param.Add("@Kewarganegaraan", siswa.Kewarganegaraan, DbType.String);
             param.Add("@NIK", siswa.NIK, DbType.String);
-            param.Add("@AnakKe", siswa.TmpLahir, DbType.Int16);
+            param.Add("@AnakKe", siswa.AnakKe, DbType.Int16);
             param.Add("@JmlhSdrKandung", siswa.JmlhSdrKandung, DbType.Int16);
+            param.Add("@JmlhSdrTiri", siswa.JmlhSdrTiri, DbType.Int16);
             param.Add("@JmlhSdrAngkat", siswa.JmlhSdrAngkat, DbType.Int16);
             param.Add("@YatimPiatu", siswa.YatimPiatu, DbType.String);
             param.Add("@Bahasa", siswa.Bahasa, DbType.String);
