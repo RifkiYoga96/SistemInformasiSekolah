@@ -104,31 +104,12 @@ namespace SistemInformasiSekolah.Dal
             return get;
         }
 
-        public int Delete(int siswaId)
+        public void Delete(int siswaId)
         {
             const string sql = @"DELETE FROM SiswaWali WHERE SiswaId=@SiswaId";
-            
             using var koneksi = new SqlConnection(DbDal.DB());
-            int cek = 0;
-                var dp = new DynamicParameters();
-                dp.Add("@SiswaId",siswaId,DbType.Int16);
-                var delete = koneksi.Execute(sql,dp);
-                cek++;
-            return cek;
-            
+            koneksi.Execute(sql, new { SiswaID = siswaId });
         }
-
-    /*    public IEnumerable<SiswaWaliModel> ListData(int siswaId)
-        {
-            const string sql = @"SELECT * FROM SiswaWali WHERE SiswaId=@SiswaId";
-            var dp = new DynamicParameters();
-            dp.Add("@SiswaId",siswaId, DbType.Int16);
-            var koneksi =  new SqlConnection(DbDal.DB());
-            var get = koneksi.Query(sql,dp);
-            return get;
-        }*/
-
-        
     }
 }
  

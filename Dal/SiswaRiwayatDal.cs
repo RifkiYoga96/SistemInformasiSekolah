@@ -129,5 +129,12 @@ namespace SistemInformasiSekolah.Dal
             var get = koneksi.QueryFirstOrDefault<SiswaRiwayatModel>(sql, dp);
             return get;
         }
+
+        public void Delete(int siswaId)
+        {
+            const string sql = @"DELETE FROM SiswaRiwayat WHERE SiswaId=@SiswaId";
+            using var koneksi = new SqlConnection(DbDal.DB());
+            koneksi.Execute(sql, new { SiswaId = siswaId });
+        }
     }
 }

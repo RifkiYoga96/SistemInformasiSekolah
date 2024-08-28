@@ -303,7 +303,7 @@ namespace SistemInformasiSekolah
             txtNamaPanggil.Text = siswa.NamaPanggil;
             if (siswa.Gender == 1)
                 radioLaki.Checked = true;
-            else if(siswa.Gender == 0)
+            else if (siswa.Gender == 0)
                 radioPerempuan.Checked = true;
             txtTempatLahir.Text = siswa.TmpLahir;
             tglLahirSiswa.Value = siswa.TglLahir;
@@ -477,11 +477,24 @@ namespace SistemInformasiSekolah
         }
         #endregion
 
+        #region DELETE DATA
 
+        public void DeleteData(int siswaId)
+        {
+            siswaDal.Delete(siswaId);
+            siswaRiwayatDal.Delete(siswaId);
+            siswaWaliDal.Delete(siswaId);
+            siswaLulusDal.Delete(siswaId);
+            siswaBeasiswaDal.Delete(siswaId);
+
+            LoadData();
+        }
+
+        #endregion
 
         #region HELPER
 
-       private void ClearInputan()
+        private void ClearInputan()
         {
             //Personal
             SiswaIDtxt.Clear();
@@ -506,7 +519,7 @@ namespace SistemInformasiSekolah
 
             // Riwayat
             ARadio.Checked = false;
-            BRadio.Checked = false; 
+            BRadio.Checked = false;
             ABRadio.Checked = false;
             ORadio.Checked = false;
             txtPenyakitDiderita.Clear();
@@ -615,13 +628,18 @@ namespace SistemInformasiSekolah
             SaveSiswa();
         }
 
-        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        public void GetFromDGV()
         {
             var siswaID = dataGridView2.CurrentRow.Cells["SiswaId"].Value.ToString();
             if (siswaID is null)
                 return;
             GetData(int.Parse(siswaID));
-            tabControl1.SelectedIndex = 1;
+        }
+
+        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        {
+           GetFromDGV();
+           tabControl1.SelectedIndex = 1;
         }
 
         public class ListDataModel
@@ -641,14 +659,40 @@ namespace SistemInformasiSekolah
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-           
-            if(SiswaIDtxt.Text == "" && txtNamaLengkap.Text != "")
+
+            if (SiswaIDtxt.Text == "" && txtNamaLengkap.Text != "")
             {
-                var dialog = MessageBox.Show("Buat Data Baru?","Konfirmasi",MessageBoxButtons.YesNo);
+                var dialog = MessageBox.Show("Buat Data Baru?", "Konfirmasi", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.No) return;
             }
             ClearInputan();
             tabControl1.SelectedIndex = 1;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (SiswaIDtxt.Text == string.Empty)
+            {
+                MessageBox.Show("Pilih Data Terlebih Dahulu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                var konfir = MessageBox.Show("Apakah Anda Yakin?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (konfir == DialogResult.No) return;
+                DeleteData(int.Parse(SiswaIDtxt.Text));
+            }
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_Click(object sender, EventArgs e)
+        {
+            GetFromDGV();
         }
     }
 }

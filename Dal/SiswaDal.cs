@@ -89,14 +89,13 @@ namespace SistemInformasiSekolah.Dal
             if (data > 0) MessageBox.Show("Data Berhasil Di Update!");
         }
 
-        public void Delete(SiswaModel siswa)
+        public void Delete(int siswaId)
         {
-            string sql = @"DELETE FROM Siswa WHERE SiswaId=@SiswaId";
+            const string sql = @"DELETE FROM Siswa WHERE SiswaId=@SiswaId";
             var dp = new DynamicParameters();
-            DynamicParameters param = new DynamicParameters();
-            dp.Add("@SiswaId",siswa.SiswaId, DbType.Int16);
+            dp.Add("@SiswaId",siswaId,DbType.Int16);
             using var koneksi = new SqlConnection(DbDal.DB());
-            var data = koneksi.Execute(sql,param);
+            koneksi.Execute(sql,dp);
         }
 
         public SiswaModel? GetData(int SiswaId)

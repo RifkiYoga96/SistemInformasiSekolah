@@ -30,6 +30,7 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnDelete = new Button();
             btnNew = new Button();
             dataGridView2 = new DataGridView();
             tabPage2 = new TabPage();
@@ -258,6 +259,7 @@
             label105 = new Label();
             label104 = new Label();
             label90 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -308,6 +310,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnDelete);
             tabPage1.Controls.Add(btnNew);
             tabPage1.Controls.Add(dataGridView2);
             tabPage1.Location = new Point(4, 24);
@@ -318,6 +321,20 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "ListData";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Red;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(646, 642);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(127, 38);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnNew
             // 
@@ -343,6 +360,8 @@
             dataGridView2.RowTemplate.Height = 29;
             dataGridView2.Size = new Size(895, 615);
             dataGridView2.TabIndex = 0;
+            dataGridView2.CellClick += dataGridView2_CellClick;
+            dataGridView2.Click += dataGridView2_Click;
             dataGridView2.DoubleClick += dataGridView2_DoubleClick;
             // 
             // tabPage2
@@ -2194,7 +2213,6 @@
             groupBox2.Size = new Size(227, 22);
             groupBox2.TabIndex = 166;
             groupBox2.TabStop = false;
-
             // 
             // radioWNIAyah
             // 
@@ -3060,5 +3078,7 @@
         private GroupBox groupBox4;
         private RadioButton radioWNIWali;
         private RadioButton radioAsingWali;
+        private Button btnDelete;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

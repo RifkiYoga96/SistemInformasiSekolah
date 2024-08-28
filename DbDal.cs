@@ -14,7 +14,7 @@ namespace SistemInformasiSekolah
     {
         public static string DB()
         {
-            return $"Server=(local);Database=SekolahKu;Trusted_Connection=True;TrustServerCertificate=True";
+            return $"Server=(local);Database=SekolahKu1;Trusted_Connection=True;TrustServerCertificate=True";
         }
     }
 }
