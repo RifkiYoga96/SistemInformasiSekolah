@@ -81,6 +81,7 @@ namespace SistemInformasiSekolah
             SaveSiswaWali(siswaId);
             SaveSiswaLulus(siswaId);
             SaveBeasiswa(siswaId);
+            LoadData();
         }
 
         private int SaveSiswaPersonal()
@@ -300,9 +301,9 @@ namespace SistemInformasiSekolah
             SiswaIDtxt.Text = siswa.SiswaId.ToString();
             txtNamaLengkap.Text = siswa.NamaLengkap;
             txtNamaPanggil.Text = siswa.NamaPanggil;
-            if (radioLaki.Checked)
+            if (siswa.Gender == 1)
                 radioLaki.Checked = true;
-            else
+            else if(siswa.Gender == 0)
                 radioPerempuan.Checked = true;
             txtTempatLahir.Text = siswa.TmpLahir;
             tglLahirSiswa.Value = siswa.TglLahir;
@@ -476,9 +477,121 @@ namespace SistemInformasiSekolah
         }
         #endregion
 
+
+
         #region HELPER
 
-        //Data Personal
+       private void ClearInputan()
+        {
+            //Personal
+            SiswaIDtxt.Clear();
+            txtNamaLengkap.Clear();
+            txtNamaPanggil.Clear();
+            radioLaki.Checked = false;
+            radioPerempuan.Checked = false;
+            comboAgamaSiswa.SelectedIndex = 0;
+            txtKewarganegara.Clear();
+            txtNIKSiswa.Clear();
+            AnakKeNumeric.Value = 0;
+            JumSauKanNumeric.Value = 0;
+            JumSauTiNumeric.Value = 0;
+            JumSauAngNumeric.Value = 0;
+            comboYatim.SelectedIndex = 0;
+            txtBahasa.Clear();
+            txtAlamatSiswa.Clear();
+            txtNoHpRumah.Clear();
+            statusTinggalCombo.SelectedIndex = 0;
+            jarakSekolahNumeric.Value = 0;
+            txtTransportasi.Clear();
+
+            // Riwayat
+            ARadio.Checked = false;
+            BRadio.Checked = false; 
+            ABRadio.Checked = false;
+            ORadio.Checked = false;
+            txtPenyakitDiderita.Clear();
+            radioTidak.Checked = false;
+            radioYa.Checked = false;
+            txtJikaYa.Clear();
+            numericTB.Value = 0;
+            numericBB.Value = 0;
+            txtLulusanDari.Clear();
+            tglIJAZAH.Value = DateTime.Today;
+            txtNoIJAZAH.Clear();
+            txtLamaBelajar.Clear();
+            txtDariSekolah.Clear();
+            txtAlasanPindah.Clear();
+            txtDiterimaKelas.Clear();
+            txtKeahlian.Clear();
+            tglDiterima.Value = DateTime.Today;
+            txtKesenian.Clear();
+            txtOlahraga.Clear();
+            txtMasyarakat.Clear();
+            txtLainnya.Clear();
+            txtCitacita.Clear();
+            tglMeninggalkanSekolah.Value = DateTime.Today;
+            txtAlasanMeningalkanSekolah.Clear();
+            tglTamatBelajar.Value = DateTime.Today;
+            txtAkhirPendidikIJAZAH.Clear();
+            beaSiswaList.Clear();
+
+            //Wali
+            // Ayah
+            txtAyahNama.Clear();
+            txtTempatLahirAyah.Clear();
+            tglLahirAyah.Value = DateTime.Today;
+            comboAgamaAyah.SelectedIndex = 0;
+            radioWNIAyah.Checked = false;
+            radioAsingAyah.Checked = false;
+            txtPendidikanAyah.Clear();
+            txtPekerjaanAyah.Clear();
+            numericGajiAyah.Value = 0;
+            txtAlamatAyah.Clear();
+            txtNoTelpAyah.Clear();
+            txtNoKKayah.Clear();
+            txtNIKAyah.Clear();
+            radioHidupAyah.Checked = false;
+            radioMatiAyah.Checked = false;
+
+            // Ibu
+            txtNamaIbu.Clear();
+            txtTempatLahirIbu.Clear();
+            tglLahirIbu.Value = DateTime.Today;
+            comboAgamaIbu.SelectedIndex = 0;
+            radioWNIIbu.Checked = false;
+            radioAsingIbu.Checked = false;
+            txtPendidikanIbu.Clear();
+            txtPekerjaanIbu.Clear();
+            numericGajiIbu.Value = 0;
+            txtAlamatIbu.Clear();
+            txtNoHPIbu.Clear();
+            txtNoKKIbu.Clear();
+            txtNIKIbu.Clear();
+            radioHidupIbu.Checked = false;
+            radioMatiIbu.Checked = false;
+
+            // Wali
+            txtNamaWali.Clear();
+            txtTempatLahirWali.Clear();
+            tglLahirWali.Value = DateTime.Today;
+            comboAgamaWali.SelectedIndex = 0;
+            radioWNIWali.Checked = false;
+            radioAsingWali.Checked = false;
+            txtPendidikanWali.Clear();
+            txtPekerjaanWali.Clear();
+            numericGajiWali.Value = 0;
+            txtAlamatWali.Clear();
+            txtNoHPWali.Clear();
+            txtNoKKWali.Clear();
+            txtNIKWali.Clear();
+
+            //Lulus
+            txtMelanjutkanDi.Clear();
+            tglBekerja.Value = DateTime.Today;
+            txtNamaPerusahaan.Clear();
+            numericPendapatan.Value = 0;
+
+        }
 
 
         public void LoadData()
@@ -528,12 +641,14 @@ namespace SistemInformasiSekolah
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
+           
+            if(SiswaIDtxt.Text == "" && txtNamaLengkap.Text != "")
+            {
+                var dialog = MessageBox.Show("Buat Data Baru?","Konfirmasi",MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.No) return;
+            }
+            ClearInputan();
+            tabControl1.SelectedIndex = 1;
         }
     }
 }

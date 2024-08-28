@@ -2194,7 +2194,7 @@
             groupBox2.Size = new Size(227, 22);
             groupBox2.TabIndex = 166;
             groupBox2.TabStop = false;
-            groupBox2.Enter += groupBox2_Enter;
+
             // 
             // radioWNIAyah
             // 

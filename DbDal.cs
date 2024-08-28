@@ -14,32 +14,7 @@ namespace SistemInformasiSekolah
     {
         public static string DB()
         {
-            return $"Server=(local);Database=SekolahKu1;Trusted_Connection=True;TrustServerCertificate=True";
+            return $"Server=(local);Database=SekolahKu;Trusted_Connection=True;TrustServerCertificate=True";
         }
-        
-            
-
-        
-/*        public IEnumerable<SiswaModel> ListSiswa()
-        {
-            string sql = @"SELECT * FROM Siswa";
-            using var koneksi = new SqlConnection(connstr);
-            var siswa = koneksi.Query<SiswaModel>(sql);
-            return siswa;
-        }  
-        public IEnumerable<SiswaModel> ListSiswaRiwayat()
-        {
-            string sql = @"SELECT * FROM SiswaRiwayat";
-            using var koneksi = new SqlConnection(connstr);
-            var siswa = koneksi.Query<SiswaModel>(sql);
-            return siswa;
-        }
-
-        public int TemplateIUD(string sql, object parameter)
-        {
-            using var koneksi = new SqlConnection(connstr);
-            var data = koneksi.Execute(sql,parameter);
-            return data;
-        }*/
     }
 }
