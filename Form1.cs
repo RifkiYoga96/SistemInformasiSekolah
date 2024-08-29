@@ -18,6 +18,8 @@ namespace SistemInformasiSekolah
         private readonly BindingSource beasiswaBinding;
         private readonly BindingList<ListBeaDTO> beaSiswaList;
 
+        public string lokasiPhoto = string.Empty;
+
         public Form1()
         {
             InitializeComponent();
@@ -278,6 +280,19 @@ namespace SistemInformasiSekolah
                 listBeasiswa.Add(newItem);
             }
             siswaBeasiswaDal.Insert(listBeasiswa);
+        }
+
+        private void UpdatePhotoSiswa()
+        {
+            var siswa = siswaDal.GetData(Convert.ToInt16(lblID.Text));
+            if (siswa is null)
+            {
+                photoSiswaBox.Image = null;
+                lokasiPhoto = string.Empty;
+                return;
+            }
+            siswa.LokasiPhoto = lokasiPhoto;
+            siswaDal.Update(siswa);
         }
         #endregion
 
@@ -613,7 +628,13 @@ namespace SistemInformasiSekolah
             var koneksi = new SqlConnection(DbDal.DB());
             var load = koneksi.Query<ListDataModel>(sql);
             dataGridView2.DataSource = load;
+            if(dataGridView2.Rows.Count > 0)
+            {
+                dataGridView2.Rows[0].Selected = true;
+            }
         }
+
+       
 
         #endregion
 
@@ -638,8 +659,8 @@ namespace SistemInformasiSekolah
 
         private void dataGridView2_DoubleClick(object sender, EventArgs e)
         {
-           GetFromDGV();
-           tabControl1.SelectedIndex = 1;
+            GetFromDGV();
+            tabControl1.SelectedIndex = 1;
         }
 
         public class ListDataModel
@@ -693,6 +714,104 @@ namespace SistemInformasiSekolah
         private void dataGridView2_Click(object sender, EventArgs e)
         {
             GetFromDGV();
+        }
+
+        private void btnPilihPhoto_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif",
+                FilterIndex = 1,
+                Title = "Pilih Photo"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                photoSiswaBox.Image = System.Drawing.Image.FromFile(openFileDialog.FileName);
+                photoSiswaBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                lokasiPhoto = openFileDialog.FileName;
+
+                UpdatePhotoSiswa();
+            }
+        }
+
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView2.SelectedRows[0];
+
+                string siswaId = selectedRow.Cells[0].Value.ToString();
+                string siswaName = selectedRow.Cells[1].Value.ToString();
+
+                lblID.Text = siswaId;
+                lblNamaSiswa.Text = siswaName;
+
+                var siswa = siswaDal.GetData(Convert.ToInt16(siswaId));
+                lokasiPhoto = siswa?.LokasiPhoto ?? string.Empty;
+                if (lokasiPhoto != string.Empty)
+                {
+                    photoSiswaBox.Image = Image.FromFile(lokasiPhoto);
+                    photoSiswaBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    photoSiswaBox.Image = null;
+                }
+                  
+            }
+        }
+
+        private void dataGridView2_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            var siswaId = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+            var siswaName = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            lblID.Text = siswaId;
+            lblNamaSiswa.Text += siswaName;
+
+            var siswa = siswaDal.GetData(Convert.ToInt16(siswaId)); // info di bawah
+            lokasiPhoto = siswa?.LokasiPhoto ?? string.Empty;
+            if (lokasiPhoto != string.Empty) 
+            {
+                photoSiswaBox.Image = Image.FromFile(lokasiPhoto);
+                photoSiswaBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+                photoSiswaBox.Image = null;
+            }
+
+            /*
+             if(siswa == null)
+            {
+                lokasiPhoto = string.Empty;
+            } else if(siswa.LokasiPhoto == null)
+            {
+                lokasiPhoto = string.Empty;
+            }else
+            {
+                lokasiPhoto = siswa.LokasiPhoto;
+            }
+                    
+             */
+
+        }
+
+        private void btnHapusPhoto_Click(object sender, EventArgs e)
+        {
+            var konfirmasi = MessageBox.Show("Hapus Photo?","Konfirmasi",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (konfirmasi == DialogResult.No) return;
+
+            int siswaId = Convert.ToInt16(lblID.Text);
+            int index = dataGridView2.CurrentRow.Index;
+
+            siswaDal.DeletePhoto(siswaId);
+            photoSiswaBox.Image = null;
+            if (dataGridView2.Rows.Count > 0)
+            {
+                dataGridView2.Rows[index].Selected = true;
+            }
         }
     }
 }

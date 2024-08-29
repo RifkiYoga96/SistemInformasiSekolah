@@ -30,6 +30,11 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            lblNamaSiswa = new Label();
+            lblID = new Label();
+            btnHapusPhoto = new Button();
+            btnPilihPhoto = new Button();
+            photoSiswaBox = new PictureBox();
             btnDelete = new Button();
             btnNew = new Button();
             dataGridView2 = new DataGridView();
@@ -262,6 +267,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)photoSiswaBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage2.SuspendLayout();
             panel2.SuspendLayout();
@@ -310,6 +316,11 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(lblNamaSiswa);
+            tabPage1.Controls.Add(lblID);
+            tabPage1.Controls.Add(btnHapusPhoto);
+            tabPage1.Controls.Add(btnPilihPhoto);
+            tabPage1.Controls.Add(photoSiswaBox);
             tabPage1.Controls.Add(btnDelete);
             tabPage1.Controls.Add(btnNew);
             tabPage1.Controls.Add(dataGridView2);
@@ -322,13 +333,63 @@
             tabPage1.Text = "ListData";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // lblNamaSiswa
+            // 
+            lblNamaSiswa.AutoSize = true;
+            lblNamaSiswa.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNamaSiswa.Location = new Point(688, 135);
+            lblNamaSiswa.Name = "lblNamaSiswa";
+            lblNamaSiswa.Size = new Size(123, 21);
+            lblNamaSiswa.TabIndex = 7;
+            lblNamaSiswa.Text = "[ Nama Siswa ]";
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblID.Location = new Point(688, 73);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(74, 17);
+            lblID.TabIndex = 6;
+            lblID.Text = "[ ID Siswa ]";
+            // 
+            // btnHapusPhoto
+            // 
+            btnHapusPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHapusPhoto.Location = new Point(814, 506);
+            btnHapusPhoto.Name = "btnHapusPhoto";
+            btnHapusPhoto.Size = new Size(90, 30);
+            btnHapusPhoto.TabIndex = 5;
+            btnHapusPhoto.Text = "Hapus";
+            btnHapusPhoto.UseVisualStyleBackColor = true;
+            btnHapusPhoto.Click += btnHapusPhoto_Click;
+            // 
+            // btnPilihPhoto
+            // 
+            btnPilihPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPilihPhoto.Location = new Point(678, 506);
+            btnPilihPhoto.Name = "btnPilihPhoto";
+            btnPilihPhoto.Size = new Size(90, 30);
+            btnPilihPhoto.TabIndex = 4;
+            btnPilihPhoto.Text = "Pilih Photo";
+            btnPilihPhoto.UseVisualStyleBackColor = true;
+            btnPilihPhoto.Click += btnPilihPhoto_Click;
+            // 
+            // photoSiswaBox
+            // 
+            photoSiswaBox.Location = new Point(675, 188);
+            photoSiswaBox.Name = "photoSiswaBox";
+            photoSiswaBox.Size = new Size(234, 312);
+            photoSiswaBox.TabIndex = 3;
+            photoSiswaBox.TabStop = false;
+            // 
             // btnDelete
             // 
             btnDelete.BackColor = Color.Red;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(646, 642);
+            btnDelete.Location = new Point(412, 642);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(127, 38);
             btnDelete.TabIndex = 2;
@@ -342,7 +403,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(779, 642);
+            btnNew.Location = new Point(545, 642);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(127, 38);
             btnNew.TabIndex = 1;
@@ -353,14 +414,16 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(11, 22);
+            dataGridView2.Location = new Point(5, 4);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(895, 615);
+            dataGridView2.Size = new Size(667, 633);
             dataGridView2.TabIndex = 0;
             dataGridView2.CellClick += dataGridView2_CellClick;
+            dataGridView2.RowEnter += dataGridView2_RowEnter;
+            dataGridView2.SelectionChanged += dataGridView2_SelectionChanged;
             dataGridView2.Click += dataGridView2_Click;
             dataGridView2.DoubleClick += dataGridView2_DoubleClick;
             // 
@@ -2802,6 +2865,8 @@
             Text = "Form1";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)photoSiswaBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -3079,6 +3144,11 @@
         private RadioButton radioWNIWali;
         private RadioButton radioAsingWali;
         private Button btnDelete;
+        private Button btnPilihPhoto;
+        private PictureBox photoSiswaBox;
+        private Button btnHapusPhoto;
+        private Label lblNamaSiswa;
+        private Label lblID;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -28,5 +28,6 @@ namespace SistemInformasiSekolah
         public string TngglDengan { get; set; }
         public int JrkKeSekolah { get; set; }
         public string TransportSekolah { get; set; }
+        public string LokasiPhoto {  get; set; }
     }
 }

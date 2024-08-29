@@ -18,13 +18,13 @@ namespace SistemInformasiSekolah.Dal
                                 NamaLengkap,NamaPanggil,Gender,TmpLahir,TglLahir,Agama,
                                 Kewarganegaraan,NIK,AnakKe,JmlhSdrKandung,JmlhSdrTiri,
                                 JmlhSdrAngkat,YatimPiatu,Bahasa,Alamat,NoTelp,TngglDengan,
-                                JrkKeSekolah,TransportSekolah)
+                                JrkKeSekolah,TransportSekolah, LokasiPhoto)
                             OUTPUT INSERTED.SiswaId
                             VALUES(
                                  @NamaLengkap,@NamaPanggil,@Gender,@TmpLahir,@TglLahir,@Agama,
                                  @Kewarganegaraan,@NIK,@AnakKe,@JmlhSdrKandung,@JmlhSdrTiri,
                                  @JmlhSdrAngkat,@YatimPiatu,@Bahasa,@Alamat,@NoTelp,@TngglDengan,
-                                 @JrkKeSekolah,@TransportSekolah)";
+                                 @JrkKeSekolah,@TransportSekolah,@LokasiPhoto)";
 
             var param = new DynamicParameters();
             param.Add("@NamaLengkap",siswa.NamaLengkap, DbType.String);
@@ -46,13 +46,14 @@ namespace SistemInformasiSekolah.Dal
             param.Add("@TngglDengan",siswa.TngglDengan, DbType.String);
             param.Add("@JrkKeSekolah",siswa.JrkKeSekolah, DbType.Int16);
             param.Add("@TransportSekolah",siswa.TransportSekolah, DbType.String);
+            param.Add("@LokasiPhoto",siswa.LokasiPhoto, DbType.String);
 
             using var koneksi = new SqlConnection(DbDal.DB());
             var data = koneksi.QuerySingle<int>(sql,param);
             return data;
         }
 
-        public void Update(SiswaModel siswa)
+        public int Update(SiswaModel siswa)
         {
             string sql = @"UPDATE Siswa SET
                                 NamaLengkap=@NamaLengkap,NamaPanggil=@NamaPanggil,Gender=@Gender,
@@ -60,7 +61,7 @@ namespace SistemInformasiSekolah.Dal
                                 NIK=@NIK,AnakKe=@AnakKe,JmlhSdrkandung=@JmlhSdrKandung,
                                 JmlhSdrTiri=@JmlhSdrTiri,JmlhSdrAngkat=@JmlhSdrAngkat,YatimPiatu=@YatimPiatu
                                 ,Bahasa=@Bahasa,Alamat=@Alamat,NoTelp=@NoTelp,TngglDengan=@TngglDengan,
-                                JrkKeSekolah=@JrkKeSekolah,TransportSekolah=@TransportSekolah
+                                JrkKeSekolah=@JrkKeSekolah,TransportSekolah=@TransportSekolah,LokasiPhoto=@LokasiPhoto
                             WHERE SiswaId=@SiswaId";
             DynamicParameters param = new DynamicParameters();
             param.Add("@SiswaId", siswa.SiswaId, DbType.Int16);
@@ -83,10 +84,18 @@ namespace SistemInformasiSekolah.Dal
             param.Add("@TngglDengan", siswa.TngglDengan, DbType.String);
             param.Add("@JrkKeSekolah", siswa.JrkKeSekolah, DbType.Int16);
             param.Add("@TransportSekolah", siswa.TransportSekolah, DbType.String);
+            param.Add("@LokasiPhoto", siswa.LokasiPhoto, DbType.String);
 
             using var koneksi = new SqlConnection(DbDal.DB());
             var data = koneksi.Execute(sql,param);
-            if (data > 0) MessageBox.Show("Data Berhasil Di Update!");
+            return data;
+        }
+
+        public void DeletePhoto(int siswaId)
+        {
+            const string sql = @"UPDATE Siswa SET LokasiPhoto ='' WHERE SiswaId=@SiswaId";
+            using var conn = new SqlConnection(DbDal.DB());
+            conn.Execute(sql, new {SiswaId = siswaId});
         }
 
         public void Delete(int siswaId)
