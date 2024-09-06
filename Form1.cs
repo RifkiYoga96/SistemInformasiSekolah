@@ -75,6 +75,9 @@ namespace SistemInformasiSekolah
         }
         #endregion
 
+        #region EVENT 
+        #endregion
+
         #region SAVE DATA
         private void SaveSiswa()
         {
@@ -630,7 +633,7 @@ namespace SistemInformasiSekolah
             dataGridView2.DataSource = load;
             if(dataGridView2.Rows.Count > 0)
             {
-                dataGridView2.Rows[0].Selected = true;
+                dataGridView2.Rows[1].Selected = true;
             }
         }
 
@@ -741,8 +744,8 @@ namespace SistemInformasiSekolah
             {
                 var selectedRow = dataGridView2.SelectedRows[0];
 
-                string siswaId = selectedRow.Cells[0].Value.ToString();
-                string siswaName = selectedRow.Cells[1].Value.ToString();
+                string siswaId = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
+                string siswaName = selectedRow.Cells[1].Value?.ToString() ?? "[Nama Siswa Kosong]";
 
                 lblID.Text = siswaId;
                 lblNamaSiswa.Text = siswaName;
@@ -768,7 +771,7 @@ namespace SistemInformasiSekolah
             var siswaName = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
 
             lblID.Text = siswaId;
-            lblNamaSiswa.Text += siswaName;
+            lblNamaSiswa.Text = siswaName;
 
             var siswa = siswaDal.GetData(Convert.ToInt16(siswaId)); // info di bawah
             lokasiPhoto = siswa?.LokasiPhoto ?? string.Empty;

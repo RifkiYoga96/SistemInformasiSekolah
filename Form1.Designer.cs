@@ -264,7 +264,6 @@
             label105 = new Label();
             label104 = new Label();
             label90 = new Label();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)photoSiswaBox).BeginInit();
@@ -335,9 +334,10 @@
             // 
             // lblNamaSiswa
             // 
+            lblNamaSiswa.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblNamaSiswa.AutoSize = true;
             lblNamaSiswa.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNamaSiswa.Location = new Point(688, 135);
+            lblNamaSiswa.Location = new Point(691, 216);
             lblNamaSiswa.Name = "lblNamaSiswa";
             lblNamaSiswa.Size = new Size(123, 21);
             lblNamaSiswa.TabIndex = 7;
@@ -345,9 +345,10 @@
             // 
             // lblID
             // 
+            lblID.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblID.AutoSize = true;
             lblID.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblID.Location = new Point(688, 73);
+            lblID.Location = new Point(691, 154);
             lblID.Name = "lblID";
             lblID.Size = new Size(74, 17);
             lblID.TabIndex = 6;
@@ -355,8 +356,9 @@
             // 
             // btnHapusPhoto
             // 
+            btnHapusPhoto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnHapusPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnHapusPhoto.Location = new Point(814, 506);
+            btnHapusPhoto.Location = new Point(817, 587);
             btnHapusPhoto.Name = "btnHapusPhoto";
             btnHapusPhoto.Size = new Size(90, 30);
             btnHapusPhoto.TabIndex = 5;
@@ -366,8 +368,9 @@
             // 
             // btnPilihPhoto
             // 
+            btnPilihPhoto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnPilihPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPilihPhoto.Location = new Point(678, 506);
+            btnPilihPhoto.Location = new Point(681, 587);
             btnPilihPhoto.Name = "btnPilihPhoto";
             btnPilihPhoto.Size = new Size(90, 30);
             btnPilihPhoto.TabIndex = 4;
@@ -377,7 +380,9 @@
             // 
             // photoSiswaBox
             // 
-            photoSiswaBox.Location = new Point(675, 188);
+            photoSiswaBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            photoSiswaBox.BorderStyle = BorderStyle.FixedSingle;
+            photoSiswaBox.Location = new Point(678, 269);
             photoSiswaBox.Name = "photoSiswaBox";
             photoSiswaBox.Size = new Size(234, 312);
             photoSiswaBox.TabIndex = 3;
@@ -385,6 +390,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnDelete.BackColor = Color.Red;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -399,6 +405,7 @@
             // 
             // btnNew
             // 
+            btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNew.BackColor = SystemColors.Highlight;
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -413,6 +420,7 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(5, 4);
             dataGridView2.Margin = new Padding(3, 2, 3, 2);
@@ -445,6 +453,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button1.BackColor = Color.Blue;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -468,6 +477,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.AutoScroll = true;
             panel2.BackColor = Color.LightGray;
             panel2.Controls.Add(jarakSekolahNumeric);
@@ -593,6 +603,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoScroll = true;
             panel1.BackColor = Color.LightGray;
             panel1.BorderStyle = BorderStyle.Fixed3D;
@@ -3149,6 +3160,5 @@
         private Button btnHapusPhoto;
         private Label lblNamaSiswa;
         private Label lblID;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

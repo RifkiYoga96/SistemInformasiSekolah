@@ -1,0 +1,4 @@
+﻿CREATE TABLE Jurusan(
+			JurusanId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+			NamaJurusan VARCHAR(50) NOT NULL DEFAULT('')
+);
