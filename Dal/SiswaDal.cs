@@ -46,7 +46,7 @@ namespace SistemInformasiSekolah.Dal
             param.Add("@TngglDengan",siswa.TngglDengan, DbType.String);
             param.Add("@JrkKeSekolah",siswa.JrkKeSekolah, DbType.Int16);
             param.Add("@TransportSekolah",siswa.TransportSekolah, DbType.String);
-            param.Add("@LokasiPhoto",siswa.LokasiPhoto, DbType.String);
+            param.Add("@LokasiPhoto",siswa.LokasiPhoto?? string.Empty, DbType.String);
 
             using var koneksi = new SqlConnection(DbDal.DB());
             var data = koneksi.QuerySingle<int>(sql,param);

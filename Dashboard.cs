@@ -16,31 +16,40 @@ namespace SistemInformasiSekolah
         {
             InitializeComponent();
         }
+        private void BukaForm(Form form)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
 
+            form.MdiParent = this;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
         private void dataIndukToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
-            f1.MdiParent = this;
-            f1.FormBorderStyle = FormBorderStyle.None;
-            f1.Dock = DockStyle.Fill;
-            f1.Show();
+            BukaForm(f1);
         }
 
         private void mapelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MapelForm mf = new MapelForm();
-            mf.MdiParent = this;
-            mf.FormBorderStyle = FormBorderStyle.None;
-            mf.Dock = DockStyle.Fill;
-            mf.Show();
+            BukaForm(mf);
         }
 
         private void jurusanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             JurusanForm jf = new JurusanForm();
-            jf.MdiParent = this;
-            jf.FormBorderStyle = FormBorderStyle.None;
-            jf.Show();
+            BukaForm(jf);
+        }
+
+        private void kelasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KelasForm kf = new KelasForm();
+            BukaForm(kf);
         }
     }
 }
