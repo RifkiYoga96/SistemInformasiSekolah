@@ -11,5 +11,7 @@ namespace SistemInformasiSekolah.Model
         public int KelasId { get; set; }
         public string NamaKelas { get; set; }
         public int Tingkat {  get; set; }
+        public int JurusanId {  get; set; }
+        public string Flag {  get; set; }
     }
 }

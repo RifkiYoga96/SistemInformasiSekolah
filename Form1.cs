@@ -631,13 +631,13 @@ namespace SistemInformasiSekolah
             var koneksi = new SqlConnection(DbDal.DB());
             var load = koneksi.Query<ListDataModel>(sql);
             dataGridView2.DataSource = load;
-            if(dataGridView2.Rows.Count > 0)
+            if (dataGridView2.Rows.Count > 0)
             {
                 dataGridView2.Rows[1].Selected = true;
             }
         }
 
-       
+
 
         #endregion
 
@@ -761,7 +761,7 @@ namespace SistemInformasiSekolah
                 {
                     photoSiswaBox.Image = null;
                 }
-                  
+
             }
         }
 
@@ -775,7 +775,7 @@ namespace SistemInformasiSekolah
 
             var siswa = siswaDal.GetData(Convert.ToInt16(siswaId)); // info di bawah
             lokasiPhoto = siswa?.LokasiPhoto ?? string.Empty;
-            if (lokasiPhoto != string.Empty) 
+            if (lokasiPhoto != string.Empty)
             {
                 photoSiswaBox.Image = Image.FromFile(lokasiPhoto);
                 photoSiswaBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -803,7 +803,7 @@ namespace SistemInformasiSekolah
 
         private void btnHapusPhoto_Click(object sender, EventArgs e)
         {
-            var konfirmasi = MessageBox.Show("Hapus Photo?","Konfirmasi",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            var konfirmasi = MessageBox.Show("Hapus Photo?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (konfirmasi == DialogResult.No) return;
 
             int siswaId = Convert.ToInt16(lblID.Text);
@@ -815,6 +815,11 @@ namespace SistemInformasiSekolah
             {
                 dataGridView2.Rows[index].Selected = true;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

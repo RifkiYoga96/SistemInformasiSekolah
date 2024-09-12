@@ -56,6 +56,12 @@ namespace SistemInformasiSekolah
             }
         }
 
+        private void ClearInput()
+        {
+            idMapelTxt.Clear();
+            namaMapelTxt.Clear();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveData();
@@ -72,14 +78,15 @@ namespace SistemInformasiSekolah
             {
                 mapelDal.Delete(int.Parse(idMapelTxt.Text));
                 LoadData();
+                ClearInput();
+                
             }
 
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            idMapelTxt.Clear();
-            namaMapelTxt.Clear();
+            ClearInput();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)

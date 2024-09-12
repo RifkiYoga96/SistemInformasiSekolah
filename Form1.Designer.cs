@@ -337,7 +337,7 @@
             lblNamaSiswa.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblNamaSiswa.AutoSize = true;
             lblNamaSiswa.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNamaSiswa.Location = new Point(691, 216);
+            lblNamaSiswa.Location = new Point(691, 72);
             lblNamaSiswa.Name = "lblNamaSiswa";
             lblNamaSiswa.Size = new Size(123, 21);
             lblNamaSiswa.TabIndex = 7;
@@ -348,7 +348,7 @@
             lblID.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblID.AutoSize = true;
             lblID.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblID.Location = new Point(691, 154);
+            lblID.Location = new Point(691, 10);
             lblID.Name = "lblID";
             lblID.Size = new Size(74, 17);
             lblID.TabIndex = 6;
@@ -358,7 +358,7 @@
             // 
             btnHapusPhoto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnHapusPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnHapusPhoto.Location = new Point(817, 587);
+            btnHapusPhoto.Location = new Point(817, 443);
             btnHapusPhoto.Name = "btnHapusPhoto";
             btnHapusPhoto.Size = new Size(90, 30);
             btnHapusPhoto.TabIndex = 5;
@@ -370,7 +370,7 @@
             // 
             btnPilihPhoto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnPilihPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPilihPhoto.Location = new Point(681, 587);
+            btnPilihPhoto.Location = new Point(681, 443);
             btnPilihPhoto.Name = "btnPilihPhoto";
             btnPilihPhoto.Size = new Size(90, 30);
             btnPilihPhoto.TabIndex = 4;
@@ -382,7 +382,7 @@
             // 
             photoSiswaBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             photoSiswaBox.BorderStyle = BorderStyle.FixedSingle;
-            photoSiswaBox.Location = new Point(678, 269);
+            photoSiswaBox.Location = new Point(678, 125);
             photoSiswaBox.Name = "photoSiswaBox";
             photoSiswaBox.Size = new Size(234, 312);
             photoSiswaBox.TabIndex = 3;
@@ -2874,6 +2874,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();

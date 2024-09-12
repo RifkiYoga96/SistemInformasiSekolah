@@ -25,20 +25,21 @@ namespace SistemInformasiSekolah.Dal
             return koneksi.QueryFirstOrDefault<JurusanModel>(sql, new { JurusanId = JurusanId });
         }
 
-        public void Insert(string NamaJurusan)
+        public void Insert(string NamaJurusan, string code)
         {
-            const string sql = @"INSERT INTO Jurusan(NamaJurusan) VALUES(@NamaJurusan)";
+            const string sql = @"INSERT INTO Jurusan(NamaJurusan,Code) VALUES(@NamaJurusan,@Code)";
             using var koneksi = new SqlConnection(DbDal.DB());
-            koneksi.Execute(sql, new { NamaJurusan = NamaJurusan });
+            koneksi.Execute(sql, new { NamaJurusan = NamaJurusan,Code = code });
         }
 
-        public void Update(int jurusanId, string namaJurusan)
+        public void Update(int jurusanId, string namaJurusan, string code)
         {
-            const string sql = @"UPDATE Jurusan SET NamaJurusan=@NamaJurusan WHERE JurusanId=Jurusan@Id";
+            const string sql = @"UPDATE Jurusan SET NamaJurusan=@NamaJurusan, Code = @Code WHERE JurusanId=Jurusan@Id";
             using var koneksi = new SqlConnection(DbDal.DB());
             var dp = new DynamicParameters();
             dp.Add("@JurusanId", jurusanId, System.Data.DbType.Int32);
             dp.Add("@NamaJurusan", namaJurusan, System.Data.DbType.String);
+            dp.Add("@Code", code, System.Data.DbType.String);
             koneksi.Execute(sql, dp);
         }
 

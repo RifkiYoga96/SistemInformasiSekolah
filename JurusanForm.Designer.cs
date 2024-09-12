@@ -31,6 +31,8 @@
             dataGridView1 = new DataGridView();
             label1 = new Label();
             panel1 = new Panel();
+            codeTxt = new TextBox();
+            label4 = new Label();
             btnNew = new Button();
             btnDelete = new Button();
             btnSave = new Button();
@@ -46,7 +48,7 @@
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 54);
+            dataGridView1.Location = new Point(14, 64);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(512, 384);
@@ -61,7 +63,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(800, 51);
+            label1.Size = new Size(827, 51);
             label1.TabIndex = 1;
             label1.Text = "Jurusan";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -70,6 +72,9 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.BackColor = Color.Gainsboro;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(codeTxt);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnSave);
@@ -77,10 +82,30 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(idJurusanTxt);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(518, 54);
+            panel1.Location = new Point(533, 64);
             panel1.Name = "panel1";
             panel1.Size = new Size(282, 384);
             panel1.TabIndex = 2;
+            // 
+            // codeTxt
+            // 
+            codeTxt.Anchor = AnchorStyles.Top;
+            codeTxt.Location = new Point(21, 171);
+            codeTxt.Name = "codeTxt";
+            codeTxt.Size = new Size(72, 23);
+            codeTxt.TabIndex = 15;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(21, 148);
+            label4.Name = "label4";
+            label4.Size = new Size(44, 20);
+            label4.TabIndex = 14;
+            label4.Text = "Code";
+            label4.TextAlign = ContentAlignment.BottomLeft;
             // 
             // btnNew
             // 
@@ -91,7 +116,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(12, 342);
+            btnNew.Location = new Point(10, 340);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 13;
@@ -108,12 +133,13 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(100, 342);
+            btnDelete.Location = new Point(98, 340);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 12;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click_1;
             // 
             // btnSave
             // 
@@ -124,7 +150,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(188, 342);
+            btnSave.Location = new Point(186, 340);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 11;
@@ -135,7 +161,7 @@
             // namaJurusanTxt
             // 
             namaJurusanTxt.Anchor = AnchorStyles.Top;
-            namaJurusanTxt.Location = new Point(22, 119);
+            namaJurusanTxt.Location = new Point(21, 119);
             namaJurusanTxt.Name = "namaJurusanTxt";
             namaJurusanTxt.Size = new Size(225, 23);
             namaJurusanTxt.TabIndex = 10;
@@ -145,7 +171,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(22, 96);
+            label3.Location = new Point(21, 96);
             label3.Name = "label3";
             label3.Size = new Size(107, 20);
             label3.TabIndex = 9;
@@ -155,7 +181,7 @@
             // idJurusanTxt
             // 
             idJurusanTxt.Anchor = AnchorStyles.Top;
-            idJurusanTxt.Location = new Point(22, 66);
+            idJurusanTxt.Location = new Point(21, 66);
             idJurusanTxt.Name = "idJurusanTxt";
             idJurusanTxt.ReadOnly = true;
             idJurusanTxt.Size = new Size(225, 23);
@@ -166,7 +192,7 @@
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(22, 43);
+            label2.Location = new Point(21, 43);
             label2.Name = "label2";
             label2.Size = new Size(81, 20);
             label2.TabIndex = 7;
@@ -177,7 +203,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(827, 461);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
@@ -201,5 +227,7 @@
         private Label label3;
         private TextBox idJurusanTxt;
         private Label label2;
+        private TextBox codeTxt;
+        private Label label4;
     }
 }

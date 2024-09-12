@@ -28,23 +28,25 @@ namespace SistemInformasiSekolah
             if (!data.Any()) return;
             dataGridView1.Columns["JurusanId"].Width = 150;
             dataGridView1.Columns["NamaJurusan"].Width = 150;
+            dataGridView1.Columns["Code"].Width = 100;
         }
 
         private void SaveData()
         {
             string jurusanId = idJurusanTxt.Text;
             string namaJurusan = namaJurusanTxt.Text;
-            if (namaJurusan == string.Empty)
+            string code = codeTxt.Text;
+            if (namaJurusan == string.Empty && code == string.Empty)
             {
-                MessageBox.Show("Nama Mapel Wajib Diisi!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nama Jurusan dan Code Wajib Diisi!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if(jurusanId == string.Empty)
+            if (jurusanId == string.Empty)
             {
                 if (MessageBox.Show("Save Data?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    jurusanDal.Insert(namaJurusan);
+                    jurusanDal.Insert(namaJurusan, code);
                     LoadData();
                 }
             }
@@ -52,26 +54,13 @@ namespace SistemInformasiSekolah
             {
                 if (MessageBox.Show("Save Data?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    jurusanDal.Update(Convert.ToInt32(jurusanId), namaJurusan);
+                    jurusanDal.Update(Convert.ToInt32(jurusanId), namaJurusan, code);
                     LoadData();
                 }
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (idJurusanTxt.Text == string.Empty)
-            {
-                MessageBox.Show("Pilih Data Terlebih Dahulu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (MessageBox.Show("Save Data?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                jurusanDal.Delete(int.Parse(idJurusanTxt.Text));
-                LoadData();
-            }
-
-        }
+ 
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveData();
@@ -81,16 +70,32 @@ namespace SistemInformasiSekolah
         {
             idJurusanTxt.Clear();
             namaJurusanTxt.Clear();
+            codeTxt.Clear();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            var row = dataGridView1.CurrentRow;
-            var idMapel = row.Cells["JurusanId"].Value?.ToString() ?? string.Empty;
-            var NamaJurusan = row.Cells["NamaJurusan"].Value?.ToString() ?? string.Empty;
+            var jurusanId = dataGridView1.CurrentRow.Cells["JurusanId"].Value?.ToString();
+            var jurusan = jurusanDal.GetData(Convert.ToInt32(jurusanId));
+            if (jurusan == null) return;
+            idJurusanTxt.Text = jurusanId;
+            namaJurusanTxt.Text = jurusan.NamaJurusan;
+            codeTxt.Text = jurusan.Code;
+        }
 
-            idJurusanTxt.Text = idMapel;
-            namaJurusanTxt.Text = NamaJurusan;
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (idJurusanTxt.Text == string.Empty)
+            {
+                MessageBox.Show("Pilih Data Terlebih Dahulu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (MessageBox.Show("Delete Data?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                jurusanDal.Delete(int.Parse(idJurusanTxt.Text));
+                LoadData();
+                
+            }
         }
     }
 }

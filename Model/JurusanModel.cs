@@ -10,5 +10,6 @@ namespace SistemInformasiSekolah.Model
     {
         public int JurusanId {  get; set; }
         public string NamaJurusan {  get; set; }
+        public string Code {  get; set; }
     }
 }
