@@ -34,6 +34,7 @@
             mapelToolStripMenuItem = new ToolStripMenuItem();
             jurusanToolStripMenuItem = new ToolStripMenuItem();
             kelasToolStripMenuItem = new ToolStripMenuItem();
+            guruToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             // formToolStripMenuItem
             // 
-            formToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dataIndukToolStripMenuItem, mapelToolStripMenuItem, jurusanToolStripMenuItem, kelasToolStripMenuItem });
+            formToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dataIndukToolStripMenuItem, mapelToolStripMenuItem, jurusanToolStripMenuItem, kelasToolStripMenuItem, guruToolStripMenuItem });
             formToolStripMenuItem.Name = "formToolStripMenuItem";
             formToolStripMenuItem.Size = new Size(47, 20);
             formToolStripMenuItem.Text = "Form";
@@ -81,6 +82,13 @@
             kelasToolStripMenuItem.Text = "Kelas";
             kelasToolStripMenuItem.Click += kelasToolStripMenuItem_Click;
             // 
+            // guruToolStripMenuItem
+            // 
+            guruToolStripMenuItem.Name = "guruToolStripMenuItem";
+            guruToolStripMenuItem.Size = new Size(180, 22);
+            guruToolStripMenuItem.Text = "Guru";
+            guruToolStripMenuItem.Click += guruToolStripMenuItem_Click;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -104,5 +112,6 @@
         private ToolStripMenuItem mapelToolStripMenuItem;
         private ToolStripMenuItem jurusanToolStripMenuItem;
         private ToolStripMenuItem kelasToolStripMenuItem;
+        private ToolStripMenuItem guruToolStripMenuItem;
     }
 }

@@ -38,8 +38,10 @@
             label3 = new Label();
             idMapelTxt = new TextBox();
             label2 = new Label();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -51,16 +53,15 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(827, 51);
+            label1.Size = new Size(847, 51);
             label1.TabIndex = 0;
             label1.Text = "Mapel";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 65);
+            dataGridView1.Location = new Point(11, 11);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(512, 384);
@@ -69,8 +70,7 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = Color.Gainsboro;
+            panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -79,9 +79,9 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(idMapelTxt);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(533, 65);
+            panel1.Location = new Point(552, 63);
             panel1.Name = "panel1";
-            panel1.Size = new Size(282, 384);
+            panel1.Size = new Size(282, 407);
             panel1.TabIndex = 2;
             // 
             // btnNew
@@ -93,7 +93,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(10, 338);
+            btnNew.Location = new Point(12, 363);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 6;
@@ -110,7 +110,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(98, 338);
+            btnDelete.Location = new Point(100, 363);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 5;
@@ -127,7 +127,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(186, 338);
+            btnSave.Location = new Point(188, 363);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 4;
@@ -176,19 +176,31 @@
             label2.Text = "ID Mapel";
             label2.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(dataGridView1);
+            panel2.Location = new Point(12, 63);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(534, 407);
+            panel2.TabIndex = 3;
+            // 
             // MapelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(827, 461);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(847, 483);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
             Controls.Add(label1);
+            Controls.Add(panel2);
             Name = "MapelForm";
             Text = "MapelForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -204,5 +216,6 @@
         private Button btnDelete;
         private Button btnSave;
         private Button btnNew;
+        private Panel panel2;
     }
 }

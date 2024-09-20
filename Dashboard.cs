@@ -51,5 +51,11 @@ namespace SistemInformasiSekolah
             KelasForm kf = new KelasForm();
             BukaForm(kf);
         }
+
+        private void guruToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGuru fg = new FormGuru();
+            BukaForm(fg);
+        }
     }
 }

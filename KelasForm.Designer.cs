@@ -46,8 +46,10 @@
             label3 = new Label();
             idKelasTxt = new TextBox();
             label2 = new Label();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -68,10 +70,10 @@
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(13, 64);
+            dataGridView1.Location = new Point(13, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(512, 384);
+            dataGridView1.Size = new Size(487, 358);
             dataGridView1.TabIndex = 2;
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
@@ -79,7 +81,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = Color.Gainsboro;
+            panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(flagTxt);
             panel1.Controls.Add(namaKelasTxt);
@@ -286,19 +288,32 @@
             label2.Text = "ID Kelas";
             label2.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.White;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(dataGridView1);
+            panel2.Location = new Point(12, 64);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(514, 384);
+            panel2.TabIndex = 4;
+            // 
             // KelasForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(827, 461);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
             Controls.Add(label1);
+            Controls.Add(panel2);
             Name = "KelasForm";
             Text = "KelasForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -322,5 +337,6 @@
         private TextBox namaKelasTxt;
         private Label label6;
         private TextBox flagTxt;
+        private Panel panel2;
     }
 }
