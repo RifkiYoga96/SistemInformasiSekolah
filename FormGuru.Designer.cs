@@ -123,7 +123,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(575, 549);
             panel1.TabIndex = 6;
-            panel1.Paint += panel1_Paint;
             // 
             // btnNew
             // 
@@ -438,7 +437,6 @@
             Controls.Add(label1);
             Name = "FormGuru";
             Text = "FormGuru";
-            Load += FormGuru_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
