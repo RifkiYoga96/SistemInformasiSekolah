@@ -31,36 +31,36 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
+            tglLahir = new DateTimePicker();
             btnNew = new Button();
             btnDelete = new Button();
             btnSave = new Button();
-            textBox5 = new TextBox();
+            txtKota = new TextBox();
             label8 = new Label();
-            textBox6 = new TextBox();
+            txtInstansiPendidikan = new TextBox();
             label9 = new Label();
-            dataGridView2 = new DataGridView();
-            textBox3 = new TextBox();
+            gridMapel = new DataGridView();
+            txtTahunLulus = new TextBox();
             label6 = new Label();
-            textBox4 = new TextBox();
+            txtJurusanPendidikan = new TextBox();
             label7 = new Label();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            radioS3 = new RadioButton();
+            radioS2 = new RadioButton();
+            radioS1 = new RadioButton();
+            radioD3 = new RadioButton();
             label5 = new Label();
-            textBox2 = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtNamaGuru = new TextBox();
             label3 = new Label();
             pictureBox1 = new PictureBox();
-            idMapelTxt = new TextBox();
+            txtIdGuru = new TextBox();
             label2 = new Label();
             panel2 = new Panel();
             label10 = new Label();
             textBox7 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridMapel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -95,34 +95,41 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(tglLahir);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnSave);
-            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(txtKota);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(textBox6);
+            panel1.Controls.Add(txtInstansiPendidikan);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(dataGridView2);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(gridMapel);
+            panel1.Controls.Add(txtTahunLulus);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(txtJurusanPendidikan);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(radioButton4);
-            panel1.Controls.Add(radioButton3);
-            panel1.Controls.Add(radioButton2);
-            panel1.Controls.Add(radioButton1);
+            panel1.Controls.Add(radioS3);
+            panel1.Controls.Add(radioS2);
+            panel1.Controls.Add(radioS1);
+            panel1.Controls.Add(radioD3);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtNamaGuru);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(idMapelTxt);
+            panel1.Controls.Add(txtIdGuru);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(413, 62);
             panel1.Name = "panel1";
             panel1.Size = new Size(575, 549);
             panel1.TabIndex = 6;
+            // 
+            // tglLahir
+            // 
+            tglLahir.Location = new Point(15, 149);
+            tglLahir.Name = "tglLahir";
+            tglLahir.Size = new Size(257, 23);
+            tglLahir.TabIndex = 48;
             // 
             // btnNew
             // 
@@ -171,14 +178,15 @@
             btnSave.TabIndex = 45;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click_1;
             // 
-            // textBox5
+            // txtKota
             // 
-            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox5.Location = new Point(302, 311);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(257, 23);
-            textBox5.TabIndex = 44;
+            txtKota.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtKota.Location = new Point(302, 311);
+            txtKota.Name = "txtKota";
+            txtKota.Size = new Size(257, 23);
+            txtKota.TabIndex = 44;
             // 
             // label8
             // 
@@ -192,13 +200,13 @@
             label8.Text = "Kota";
             label8.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // textBox6
+            // txtInstansiPendidikan
             // 
-            textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox6.Location = new Point(302, 256);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(257, 23);
-            textBox6.TabIndex = 42;
+            txtInstansiPendidikan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtInstansiPendidikan.Location = new Point(302, 256);
+            txtInstansiPendidikan.Name = "txtInstansiPendidikan";
+            txtInstansiPendidikan.Size = new Size(257, 23);
+            txtInstansiPendidikan.TabIndex = 42;
             // 
             // label9
             // 
@@ -212,23 +220,23 @@
             label9.Text = "Instansi Pendidikan";
             label9.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // dataGridView2
+            // gridMapel
             // 
-            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(15, 360);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(544, 127);
-            dataGridView2.TabIndex = 40;
+            gridMapel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            gridMapel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridMapel.Location = new Point(15, 360);
+            gridMapel.Name = "gridMapel";
+            gridMapel.RowTemplate.Height = 25;
+            gridMapel.Size = new Size(544, 127);
+            gridMapel.TabIndex = 40;
             // 
-            // textBox3
+            // txtTahunLulus
             // 
-            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox3.Location = new Point(15, 311);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(257, 23);
-            textBox3.TabIndex = 35;
+            txtTahunLulus.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtTahunLulus.Location = new Point(15, 311);
+            txtTahunLulus.Name = "txtTahunLulus";
+            txtTahunLulus.Size = new Size(257, 23);
+            txtTahunLulus.TabIndex = 35;
             // 
             // label6
             // 
@@ -242,13 +250,13 @@
             label6.Text = "Tahun Lulus";
             label6.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // textBox4
+            // txtJurusanPendidikan
             // 
-            textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox4.Location = new Point(15, 256);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(257, 23);
-            textBox4.TabIndex = 33;
+            txtJurusanPendidikan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtJurusanPendidikan.Location = new Point(15, 256);
+            txtJurusanPendidikan.Name = "txtJurusanPendidikan";
+            txtJurusanPendidikan.Size = new Size(257, 23);
+            txtJurusanPendidikan.TabIndex = 33;
             // 
             // label7
             // 
@@ -262,53 +270,53 @@
             label7.Text = "Jurusan Pendidikan";
             label7.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // radioButton4
+            // radioS3
             // 
-            radioButton4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(233, 207);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(37, 19);
-            radioButton4.TabIndex = 31;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "S3";
-            radioButton4.UseVisualStyleBackColor = true;
+            radioS3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radioS3.AutoSize = true;
+            radioS3.Location = new Point(233, 207);
+            radioS3.Name = "radioS3";
+            radioS3.Size = new Size(37, 19);
+            radioS3.TabIndex = 31;
+            radioS3.TabStop = true;
+            radioS3.Text = "S3";
+            radioS3.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioS2
             // 
-            radioButton3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(164, 207);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(37, 19);
-            radioButton3.TabIndex = 30;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "S2";
-            radioButton3.UseVisualStyleBackColor = true;
+            radioS2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radioS2.AutoSize = true;
+            radioS2.Location = new Point(164, 207);
+            radioS2.Name = "radioS2";
+            radioS2.Size = new Size(37, 19);
+            radioS2.TabIndex = 30;
+            radioS2.TabStop = true;
+            radioS2.Text = "S2";
+            radioS2.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioS1
             // 
-            radioButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(93, 207);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(37, 19);
-            radioButton2.TabIndex = 29;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "S1";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioS1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radioS1.AutoSize = true;
+            radioS1.Location = new Point(93, 207);
+            radioS1.Name = "radioS1";
+            radioS1.Size = new Size(37, 19);
+            radioS1.TabIndex = 29;
+            radioS1.TabStop = true;
+            radioS1.Text = "S1";
+            radioS1.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioD3
             // 
-            radioButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(23, 207);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(39, 19);
-            radioButton1.TabIndex = 28;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "D3";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioD3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            radioD3.AutoSize = true;
+            radioD3.Location = new Point(23, 207);
+            radioD3.Name = "radioD3";
+            radioD3.Size = new Size(39, 19);
+            radioD3.TabIndex = 28;
+            radioD3.TabStop = true;
+            radioD3.Text = "D3";
+            radioD3.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -322,14 +330,6 @@
             label5.Text = "Tingkat Pendidikan";
             label5.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox2.Location = new Point(15, 149);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(257, 23);
-            textBox2.TabIndex = 26;
-            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -342,13 +342,13 @@
             label4.Text = "Tgl Lahir";
             label4.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // textBox1
+            // txtNamaGuru
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox1.Location = new Point(15, 95);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(257, 23);
-            textBox1.TabIndex = 24;
+            txtNamaGuru.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtNamaGuru.Location = new Point(15, 95);
+            txtNamaGuru.Name = "txtNamaGuru";
+            txtNamaGuru.Size = new Size(257, 23);
+            txtNamaGuru.TabIndex = 24;
             // 
             // label3
             // 
@@ -372,14 +372,14 @@
             pictureBox1.TabIndex = 22;
             pictureBox1.TabStop = false;
             // 
-            // idMapelTxt
+            // txtIdGuru
             // 
-            idMapelTxt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            idMapelTxt.Location = new Point(15, 41);
-            idMapelTxt.Name = "idMapelTxt";
-            idMapelTxt.ReadOnly = true;
-            idMapelTxt.Size = new Size(257, 23);
-            idMapelTxt.TabIndex = 5;
+            txtIdGuru.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtIdGuru.Location = new Point(15, 41);
+            txtIdGuru.Name = "txtIdGuru";
+            txtIdGuru.ReadOnly = true;
+            txtIdGuru.Size = new Size(257, 23);
+            txtIdGuru.TabIndex = 5;
             // 
             // label2
             // 
@@ -440,7 +440,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridMapel).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -452,26 +452,25 @@
         private Label label1;
         private DataGridView dataGridView1;
         private Panel panel1;
-        private TextBox textBox5;
+        private TextBox txtKota;
         private Label label8;
-        private TextBox textBox6;
+        private TextBox txtInstansiPendidikan;
         private Label label9;
-        private DataGridView dataGridView2;
-        private TextBox textBox3;
+        private DataGridView gridMapel;
+        private TextBox txtTahunLulus;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox txtJurusanPendidikan;
         private Label label7;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton radioS3;
+        private RadioButton radioS2;
+        private RadioButton radioS1;
+        private RadioButton radioD3;
         private Label label5;
-        private TextBox textBox2;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtNamaGuru;
         private Label label3;
         private PictureBox pictureBox1;
-        private TextBox idMapelTxt;
+        private TextBox txtIdGuru;
         private Label label2;
         private Button btnNew;
         private Button btnDelete;
@@ -479,5 +478,6 @@
         private Panel panel2;
         private Label label10;
         private TextBox textBox7;
+        private DateTimePicker tglLahir;
     }
 }

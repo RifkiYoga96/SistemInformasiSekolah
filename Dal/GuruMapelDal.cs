@@ -29,19 +29,19 @@ namespace SistemInformasiSekolah.Dal
             using var conn = new SqlConnection(DbDal.DB());
             return conn.Query<GuruMapelModel>(sql, dp).ToList();
         }
-        public void Insert(IEnumerable<GuruMapelModel> listMapel)
+        public void Insert(IEnumerable<GuruMapelModel> listMapel, int id)
         {
             const string sql = @"
                 INSERT INTO GuruMapel
                     (GuruId, MapelId)
                 VALUES
-                    (GuruId, MapelId)";
+                    (@GuruId, @MapelId)";
 
             using var conn = new SqlConnection(DbDal.DB());
             foreach (var item in listMapel)
             {
                 var dp = new DynamicParameters();
-                dp.Add("@GuruId", item.GuruId);
+                dp.Add("@GuruId", id);
                 dp.Add("@MapelId", item.MapelId);
 
                 conn.Execute(sql, dp);
