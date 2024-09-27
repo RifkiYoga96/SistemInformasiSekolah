@@ -22,16 +22,16 @@ namespace SistemInformasiSekolah.Dal
         public int Insert(GuruModel guru)
         {
             const string sql = @"
-            INSERT INTO Guru(
-                GuruName, TglLahir, JurusanPendidikan, 
-                TingkatPendidikan, TahunLulus, InstansiPendidikan, 
-                KotaPendidikan)
-            OUTPUT inserted.GuruID
-            VALUES(
-                @GuruName, @TglLahir, @JurusanPendidikan, 
-                @TingkatPendidikan, @TahunLulus, 
-                @InstansiPendidikan, @KotaPendidikan)";
-
+                            INSERT INTO Guru(
+                                GuruName, TglLahir, JurusanPendidikan, 
+                                TingkatPendidikan, TahunLulus, InstansiPendidikan, 
+                                KotaPendidikan)
+                            OUTPUT INSERTED.GuruId
+                            VALUES(
+                                @GuruName, @TglLahir, @JurusanPendidikan, 
+                                @TingkatPendidikan, @TahunLulus, 
+                                @InstansiPendidikan, @KotaPendidikan)";
+            const string idAkhir = "SELECT MAX(GuruId) FROM Guru";
             var dp = new DynamicParameters();
             dp.Add("@GuruName", guru.GuruName, DbType.String);
             dp.Add("@TglLahir", guru.TglLahir, DbType.DateTime);
@@ -42,7 +42,8 @@ namespace SistemInformasiSekolah.Dal
             dp.Add("@KotaPendidikan", guru.KotaPendidikan, DbType.String);
 
             using var koneksi = new SqlConnection(DbDal.DB());
-            return koneksi.QuerySingle<int>(sql, dp);
+            koneksi.Execute(sql, dp);
+            return koneksi.QuerySingle<int>(idAkhir);
         }
 
         public void Update(GuruModel guru)
@@ -58,6 +59,7 @@ namespace SistemInformasiSekolah.Dal
                                 WHERE
                                     GuruId=@GuruId";
             var dp = new DynamicParameters();
+            dp.Add("@GuruId", guru.GuruId, DbType.Int32);
             dp.Add("@GuruName", guru.GuruName, DbType.String);
             dp.Add("@TglLahir", guru.TglLahir, DbType.DateTime);
             dp.Add("@JurusanPendidikan", guru.JurusanPendidikan, DbType.String);
@@ -69,9 +71,10 @@ namespace SistemInformasiSekolah.Dal
             using var koneksi = new SqlConnection(DbDal.DB());
             koneksi.Execute(sql, dp);
         }
+
         public void Delete(int guruId)
         {
-            const string sql = @"DELETE FROM Guru WHERE GuruId @GuruId";
+            const string sql = @"DELETE FROM Guru WHERE GuruId=@GuruId";
             using var koneksi = new SqlConnection(DbDal.DB());
             koneksi.Execute(sql, new {GuruId=guruId});
         }

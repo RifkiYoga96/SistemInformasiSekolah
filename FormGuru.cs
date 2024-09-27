@@ -39,27 +39,47 @@ namespace SistemInformasiSekolah
         {
             btnNew.Click += btnNew_Click;
             btnSave.Click += btnSave_Click;
+            btnDelete.Click += BtnDelete_Click;
 
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             gridMapel.KeyDown += gridMapel_KeyDown;
             gridMapel.CellValidated += gridMapel_CellValidated;
         }
 
+        private void BtnDelete_Click(object? sender, EventArgs e)
+        {
+            klikDelete();
+        }
+        private void klikDelete()
+        {
+            var delete = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
+            if(MessageBox.Show("Apakah ingin menghapus data tersebut","Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                _guruDal.Delete(delete);
+                RefreshData();
+            }
+        }
         private void gridMapel_CellValidated(object? sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
-            var grid = (DataGridView)sender;
-            switch (grid.CurrentCell.OwningColumn.Name)
+            if (e.RowIndex < 0)
+                return;
+
+            var dataGrid = (DataGridView)sender;
+            var getIdMapel = dataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+            switch (dataGrid.CurrentCell.OwningColumn.Name)
             {
                 case "Id":
-                    var mapel = _mapelDal.GetData(Convert.ToInt16(grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value));
+                    var mapel = _mapelDal.GetData(Convert.ToInt32(getIdMapel));
                     if (mapel == null)
                     {
-                        _listMapel[e.RowIndex].Mapel = "";
+                        _listMapel[e.RowIndex].Mapel = " ";
                         return;
                     }
+
                     _listMapel[e.RowIndex].Id = mapel.MapelId;
-                    _listMapel[e.RowIndex].Mapel = mapel.NamaMapel;
+                    _listMapel[e.RowIndex].Mapel= mapel.NamaMapel;
+
                     break;
             }
         }
@@ -76,17 +96,22 @@ namespace SistemInformasiSekolah
             if (e.KeyCode == Keys.F1)
             {
                 DataGridViewRow currentRow = gridMapel.CurrentRow;
-                using var formMapelList = new FormListMapel();
-                if (formMapelList.ShowDialog() == DialogResult.OK && currentRow != null)
-                {
-                    var mapelId = formMapelList.MapelId;
-                    var mapelName = formMapelList.MapelName;
 
-                    // dataGridView1.BeginEdit(true);
+                using var formMapel = new FormListMapel();
+                if (formMapel.ShowDialog() == DialogResult.OK)
+                {
+                    var mapelId = formMapel.MapelId;
+                    var mapelName = formMapel.MapelName;
+
+                    gridMapel.BeginEdit(true);
+
                     currentRow.Cells[0].Value = mapelId;
                     currentRow.Cells[1].Value = mapelName;
-                    dataGridView1.EndEdit(DataGridViewDataErrorContexts.Commit);
-                    _listMapelBinding.ResetBindings(true);
+
+                    gridMapel.EndEdit(DataGridViewDataErrorContexts.Commit);
+
+                    _listMapelBinding.ResetBindings(false);
+                    gridMapel.CurrentCell = gridMapel.Rows[gridMapel.Rows.Count - 1].Cells[0];
                 }
             }
         }
@@ -106,6 +131,7 @@ namespace SistemInformasiSekolah
         {
             SaveGuru();
             RefreshData();
+            ClearInput();
         }
 
         private void ClearInput()
@@ -144,15 +170,14 @@ namespace SistemInformasiSekolah
                     MapelId = x.Id
                 }).ToList()
             };
-
-            if (guru.GuruId == 0)
+ 
+            if (guruId == 0)
                 guru.GuruId = _guruDal.Insert(guru);
             else
                 _guruDal.Update(guru);
-
+            MessageBox.Show(guru.GuruId.ToString());
             _guruMapelDal.Delete(guru.GuruId);
             _guruMapelDal.Insert(guru.ListMapel, guru.GuruId);
-
             return guruId;
         }
 
@@ -196,11 +221,6 @@ namespace SistemInformasiSekolah
             dataGridView1.Refresh();
         }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            SaveGuru();
-            RefreshData();
-        }
     }
 }
 

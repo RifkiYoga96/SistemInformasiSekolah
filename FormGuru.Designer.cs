@@ -178,7 +178,6 @@
             btnSave.TabIndex = 45;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click_1;
             // 
             // txtKota
             // 

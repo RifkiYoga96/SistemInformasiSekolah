@@ -15,11 +15,11 @@ namespace SistemInformasiSekolah.Dal
         {
             const string sql = @"
                 SELECT 
-                    aa.GuruId, aa.MapelId,
-                    ISNULL(bb.MapelName, '') AS MapelName
+                    gm.GuruId, gm.MapelId,
+                    ISNULL(m.NamaMapel, '') AS NamaMapel
                 FROM 
-                    GuruMapel aa
-                    LEFT JOIN Mapel bb ON aa.MapelId = bb.MapelId
+                    GuruMapel gm
+                    LEFT JOIN Mapel m ON gm.MapelId = m.MapelId
                 WHERE
                     GuruId = @GuruId";
 
@@ -51,7 +51,7 @@ namespace SistemInformasiSekolah.Dal
         public void Delete(int guruId)
         {
             const string sql = @"
-                DELETE FROM Guru
+                DELETE FROM GuruMapel
                 WHERE GuruId = @GuruId";
 
             var dp = new DynamicParameters();
