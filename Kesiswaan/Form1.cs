@@ -1,5 +1,6 @@
 using Dapper;
-using SistemInformasiSekolah.Dal;
+using SistemInformasiSekolah.Kesiswaan.Dal;
+using SistemInformasiSekolah.Kesiswaan.Model;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Web;

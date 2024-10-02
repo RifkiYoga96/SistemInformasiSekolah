@@ -57,7 +57,7 @@
             label2 = new Label();
             panel2 = new Panel();
             label10 = new Label();
-            textBox7 = new TextBox();
+            txtFilter = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridMapel).BeginInit();
@@ -93,7 +93,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.White;
+            panel1.BackColor = SystemColors.InactiveCaption;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(tglLahir);
             panel1.Controls.Add(btnNew);
@@ -398,7 +398,7 @@
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label10);
-            panel2.Controls.Add(textBox7);
+            panel2.Controls.Add(txtFilter);
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(12, 62);
             panel2.Name = "panel2";
@@ -417,13 +417,14 @@
             label10.Text = "Search :";
             label10.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // textBox7
+            // txtFilter
             // 
-            textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox7.Location = new Point(82, 15);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(300, 23);
-            textBox7.TabIndex = 48;
+            txtFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtFilter.Location = new Point(82, 15);
+            txtFilter.Name = "txtFilter";
+            txtFilter.PlaceholderText = "Masukkan Nama Guru";
+            txtFilter.Size = new Size(300, 23);
+            txtFilter.TabIndex = 48;
             // 
             // FormGuru
             // 
@@ -476,7 +477,7 @@
         private Button btnSave;
         private Panel panel2;
         private Label label10;
-        private TextBox textBox7;
+        private TextBox txtFilter;
         private DateTimePicker tglLahir;
     }
 }

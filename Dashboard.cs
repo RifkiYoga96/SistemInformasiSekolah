@@ -57,5 +57,12 @@ namespace SistemInformasiSekolah
             FormGuru fg = new FormGuru();
             BukaForm(fg);
         }
+
+        private void jadwalPelajaranToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormJadwalPelajaran fjp = new FormJadwalPelajaran();
+
+            BukaForm(fjp);
+        }
     }
 }

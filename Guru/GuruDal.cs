@@ -13,11 +13,11 @@ namespace SistemInformasiSekolah.Dal
 {
     public class GuruDal
     {
-        public IEnumerable<GuruModel> ListData()
+        public IEnumerable<GuruModel> ListData(string sqlc, object dp)
         {
-            const string sql = @"SELECT * FROM Guru";
+            string sql = $@"SELECT * FROM Guru {sqlc}";
             using var koneksi = new SqlConnection(DbDal.DB());
-            return koneksi.Query<GuruModel>(sql);
+            return koneksi.Query<GuruModel>(sql,dp);
         }
         public int Insert(GuruModel guru)
         {

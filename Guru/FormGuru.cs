@@ -1,4 +1,6 @@
-﻿using SistemInformasiSekolah.Dal;
+﻿using Dapper;
+using SistemInformasiSekolah.Guru;
+using SistemInformasiSekolah.Mapel;
 using SistemInformasiSekolah.Model;
 using System;
 using System.Collections.Generic;
@@ -44,8 +46,15 @@ namespace SistemInformasiSekolah
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             gridMapel.KeyDown += gridMapel_KeyDown;
             gridMapel.CellValidated += gridMapel_CellValidated;
+
+            txtFilter.TextChanged += txtFilter_TextChanged;
         }
 
+        private void txtFilter_TextChanged(object? sender, EventArgs e)
+        {
+            RefreshData();
+
+        }
         private void BtnDelete_Click(object? sender, EventArgs e)
         {
             klikDelete();
@@ -210,7 +219,10 @@ namespace SistemInformasiSekolah
         }
         private void RefreshData()
         {
-            var listData = _guruDal.ListData() ?? new List<GuruModel>();
+            string sqlc = Filter(txtFilter.Text);
+            var dp = new DynamicParameters();
+            if (sqlc != "") dp.Add("@GuruName",txtFilter.Text);
+            var listData = _guruDal.ListData(sqlc,dp) ?? new List<GuruModel>();
             var dataSource = listData.Select(x => new GuruDto
             {
                 Id = x.GuruId,
@@ -219,6 +231,15 @@ namespace SistemInformasiSekolah
             }).ToList();
             dataGridView1.DataSource = dataSource;
             dataGridView1.Refresh();
+        }
+
+        private string Filter(string namaGuru)
+        {
+            string sql = string.Empty;
+            if (namaGuru != "")
+                return sql += @" WHERE GuruName LIKE '%'+@GuruName+'%'";
+            else
+                return sql;
         }
 
     }

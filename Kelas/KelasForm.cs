@@ -1,4 +1,6 @@
 ﻿using SistemInformasiSekolah.Dal;
+using SistemInformasiSekolah.Jurusan;
+using SistemInformasiSekolah.Kesiswaan.Dal;
 using SistemInformasiSekolah.Model;
 using System;
 using System.Collections.Generic;

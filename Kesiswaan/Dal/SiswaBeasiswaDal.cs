@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using SistemInformasiSekolah.Kesiswaan.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemInformasiSekolah.Dal
+namespace SistemInformasiSekolah.Kesiswaan.Dal
 {
     public class SiswaBeasiswaDal
     {
