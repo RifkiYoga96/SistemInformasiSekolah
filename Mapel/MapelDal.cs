@@ -16,7 +16,7 @@ namespace SistemInformasiSekolah.Dal
             const string sql = @"SELECT * FROM Mapel";
             using var koneksi = new SqlConnection(DbDal.DB());
             return koneksi.Query<Model.MapelModel>(sql);
-        }
+        } 
 
         public MapelModel? GetData(int MapelId)
         {

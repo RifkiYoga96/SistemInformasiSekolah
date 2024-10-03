@@ -1,6 +1,5 @@
 ﻿using Dapper;
-using SistemInformasiSekolah.Guru;
-using SistemInformasiSekolah.Mapel;
+using SistemInformasiSekolah.Dal;
 using SistemInformasiSekolah.Model;
 using System;
 using System.Collections.Generic;

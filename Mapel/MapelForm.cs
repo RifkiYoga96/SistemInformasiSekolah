@@ -1,4 +1,4 @@
-﻿using SistemInformasiSekolah.Mapel;
+﻿using SistemInformasiSekolah.Dal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

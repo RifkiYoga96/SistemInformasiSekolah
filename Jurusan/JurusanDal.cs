@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using SistemInformasiSekolah.Jurusan;
+using SistemInformasiSekolah.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
