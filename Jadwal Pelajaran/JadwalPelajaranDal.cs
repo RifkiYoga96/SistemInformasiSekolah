@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,11 +11,29 @@ namespace SistemInformasiSekolah.Jadwal_Pelajaran
 {
     public class JadwalPelajaranDal
     {
-        public IEnumerable<JadwalPelajaranModel> ListData()
+        public IEnumerable<JadwalPelajaranModel> ListData(int KelasId, string JenisJadwal)
         {
-            const string sql = @"SELECT * FROM JadwalPelajaran";
+            const string sql = @"SELECT 
+                                       jp.JadwalPelajaranId,jp.KelasId,jp.Hari,jp.JenisJadwal,jp.JamMulai,
+                                       jp.JamSelesai,jp.MapelId,jp.GuruId,k.NamaKelas,
+                                       m.NamaMapel,g.GuruName
+                                FROM JadwalPelajaran jp
+                                    INNER JOIN Kelas k ON jp.KelasId=k.KelasId
+                                    INNER JOIN Mapel m ON jp.MapelId=m.MapelId
+                                    INNER JOIN Guru g ON jp.GuruId=g.GuruId
+                                WHERE jp.KelasId=@KelasId AND jp.JenisJadwal=@JenisJadwal
+                                ORDER BY 
+                                    CASE
+                                        WHEN jp.Hari = 'Senin' THEN 1
+                                        WHEN jp.Hari = 'Selasa' THEN 2
+                                        WHEN jp.Hari = 'Rabu' THEN 3
+                                        WHEN jp.Hari = 'Kamis' THEN 4
+                                        WHEN jp.Hari = 'Jum`at' THEN 5
+                                        ELSE 6
+                                    END,
+                                    CAST(jp.JamMulai AS TIME)";
             using var koneksi = new SqlConnection(DbDal.DB());
-            return koneksi.Query<JadwalPelajaranModel>(sql);
+            return koneksi.Query<JadwalPelajaranModel>(sql, new {KelasId=KelasId,JenisJadwal=JenisJadwal});
         }
 
         public JadwalPelajaranModel? GetData(int ID)
@@ -22,6 +41,13 @@ namespace SistemInformasiSekolah.Jadwal_Pelajaran
             const string sql = @"SELECT * FROM JadwalPelajaran WHERE JadwalPelajaranId=@ID";
             using var koneksi = new SqlConnection(DbDal.DB());
             return koneksi.QueryFirstOrDefault<JadwalPelajaranModel>(sql, new {ID=ID});
+        }
+
+        public JadwalPelajaranModel? GetDataFirst(string sqlc,string NamaKelas)
+        {
+            string sql = $@"SELECT KelasId,NamaKelas FROM Kelas {sqlc}";
+            using var koneksi = new SqlConnection(DbDal.DB());
+            return koneksi.QueryFirstOrDefault<JadwalPelajaranModel>(sql, new {NamaKelas=NamaKelas});
         }
 
         public void Delete(int ID)

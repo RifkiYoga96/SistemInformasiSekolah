@@ -29,43 +29,41 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            panel6 = new Panel();
+            comboJenisJadwal = new ComboBox();
+            label4 = new Label();
+            comboHari = new ComboBox();
+            label1 = new Label();
+            btnNew = new Button();
+            btnDelete = new Button();
+            btnSave = new Button();
             panel4 = new Panel();
+            guruCombo = new ComboBox();
+            mapelCombo = new ComboBox();
+            txtKeterangan = new TextBox();
+            label2 = new Label();
             jamSelesaiDT = new DateTimePicker();
             jamMulaiDT = new DateTimePicker();
-            comboHari = new ComboBox();
-            comboJenisJadwal = new ComboBox();
             label7 = new Label();
             label8 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label1 = new Label();
-            label4 = new Label();
             panel3 = new Panel();
+            btnKelas = new Button();
             namaKelasTxt = new TextBox();
             label3 = new Label();
-            btnNew = new Button();
-            btnDelete = new Button();
-            btnSave = new Button();
+            btn = new Button();
             panel2 = new Panel();
-            radioButton2 = new RadioButton();
+            radioKhusus = new RadioButton();
             label10 = new Label();
-            radioButton1 = new RadioButton();
+            radioUmum = new RadioButton();
             dataGridView1 = new DataGridView();
-            button4 = new Button();
-            panel6 = new Panel();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            mapelCombo = new ComboBox();
-            guruCombo = new ComboBox();
             panel1.SuspendLayout();
+            panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -74,66 +72,118 @@
             panel1.BackColor = Color.LightGray;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel6);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(panel3);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnSave);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(btn);
             panel1.Location = new Point(660, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(348, 569);
+            panel1.Size = new Size(348, 548);
             panel1.TabIndex = 4;
             // 
-            // button1
+            // panel6
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.AutoEllipsis = true;
-            button1.BackColor = Color.Green;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(77, 524);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 31);
-            button1.TabIndex = 11;
-            button1.Text = "New";
-            button1.UseVisualStyleBackColor = false;
+            panel6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel6.BackColor = SystemColors.InactiveCaption;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(comboJenisJadwal);
+            panel6.Controls.Add(label4);
+            panel6.Controls.Add(comboHari);
+            panel6.Controls.Add(label1);
+            panel6.Location = new Point(10, 103);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(325, 134);
+            panel6.TabIndex = 10;
             // 
-            // button2
+            // comboJenisJadwal
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.AutoEllipsis = true;
-            button2.BackColor = Color.Red;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(165, 524);
-            button2.Name = "button2";
-            button2.Size = new Size(82, 31);
-            button2.TabIndex = 10;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = false;
+            comboJenisJadwal.BackColor = Color.Silver;
+            comboJenisJadwal.FlatStyle = FlatStyle.Flat;
+            comboJenisJadwal.FormattingEnabled = true;
+            comboJenisJadwal.Location = new Point(22, 39);
+            comboJenisJadwal.Name = "comboJenisJadwal";
+            comboJenisJadwal.Size = new Size(262, 23);
+            comboJenisJadwal.TabIndex = 20;
             // 
-            // button3
+            // label4
             // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button3.AutoEllipsis = true;
-            button3.BackColor = SystemColors.Highlight;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(253, 524);
-            button3.Name = "button3";
-            button3.Size = new Size(82, 31);
-            button3.TabIndex = 9;
-            button3.Text = "Save";
-            button3.UseVisualStyleBackColor = false;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(22, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(87, 19);
+            label4.TabIndex = 8;
+            label4.Text = "Jenis Jadwal";
+            label4.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // comboHari
+            // 
+            comboHari.FormattingEnabled = true;
+            comboHari.Location = new Point(22, 87);
+            comboHari.Name = "comboHari";
+            comboHari.Size = new Size(262, 23);
+            comboHari.TabIndex = 21;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(22, 66);
+            label1.Name = "label1";
+            label1.Size = new Size(35, 19);
+            label1.TabIndex = 10;
+            label1.Text = "Hari";
+            label1.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // btnNew
+            // 
+            btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnNew.AutoEllipsis = true;
+            btnNew.BackColor = Color.Green;
+            btnNew.FlatAppearance.BorderSize = 0;
+            btnNew.FlatStyle = FlatStyle.Flat;
+            btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNew.ForeColor = Color.White;
+            btnNew.Location = new Point(77, 503);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(82, 31);
+            btnNew.TabIndex = 11;
+            btnNew.Text = "New";
+            btnNew.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDelete.AutoEllipsis = true;
+            btnDelete.BackColor = Color.Red;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(165, 503);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(82, 31);
+            btnDelete.TabIndex = 10;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSave.AutoEllipsis = true;
+            btnSave.BackColor = SystemColors.Highlight;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(253, 503);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(82, 31);
+            btnSave.TabIndex = 9;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -142,7 +192,7 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(guruCombo);
             panel4.Controls.Add(mapelCombo);
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(txtKeterangan);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(jamSelesaiDT);
             panel4.Controls.Add(jamMulaiDT);
@@ -154,6 +204,42 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(325, 247);
             panel4.TabIndex = 8;
+            // 
+            // guruCombo
+            // 
+            guruCombo.FormattingEnabled = true;
+            guruCombo.Location = new Point(22, 135);
+            guruCombo.Name = "guruCombo";
+            guruCombo.Size = new Size(262, 23);
+            guruCombo.TabIndex = 26;
+            // 
+            // mapelCombo
+            // 
+            mapelCombo.FormattingEnabled = true;
+            mapelCombo.Location = new Point(22, 87);
+            mapelCombo.Name = "mapelCombo";
+            mapelCombo.Size = new Size(262, 23);
+            mapelCombo.TabIndex = 22;
+            // 
+            // txtKeterangan
+            // 
+            txtKeterangan.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtKeterangan.Location = new Point(22, 185);
+            txtKeterangan.Name = "txtKeterangan";
+            txtKeterangan.Size = new Size(262, 23);
+            txtKeterangan.TabIndex = 25;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(22, 164);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 19);
+            label2.TabIndex = 24;
+            label2.Text = "Keterangan";
+            label2.TextAlign = ContentAlignment.BottomLeft;
             // 
             // jamSelesaiDT
             // 
@@ -177,24 +263,6 @@
             jamMulaiDT.ShowUpDown = true;
             jamMulaiDT.Size = new Size(113, 23);
             jamMulaiDT.TabIndex = 22;
-            // 
-            // comboHari
-            // 
-            comboHari.FormattingEnabled = true;
-            comboHari.Location = new Point(22, 87);
-            comboHari.Name = "comboHari";
-            comboHari.Size = new Size(262, 23);
-            comboHari.TabIndex = 21;
-            // 
-            // comboJenisJadwal
-            // 
-            comboJenisJadwal.BackColor = Color.Silver;
-            comboJenisJadwal.FlatStyle = FlatStyle.Flat;
-            comboJenisJadwal.FormattingEnabled = true;
-            comboJenisJadwal.Location = new Point(22, 39);
-            comboJenisJadwal.Name = "comboJenisJadwal";
-            comboJenisJadwal.Size = new Size(262, 23);
-            comboJenisJadwal.TabIndex = 20;
             // 
             // label7
             // 
@@ -244,34 +312,12 @@
             label6.Text = "Jam Mulai";
             label6.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(22, 66);
-            label1.Name = "label1";
-            label1.Size = new Size(35, 19);
-            label1.TabIndex = 10;
-            label1.Text = "Hari";
-            label1.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(22, 17);
-            label4.Name = "label4";
-            label4.Size = new Size(87, 19);
-            label4.TabIndex = 8;
-            label4.Text = "Jenis Jadwal";
-            label4.TextAlign = ContentAlignment.BottomLeft;
-            // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(button4);
+            panel3.Controls.Add(btnKelas);
             panel3.Controls.Add(namaKelasTxt);
             panel3.Controls.Add(label3);
             panel3.Location = new Point(10, 10);
@@ -279,10 +325,20 @@
             panel3.Size = new Size(325, 86);
             panel3.TabIndex = 7;
             // 
+            // btnKelas
+            // 
+            btnKelas.Location = new Point(242, 36);
+            btnKelas.Name = "btnKelas";
+            btnKelas.Size = new Size(42, 23);
+            btnKelas.TabIndex = 8;
+            btnKelas.Text = "...";
+            btnKelas.UseVisualStyleBackColor = true;
+            // 
             // namaKelasTxt
             // 
             namaKelasTxt.Location = new Point(22, 36);
             namaKelasTxt.Name = "namaKelasTxt";
+            namaKelasTxt.PlaceholderText = " Mohon Atur Kelas";
             namaKelasTxt.Size = new Size(214, 23);
             namaKelasTxt.TabIndex = 7;
             // 
@@ -292,83 +348,51 @@
             label3.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(22, 15);
             label3.Name = "label3";
-            label3.Size = new Size(83, 19);
+            label3.Size = new Size(42, 19);
             label3.TabIndex = 6;
-            label3.Text = "Nama Kelas";
+            label3.Text = "Kelas";
             label3.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // btnNew
+            // btn
             // 
-            btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
-            btnNew.FlatAppearance.BorderSize = 0;
-            btnNew.FlatStyle = FlatStyle.Flat;
-            btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(158, 846);
-            btnNew.Name = "btnNew";
-            btnNew.Size = new Size(82, 31);
-            btnNew.TabIndex = 6;
-            btnNew.Text = "New";
-            btnNew.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDelete.AutoEllipsis = true;
-            btnDelete.BackColor = Color.Red;
-            btnDelete.FlatAppearance.BorderSize = 0;
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(246, 846);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(82, 31);
-            btnDelete.TabIndex = 5;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnSave
-            // 
-            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnSave.AutoEllipsis = true;
-            btnSave.BackColor = SystemColors.Highlight;
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(334, 846);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(82, 31);
-            btnSave.TabIndex = 4;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = false;
+            btn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn.AutoEllipsis = true;
+            btn.BackColor = Color.Red;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn.ForeColor = Color.White;
+            btn.Location = new Point(246, 825);
+            btn.Name = "btn";
+            btn.Size = new Size(82, 31);
+            btn.TabIndex = 5;
+            btn.Text = "Delete";
+            btn.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(radioButton2);
+            panel2.Controls.Add(radioKhusus);
             panel2.Controls.Add(label10);
-            panel2.Controls.Add(radioButton1);
+            panel2.Controls.Add(radioUmum);
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(12, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(642, 569);
+            panel2.Size = new Size(642, 548);
             panel2.TabIndex = 5;
             // 
-            // radioButton2
+            // radioKhusus
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            radioButton2.Location = new Point(224, 11);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(75, 24);
-            radioButton2.TabIndex = 50;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Khusus";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioKhusus.AutoSize = true;
+            radioKhusus.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            radioKhusus.Location = new Point(224, 11);
+            radioKhusus.Name = "radioKhusus";
+            radioKhusus.Size = new Size(75, 24);
+            radioKhusus.TabIndex = 50;
+            radioKhusus.TabStop = true;
+            radioKhusus.Text = "Khusus";
+            radioKhusus.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -381,17 +405,17 @@
             label10.Text = "Jenis Jadwal :";
             label10.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // radioButton1
+            // radioUmum
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            radioButton1.Location = new Point(136, 11);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(73, 24);
-            radioButton1.TabIndex = 2;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Umum";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioUmum.AutoSize = true;
+            radioUmum.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            radioUmum.Location = new Point(136, 11);
+            radioUmum.Name = "radioUmum";
+            radioUmum.Size = new Size(73, 24);
+            radioUmum.TabIndex = 2;
+            radioUmum.TabStop = true;
+            radioUmum.Text = "Umum";
+            radioUmum.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -400,79 +424,23 @@
             dataGridView1.Location = new Point(11, 48);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(619, 510);
+            dataGridView1.Size = new Size(619, 489);
             dataGridView1.TabIndex = 1;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(242, 36);
-            button4.Name = "button4";
-            button4.Size = new Size(42, 23);
-            button4.TabIndex = 8;
-            button4.Text = "...";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            panel6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel6.BackColor = SystemColors.InactiveCaption;
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(comboJenisJadwal);
-            panel6.Controls.Add(label4);
-            panel6.Controls.Add(comboHari);
-            panel6.Controls.Add(label1);
-            panel6.Location = new Point(10, 103);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(325, 134);
-            panel6.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            textBox1.Location = new Point(22, 185);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(262, 23);
-            textBox1.TabIndex = 25;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(22, 164);
-            label2.Name = "label2";
-            label2.Size = new Size(80, 19);
-            label2.TabIndex = 24;
-            label2.Text = "Keterangan";
-            label2.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // mapelCombo
-            // 
-            mapelCombo.FormattingEnabled = true;
-            mapelCombo.Location = new Point(22, 87);
-            mapelCombo.Name = "mapelCombo";
-            mapelCombo.Size = new Size(262, 23);
-            mapelCombo.TabIndex = 22;
-            // 
-            // guruCombo
-            // 
-            guruCombo.FormattingEnabled = true;
-            guruCombo.Location = new Point(22, 135);
-            guruCombo.Name = "guruCombo";
-            guruCombo.Size = new Size(262, 23);
-            guruCombo.TabIndex = 26;
+ 
             // 
             // FormJadwalPelajaran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1020, 592);
+            ClientSize = new Size(1020, 571);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormJadwalPelajaran";
             Text = "FormJadwalPelajaran";
             panel1.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
@@ -480,27 +448,23 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Button btnNew;
-        private Button btnDelete;
-        private Button btnSave;
+        private Button btn;
         private Panel panel2;
         private DataGridView dataGridView1;
         private Panel panel3;
         private Panel panel4;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private RadioButton radioButton1;
+        private Button btnNew;
+        private Button btnDelete;
+        private Button btnSave;
+        private RadioButton radioUmum;
         private Label label10;
-        private RadioButton radioButton2;
+        private RadioButton radioKhusus;
         private Label label5;
         private Label label6;
         private Label label1;
@@ -513,9 +477,9 @@
         private ComboBox comboJenisJadwal;
         private DateTimePicker jamSelesaiDT;
         private DateTimePicker jamMulaiDT;
-        private Button button4;
+        private Button btnKelas;
         private Panel panel6;
-        private TextBox textBox1;
+        private TextBox txtKeterangan;
         private Label label2;
         private ComboBox guruCombo;
         private ComboBox mapelCombo;

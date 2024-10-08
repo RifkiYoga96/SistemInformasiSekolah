@@ -10,7 +10,7 @@ namespace SistemInformasiSekolah.Jadwal_Pelajaran
     {
         public int JadwalPelajaranId { get; set; }
         public int KelasId { get; set; }
-        public string KelasName { get; set; }
+        public string NamaKelas { get; set; }
 
         public string Hari { get; set; }
         public string JenisJadwal { get; set; }
@@ -18,7 +18,7 @@ namespace SistemInformasiSekolah.Jadwal_Pelajaran
         public string JamSelesai { get; set; }
 
         public int MapelId { get; set; }
-        public string MapelName { get; set; }
+        public string NamaMapel { get; set; }
         public int GuruId { get; set; }
         public string GuruName { get; set; }
         public string Keterangan { get; set; }

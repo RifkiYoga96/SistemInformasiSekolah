@@ -30,14 +30,13 @@ namespace SistemInformasiSekolah
 
         public void LoadData()
         {
-            var listkelas = kelasDal.ListData().
+            var listkelas = kelasDal.ListData();
+            dataGridView1.DataSource = listkelas.
                 Select(x => new
                 {
                     KelasId = x.KelasId,
                     Name = x.NamaKelas
                 }).ToList();
-
-            dataGridView1.DataSource = listkelas;
 
             if (dataGridView1.Rows.Count > 0)
             {
@@ -111,7 +110,7 @@ namespace SistemInformasiSekolah
             var kelas = kelasDal.GetData(Convert.ToInt32(kelasId));
             if (kelas is null) return;
             idKelasTxt.Text = kelasId;
-            namaKelasTxt.Text = kelas.NamaKelas;
+            //namaKelasTxt.Text = kelas.NamaKelas;
             if (kelas.Tingkat == 10) radio10.Checked = true;
             if (kelas.Tingkat == 11) radio11.Checked = true;
             if (kelas.Tingkat == 12) radio12.Checked = true;

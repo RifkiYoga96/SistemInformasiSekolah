@@ -59,5 +59,19 @@ namespace SistemInformasiSekolah.Dal
             using var koneksi = new SqlConnection(DbDal.DB());
             koneksi.Execute(sql, new { KelasId = kelasId });
         }
+
+        public IEnumerable<KelasModel> GetDataFlag(int tingkat,int jurusanId)
+        {
+            const string sql = @"SELECT Flag FROM Kelas WHERE Tingkat=@Tingkat AND JurusanId=@JurusanId";
+            using var koneksi = new SqlConnection(DbDal.DB());
+            return koneksi.Query<KelasModel>(sql, new {Tingkat=tingkat,JurusanId=jurusanId});
+        }
+
+        public int GetIdByName(string NamaKelas)
+        {
+            const string sql = @"SELECT KelasId FROM Kelas WHERE NamaKelas=@KelasName";
+            using var koneksi = new SqlConnection(DbDal.DB());
+            return koneksi.QuerySingleOrDefault<int>(sql, new {KelasName=NamaKelas}); 
+        }
     }
 }
