@@ -3,5 +3,4 @@
 			StatusPersensi VARCHAR(5), Keterangan VARCHAR (2)
 			);
 
-
 DROP TABLE PersensiDetail;
