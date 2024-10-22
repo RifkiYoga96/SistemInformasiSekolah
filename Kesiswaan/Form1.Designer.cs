@@ -337,7 +337,7 @@
             lblNamaSiswa.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblNamaSiswa.AutoSize = true;
             lblNamaSiswa.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNamaSiswa.Location = new Point(691, 72);
+            lblNamaSiswa.Location = new Point(691, 81);
             lblNamaSiswa.Name = "lblNamaSiswa";
             lblNamaSiswa.Size = new Size(123, 21);
             lblNamaSiswa.TabIndex = 7;
@@ -348,7 +348,7 @@
             lblID.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblID.AutoSize = true;
             lblID.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblID.Location = new Point(691, 10);
+            lblID.Location = new Point(691, 19);
             lblID.Name = "lblID";
             lblID.Size = new Size(74, 17);
             lblID.TabIndex = 6;
@@ -358,7 +358,7 @@
             // 
             btnHapusPhoto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnHapusPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnHapusPhoto.Location = new Point(817, 443);
+            btnHapusPhoto.Location = new Point(817, 452);
             btnHapusPhoto.Name = "btnHapusPhoto";
             btnHapusPhoto.Size = new Size(90, 30);
             btnHapusPhoto.TabIndex = 5;
@@ -370,7 +370,7 @@
             // 
             btnPilihPhoto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnPilihPhoto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPilihPhoto.Location = new Point(681, 443);
+            btnPilihPhoto.Location = new Point(681, 452);
             btnPilihPhoto.Name = "btnPilihPhoto";
             btnPilihPhoto.Size = new Size(90, 30);
             btnPilihPhoto.TabIndex = 4;
@@ -382,7 +382,7 @@
             // 
             photoSiswaBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             photoSiswaBox.BorderStyle = BorderStyle.FixedSingle;
-            photoSiswaBox.Location = new Point(678, 125);
+            photoSiswaBox.Location = new Point(678, 134);
             photoSiswaBox.Name = "photoSiswaBox";
             photoSiswaBox.Size = new Size(234, 312);
             photoSiswaBox.TabIndex = 3;
@@ -1319,7 +1319,7 @@
             groupBox1.Controls.Add(ORadio);
             groupBox1.Controls.Add(BRadio);
             groupBox1.Controls.Add(ABRadio);
-            groupBox1.Location = new Point(229, 28);
+            groupBox1.Location = new Point(229, 19);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(190, 27);
             groupBox1.TabIndex = 100;

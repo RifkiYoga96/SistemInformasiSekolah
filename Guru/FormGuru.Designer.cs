@@ -58,11 +58,13 @@
             panel2 = new Panel();
             label10 = new Label();
             txtFilter = new TextBox();
+            panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridMapel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -74,7 +76,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1000, 51);
+            label1.Size = new Size(1043, 51);
             label1.TabIndex = 4;
             label1.Text = "Guru";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -87,13 +89,12 @@
             dataGridView1.Location = new Point(13, 44);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(369, 492);
+            dataGridView1.Size = new Size(369, 530);
             dataGridView1.TabIndex = 5;
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = SystemColors.InactiveCaption;
+            panel1.BackColor = SystemColors.ControlLight;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(tglLahir);
             panel1.Controls.Add(btnNew);
@@ -116,17 +117,17 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txtNamaGuru);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(txtIdGuru);
             panel1.Controls.Add(label2);
+            panel1.Controls.Add(panel3);
             panel1.Location = new Point(413, 62);
             panel1.Name = "panel1";
-            panel1.Size = new Size(575, 549);
+            panel1.Size = new Size(619, 587);
             panel1.TabIndex = 6;
             // 
             // tglLahir
             // 
-            tglLahir.Location = new Point(15, 149);
+            tglLahir.Location = new Point(26, 159);
             tglLahir.Name = "tglLahir";
             tglLahir.Size = new Size(257, 23);
             tglLahir.TabIndex = 48;
@@ -140,7 +141,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(303, 504);
+            btnNew.Location = new Point(347, 542);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 47;
@@ -156,7 +157,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(391, 504);
+            btnDelete.Location = new Point(435, 542);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 46;
@@ -172,7 +173,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(479, 504);
+            btnSave.Location = new Point(523, 542);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 45;
@@ -181,18 +182,17 @@
             // 
             // txtKota
             // 
-            txtKota.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtKota.Location = new Point(302, 311);
+            txtKota.Location = new Point(313, 321);
             txtKota.Name = "txtKota";
             txtKota.Size = new Size(257, 23);
             txtKota.TabIndex = 44;
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label8.AutoSize = true;
+            label8.BackColor = SystemColors.InactiveCaption;
             label8.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(302, 288);
+            label8.Location = new Point(313, 298);
             label8.Name = "label8";
             label8.Size = new Size(40, 20);
             label8.TabIndex = 43;
@@ -201,18 +201,17 @@
             // 
             // txtInstansiPendidikan
             // 
-            txtInstansiPendidikan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtInstansiPendidikan.Location = new Point(302, 256);
+            txtInstansiPendidikan.Location = new Point(313, 266);
             txtInstansiPendidikan.Name = "txtInstansiPendidikan";
             txtInstansiPendidikan.Size = new Size(257, 23);
             txtInstansiPendidikan.TabIndex = 42;
             // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label9.AutoSize = true;
+            label9.BackColor = SystemColors.InactiveCaption;
             label9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(302, 233);
+            label9.Location = new Point(313, 243);
             label9.Name = "label9";
             label9.Size = new Size(140, 20);
             label9.TabIndex = 41;
@@ -221,9 +220,8 @@
             // 
             // gridMapel
             // 
-            gridMapel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gridMapel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridMapel.Location = new Point(15, 360);
+            gridMapel.Location = new Point(26, 370);
             gridMapel.Name = "gridMapel";
             gridMapel.RowTemplate.Height = 25;
             gridMapel.Size = new Size(544, 127);
@@ -231,18 +229,17 @@
             // 
             // txtTahunLulus
             // 
-            txtTahunLulus.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtTahunLulus.Location = new Point(15, 311);
+            txtTahunLulus.Location = new Point(26, 321);
             txtTahunLulus.Name = "txtTahunLulus";
             txtTahunLulus.Size = new Size(257, 23);
             txtTahunLulus.TabIndex = 35;
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
+            label6.BackColor = SystemColors.InactiveCaption;
             label6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(15, 288);
+            label6.Location = new Point(26, 298);
             label6.Name = "label6";
             label6.Size = new Size(90, 20);
             label6.TabIndex = 34;
@@ -251,18 +248,17 @@
             // 
             // txtJurusanPendidikan
             // 
-            txtJurusanPendidikan.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtJurusanPendidikan.Location = new Point(15, 256);
+            txtJurusanPendidikan.Location = new Point(26, 266);
             txtJurusanPendidikan.Name = "txtJurusanPendidikan";
             txtJurusanPendidikan.Size = new Size(257, 23);
             txtJurusanPendidikan.TabIndex = 33;
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
+            label7.BackColor = SystemColors.InactiveCaption;
             label7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(15, 233);
+            label7.Location = new Point(26, 243);
             label7.Name = "label7";
             label7.Size = new Size(142, 20);
             label7.TabIndex = 32;
@@ -271,58 +267,58 @@
             // 
             // radioS3
             // 
-            radioS3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioS3.AutoSize = true;
-            radioS3.Location = new Point(233, 207);
+            radioS3.BackColor = SystemColors.InactiveCaption;
+            radioS3.Location = new Point(244, 217);
             radioS3.Name = "radioS3";
             radioS3.Size = new Size(37, 19);
             radioS3.TabIndex = 31;
             radioS3.TabStop = true;
             radioS3.Text = "S3";
-            radioS3.UseVisualStyleBackColor = true;
+            radioS3.UseVisualStyleBackColor = false;
             // 
             // radioS2
             // 
-            radioS2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioS2.AutoSize = true;
-            radioS2.Location = new Point(164, 207);
+            radioS2.BackColor = SystemColors.InactiveCaption;
+            radioS2.Location = new Point(175, 217);
             radioS2.Name = "radioS2";
             radioS2.Size = new Size(37, 19);
             radioS2.TabIndex = 30;
             radioS2.TabStop = true;
             radioS2.Text = "S2";
-            radioS2.UseVisualStyleBackColor = true;
+            radioS2.UseVisualStyleBackColor = false;
             // 
             // radioS1
             // 
-            radioS1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioS1.AutoSize = true;
-            radioS1.Location = new Point(93, 207);
+            radioS1.BackColor = SystemColors.InactiveCaption;
+            radioS1.Location = new Point(104, 217);
             radioS1.Name = "radioS1";
             radioS1.Size = new Size(37, 19);
             radioS1.TabIndex = 29;
             radioS1.TabStop = true;
             radioS1.Text = "S1";
-            radioS1.UseVisualStyleBackColor = true;
+            radioS1.UseVisualStyleBackColor = false;
             // 
             // radioD3
             // 
-            radioD3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             radioD3.AutoSize = true;
-            radioD3.Location = new Point(23, 207);
+            radioD3.BackColor = SystemColors.InactiveCaption;
+            radioD3.Location = new Point(34, 217);
             radioD3.Name = "radioD3";
             radioD3.Size = new Size(39, 19);
             radioD3.TabIndex = 28;
             radioD3.TabStop = true;
             radioD3.Text = "D3";
-            radioD3.UseVisualStyleBackColor = true;
+            radioD3.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
+            label5.BackColor = SystemColors.InactiveCaption;
             label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(15, 182);
+            label5.Location = new Point(26, 192);
             label5.Name = "label5";
             label5.Size = new Size(140, 20);
             label5.TabIndex = 27;
@@ -331,10 +327,10 @@
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
+            label4.BackColor = SystemColors.InactiveCaption;
             label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(15, 126);
+            label4.Location = new Point(26, 136);
             label4.Name = "label4";
             label4.Size = new Size(67, 20);
             label4.TabIndex = 25;
@@ -343,18 +339,17 @@
             // 
             // txtNamaGuru
             // 
-            txtNamaGuru.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtNamaGuru.Location = new Point(15, 95);
+            txtNamaGuru.Location = new Point(26, 105);
             txtNamaGuru.Name = "txtNamaGuru";
             txtNamaGuru.Size = new Size(257, 23);
             txtNamaGuru.TabIndex = 24;
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
+            label3.BackColor = SystemColors.InactiveCaption;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(15, 72);
+            label3.Location = new Point(26, 82);
             label3.Name = "label3";
             label3.Size = new Size(50, 20);
             label3.TabIndex = 23;
@@ -363,18 +358,16 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(379, 18);
+            pictureBox1.Location = new Point(392, 17);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(180, 212);
+            pictureBox1.Size = new Size(166, 194);
             pictureBox1.TabIndex = 22;
             pictureBox1.TabStop = false;
             // 
             // txtIdGuru
             // 
-            txtIdGuru.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtIdGuru.Location = new Point(15, 41);
+            txtIdGuru.Location = new Point(26, 51);
             txtIdGuru.Name = "txtIdGuru";
             txtIdGuru.ReadOnly = true;
             txtIdGuru.Size = new Size(257, 23);
@@ -382,10 +375,10 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
+            label2.BackColor = SystemColors.InactiveCaption;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(15, 18);
+            label2.Location = new Point(26, 28);
             label2.Name = "label2";
             label2.Size = new Size(62, 20);
             label2.TabIndex = 4;
@@ -394,7 +387,6 @@
             // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label10);
@@ -402,7 +394,7 @@
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(12, 62);
             panel2.Name = "panel2";
-            panel2.Size = new Size(395, 549);
+            panel2.Size = new Size(395, 587);
             panel2.TabIndex = 7;
             // 
             // label10
@@ -426,12 +418,21 @@
             txtFilter.Size = new Size(300, 23);
             txtFilter.TabIndex = 48;
             // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.InactiveCaption;
+            panel3.Controls.Add(pictureBox1);
+            panel3.Location = new Point(12, 11);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(593, 510);
+            panel3.TabIndex = 49;
+            // 
             // FormGuru
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1000, 623);
+            ClientSize = new Size(1043, 661);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -444,6 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -479,5 +481,6 @@
         private Label label10;
         private TextBox txtFilter;
         private DateTimePicker tglLahir;
+        private Panel panel3;
     }
 }

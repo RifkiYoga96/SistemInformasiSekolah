@@ -37,6 +37,8 @@ namespace SistemInformasiSekolah.Kelas_Siswa
                                  FROM KelasSiswa ks 
                                  INNER JOIN Kelas k ON ks.KelasId = k.KelasId
                                  INNER JOIN KelasSiswaDetail ksd ON k.KelasId=kld.KelasId";
+            var koneksi = new SqlConnection(DbDal.DB());
+            return koneksi.Query<KelasSiswaModel>(sql);
         }
     }
 }
