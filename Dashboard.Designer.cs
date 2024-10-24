@@ -36,6 +36,8 @@
             kelasToolStripMenuItem = new ToolStripMenuItem();
             guruToolStripMenuItem = new ToolStripMenuItem();
             jadwalPelajaranToolStripMenuItem = new ToolStripMenuItem();
+            kelasSiswaToolStripMenuItem = new ToolStripMenuItem();
+            persensiToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             // 
             // formToolStripMenuItem
             // 
-            formToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dataIndukToolStripMenuItem, mapelToolStripMenuItem, jurusanToolStripMenuItem, kelasToolStripMenuItem, guruToolStripMenuItem, jadwalPelajaranToolStripMenuItem });
+            formToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dataIndukToolStripMenuItem, mapelToolStripMenuItem, jurusanToolStripMenuItem, kelasToolStripMenuItem, guruToolStripMenuItem, jadwalPelajaranToolStripMenuItem, kelasSiswaToolStripMenuItem, persensiToolStripMenuItem });
             formToolStripMenuItem.Name = "formToolStripMenuItem";
             formToolStripMenuItem.Size = new Size(47, 20);
             formToolStripMenuItem.Text = "Form";
@@ -97,6 +99,19 @@
             jadwalPelajaranToolStripMenuItem.Text = "Jadwal Pelajaran";
             jadwalPelajaranToolStripMenuItem.Click += jadwalPelajaranToolStripMenuItem_Click;
             // 
+            // kelasSiswaToolStripMenuItem
+            // 
+            kelasSiswaToolStripMenuItem.Name = "kelasSiswaToolStripMenuItem";
+            kelasSiswaToolStripMenuItem.Size = new Size(180, 22);
+            kelasSiswaToolStripMenuItem.Text = "Kelas - Siswa";
+            kelasSiswaToolStripMenuItem.Click += kelasSiswaToolStripMenuItem_Click;
+            // 
+            // persensiToolStripMenuItem
+            // 
+            persensiToolStripMenuItem.Name = "persensiToolStripMenuItem";
+            persensiToolStripMenuItem.Size = new Size(180, 22);
+            persensiToolStripMenuItem.Text = "Persensi";
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -122,5 +137,7 @@
         private ToolStripMenuItem kelasToolStripMenuItem;
         private ToolStripMenuItem guruToolStripMenuItem;
         private ToolStripMenuItem jadwalPelajaranToolStripMenuItem;
+        private ToolStripMenuItem kelasSiswaToolStripMenuItem;
+        private ToolStripMenuItem persensiToolStripMenuItem;
     }
 }

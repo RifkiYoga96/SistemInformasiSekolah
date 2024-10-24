@@ -29,5 +29,33 @@ namespace SistemInformasiSekolah.Kelas_Siswa
             dp.Add("@SiswaId", ksd.SiswaId, System.Data.DbType.Int32);
             koneksi.Execute(sql, dp);
         }
+
+        public IEnumerable<KelasSiswaDetailModel> ListData()
+        {
+            const string sql =@"
+                    SELECT
+                          ksd.SiswaId,ksd.kelasId,s.SiswaName
+                    FROM
+                          KelasSiswaDetail ksd
+                    INNER JOIN
+                          Siswa s ON ksd.SiswaId=s.SiswaId";
+
+            var koneksi = new SqlConnection(DbDal.DB());
+            return koneksi.Query<KelasSiswaDetailModel>(sql);
+        }
+        public IEnumerable<KelasSiswaDetailModel> ListData(int kelasId)
+        {
+            const string sql = @"
+                    SELECT
+                          ksd.SiswaId,ksd.kelasId,s.SiswaName
+                    FROM
+                          KelasSiswaDetail ksd
+                    INNER JOIN
+                          Siswa s ON ksd.SiswaId=s.SiswaId
+                    WHERE ksd.KelasId=kelasId";
+
+            var koneksi = new SqlConnection(DbDal.DB());
+            return koneksi.Query<KelasSiswaDetailModel>(sql, new {kelasId=kelasId});
+        }
     }
 }

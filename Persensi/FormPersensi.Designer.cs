@@ -201,7 +201,7 @@
             panel4.Controls.Add(label3);
             panel4.Controls.Add(kelasCombo);
             panel4.Controls.Add(label1);
-            panel4.Location = new Point(12, 119);
+            panel4.Location = new Point(11, 119);
             panel4.Name = "panel4";
             panel4.Size = new Size(316, 332);
             panel4.TabIndex = 1;
@@ -279,7 +279,7 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(txtJam);
             panel3.Controls.Add(tglDT);
-            panel3.Location = new Point(12, 12);
+            panel3.Location = new Point(11, 12);
             panel3.Name = "panel3";
             panel3.Size = new Size(316, 100);
             panel3.TabIndex = 0;

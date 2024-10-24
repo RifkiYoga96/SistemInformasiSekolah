@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,22 @@ namespace SistemInformasiSekolah.Kelas_Siswa
                                  INNER JOIN KelasSiswaDetail ksd ON k.KelasId=kld.KelasId";
             var koneksi = new SqlConnection(DbDal.DB());
             return koneksi.Query<KelasSiswaModel>(sql);
+        }
+        public KelasSiswaModel? GetData(int kelasId)
+        {
+            const string sql = @"
+            SELECT
+                ks.KelasId, ks.TahunAjaran, ks.WaliKelasId,
+                ISNULL(k.KelasName, '') KelasName,
+                ISNULL(g.GuruName, '') WaliKelasName
+            FROM
+                KelasSiswa ks
+                LEFT JOIN Kelas k ON ks.KelasId = k.KelasId
+                LEFT JOIN Guru g ON ks.WaliKelasId = g.GuruId
+            WHERE
+                ks.KelasId = @kelasId";
+            using var conn = new SqlConnection(DbDal.DB());
+            return conn.Query<KelasSiswaModel>(sql, new {kelasId=kelasId}).FirstOrDefault();
         }
     }
 }

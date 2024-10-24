@@ -64,5 +64,11 @@ namespace SistemInformasiSekolah
 
             BukaForm(fjp);
         }
+
+        private void kelasSiswaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKelasSiswa kelasSiswa = new FormKelasSiswa();
+            BukaForm(kelasSiswa);
+        }
     }
 }
