@@ -13,7 +13,8 @@ namespace SistemInformasiSekolah.Kelas_Siswa
     {
         public void Insert(KelasSiswaModel kelasSiswa)
         {
-            const string sql = @"INSERT INTO KelasSiswa(KelasId,TahunAjaran,WaliKelasId)";
+            const string sql = @"INSERT INTO KelasSiswa(KelasId,TahunAjaran,WaliKelasId)
+                                 VALUES(@KelasId,@TahunAjaran,@WaliKelasId)";
             var dp = new DynamicParameters();
             dp.Add("@KelasId",kelasSiswa.KelasId,System.Data.DbType.Int16);
             dp.Add("@TahunAjaran",kelasSiswa.TahunAjaran,System.Data.DbType.String);
@@ -46,7 +47,7 @@ namespace SistemInformasiSekolah.Kelas_Siswa
             const string sql = @"
             SELECT
                 ks.KelasId, ks.TahunAjaran, ks.WaliKelasId,
-                ISNULL(k.KelasName, '') KelasName,
+                ISNULL(k.NamaKelas, '') NamaKelas,
                 ISNULL(g.GuruName, '') WaliKelasName
             FROM
                 KelasSiswa ks

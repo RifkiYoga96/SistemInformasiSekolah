@@ -34,7 +34,7 @@ namespace SistemInformasiSekolah.Kelas_Siswa
         {
             const string sql =@"
                     SELECT
-                          ksd.SiswaId,ksd.kelasId,s.SiswaName
+                          ksd.SiswaId,ksd.kelasId,s.NamaLengkap
                     FROM
                           KelasSiswaDetail ksd
                     INNER JOIN
@@ -43,19 +43,25 @@ namespace SistemInformasiSekolah.Kelas_Siswa
             var koneksi = new SqlConnection(DbDal.DB());
             return koneksi.Query<KelasSiswaDetailModel>(sql);
         }
-        public IEnumerable<KelasSiswaDetailModel> ListData(int kelasId)
+        public IEnumerable<KelasSiswaDetailModel> ListDataa(int kelasId)
         {
             const string sql = @"
                     SELECT
-                          ksd.SiswaId,ksd.kelasId,s.SiswaName
+                          ksd.SiswaId,ksd.kelasId,s.NamaLengkap
                     FROM
                           KelasSiswaDetail ksd
                     INNER JOIN
                           Siswa s ON ksd.SiswaId=s.SiswaId
-                    WHERE ksd.KelasId=kelasId";
+                    WHERE ksd.KelasId=@kelasId";
 
             var koneksi = new SqlConnection(DbDal.DB());
             return koneksi.Query<KelasSiswaDetailModel>(sql, new {kelasId=kelasId});
+        }
+        public void Delete(int KelasId)
+        {
+            const string sql = @"DELETE FROM KelasSiswaDetail WHERE KelasId=@KelasId";
+            var koneksi = new SqlConnection(DbDal.DB());
+            koneksi.Execute(sql, new { KelasId = KelasId });
         }
     }
 }

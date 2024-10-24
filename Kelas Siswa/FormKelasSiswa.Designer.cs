@@ -33,8 +33,6 @@
             gridKelasSiswa = new DataGridView();
             gridSiswa = new DataGridView();
             panel2 = new Panel();
-            btnNew = new Button();
-            btnDelete = new Button();
             btnSave = new Button();
             panel3 = new Panel();
             txtTahunAjaran = new TextBox();
@@ -96,46 +94,12 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.LightGray;
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(btnNew);
-            panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnSave);
             panel2.Controls.Add(panel3);
             panel2.Location = new Point(634, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(341, 479);
             panel2.TabIndex = 1;
-            // 
-            // btnNew
-            // 
-            btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
-            btnNew.FlatAppearance.BorderSize = 0;
-            btnNew.FlatStyle = FlatStyle.Flat;
-            btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(69, 431);
-            btnNew.Name = "btnNew";
-            btnNew.Size = new Size(82, 31);
-            btnNew.TabIndex = 50;
-            btnNew.Text = "New";
-            btnNew.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnDelete.AutoEllipsis = true;
-            btnDelete.BackColor = Color.Red;
-            btnDelete.FlatAppearance.BorderSize = 0;
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(157, 431);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(82, 31);
-            btnDelete.TabIndex = 49;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
@@ -272,8 +236,6 @@
         private ComboBox kelasCombo;
         private Label label1;
         private DataGridView gridSiswa;
-        private Button btnNew;
-        private Button btnDelete;
         private Button btnSave;
         private TextBox txtTahunAjaran;
         private TextBox textBox1;

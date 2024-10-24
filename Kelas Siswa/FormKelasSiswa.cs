@@ -24,6 +24,8 @@ namespace SistemInformasiSekolah
         private BindingList<SiswaDto> kelasSiswaList = new BindingList<SiswaDto>();
         private BindingSource allSiswaBinding = new BindingSource();
         private BindingSource kelasSiswaBinding = new BindingSource();
+        private bool Perubahan = false;
+        private int kelasIdGlobal;
         public FormKelasSiswa()
         {
             InitializeComponent();
@@ -34,10 +36,14 @@ namespace SistemInformasiSekolah
             guruDal = new GuruDal();
             kelasDal = new KelasDal();
             allSiswaBinding.DataSource = allSiswaList;
-            kelasSiswaBinding.DataSource = kelasSiswaBinding;
+            kelasSiswaBinding.DataSource = kelasSiswaList;
 
             gridSiswa.DataSource = allSiswaBinding;
             gridKelasSiswa.DataSource = kelasSiswaBinding;
+            gridKelasSiswa.ReadOnly = true;
+            gridSiswa.ReadOnly = true;
+            gridSiswa.AllowUserToAddRows = false;
+            gridKelasSiswa.AllowUserToAddRows = false;
 
             InitCombo();
             RegisterEvent();
@@ -45,24 +51,54 @@ namespace SistemInformasiSekolah
         private void InitCombo()
         {
             kelasCombo.DataSource = kelasDal.ListData()
-                .Select(x => new {KelasId=x.KelasId,KelasName=x.NamaKelas}).ToList();
-            kelasCombo.DisplayMember = "KelasName";
+                .Select(x => new {KelasId=x.KelasId,NamaKelas=x.NamaKelas}).ToList();
+            kelasCombo.DisplayMember = "NamaKelas";
             kelasCombo.ValueMember = "KelasId";
 
             waliKelasCombo.DataSource = guruDal.ListData(string.Empty, new {})
                 .Select(x => new {GuruId=x.GuruId,GuruName=x.GuruName}).ToList();
             waliKelasCombo.DisplayMember = "GuruName";
-            waliKelasCombo.DisplayMember = "GuruId";
+            waliKelasCombo.ValueMember = "GuruId";
         }
         private void RegisterEvent()
         {
             btnSave.Click += BtnSave_Click;
             kelasCombo.SelectedIndexChanged += KelasCombo_SelectedIndexChanged;
+            gridSiswa.CellDoubleClick += GridSiswa_CellDoubleClick;
+            gridKelasSiswa.CellDoubleClick += GridKelasSiswa_CellDoubleClick;
+        }
+
+        private void GridKelasSiswa_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 ) return;
+            var selectData = kelasSiswaList[e.RowIndex];
+            if (selectData.SiswaId == 0) return;
+            allSiswaList.Add(selectData);
+            kelasSiswaList.Remove(selectData);
+            Perubahan = true;
+        }
+
+        private void GridSiswa_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            var selectData = allSiswaList[e.RowIndex];
+            if (selectData.SiswaId == 0) return;
+            kelasSiswaList.Add(selectData);
+            allSiswaList.Remove(selectData);
+            Perubahan = true;
         }
 
         private void KelasCombo_SelectedIndexChanged(object? sender, EventArgs e)
         {
+            if (kelasCombo.SelectedIndex == -1) return;
+            if (Perubahan)
+            {
+                if (MessageBox.Show("Simpan Perubahan?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    SaveData(kelasIdGlobal);
+            }
+            Perubahan = false;
             LoadData();
+            kelasIdGlobal = (int)kelasCombo.SelectedValue;
         }
         private void LoadData()
         {
@@ -72,16 +108,25 @@ namespace SistemInformasiSekolah
             if(kelasSiswa is null)
             {
                 ClearFrom();
-                return;
             }
-            txtTahunAjaran.Text = kelasSiswa.TahunAjaran;
-            waliKelasCombo.SelectedValue = kelasSiswa.WaliKelasId;
-            var ListkelasSiswa = kelasSiswaDetailDal.ListData(kelasSiswa.KelasId)?.ToList() ?? new();
+            txtTahunAjaran.Text = kelasSiswa?.TahunAjaran ?? string.Empty;
+            waliKelasCombo.SelectedValue = kelasSiswa?.WaliKelasId ?? -1;
+            var allSiswa = siswaDal.ListData()?.ToList() ?? new();
+            var siswaInKelas = kelasSiswaDetailDal.ListData()?.ToList() ?? new();
+            var siswaIdInKelas = siswaInKelas.Select(x => x.SiswaId)?.ToList() ?? new();
+
+            allSiswa.RemoveAll(x => siswaIdInKelas.Contains(x.SiswaId));
+            allSiswaList.Clear();
+
+            var allSiswaListTemp = allSiswa.Select(x => new SiswaDto(x.SiswaId,x.NamaLengkap))?.ToList() ?? new();
+            foreach(var item in allSiswaListTemp)
+                allSiswaList.Add(item);
+
             kelasSiswaList.Clear();
-            var kelasSiswaTemp = ListkelasSiswa.Select(x => new SiswaDto(x.SiswaId,x.SiswaName))?.ToList() ?? new();
-            foreach (var item in kelasSiswaTemp) kelasSiswaList.Add(item);
-            ListKelasTersedia();
-            
+            var kelasSiswaDetail = kelasSiswaDetailDal.ListDataa(kelasId);
+            var kelasSiswaListTemp = kelasSiswaDetail.Select(x => new SiswaDto(x.SiswaId, x.NamaLengkap))?.ToList() ?? new();
+            foreach (var item in kelasSiswaListTemp)
+                kelasSiswaList.Add(item);
         }
         private void ClearFrom()
         {
@@ -89,7 +134,7 @@ namespace SistemInformasiSekolah
             waliKelasCombo.SelectedIndex = -1;
             allSiswaList.Clear();
             kelasSiswaList.Clear();
-            ListKelasTersedia();
+           
         }
         private void ListKelasTersedia()
         {
@@ -106,7 +151,41 @@ namespace SistemInformasiSekolah
         }
         private void BtnSave_Click(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            SaveData(kelasIdGlobal);
+        }
+        private void SaveData(int kelasId)
+        {
+            int waliKelasId = waliKelasCombo.SelectedIndex < 0 ? -1 : (int)waliKelasCombo.SelectedValue;
+            string tahunAjaran = txtTahunAjaran.Text;
+            if (kelasId < 0 || waliKelasId < 0 || tahunAjaran == "")
+            {
+                MessageBox.Show("Data Tidak Valid!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (MessageBox.Show("Input Data?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+            var cekKelasSiswa = kelasSiswaDal.GetData(kelasId);
+            if (cekKelasSiswa is null)
+            {
+                var kelasSiswa = new KelasSiswaModel()
+                {
+                    KelasId = kelasId,
+                    TahunAjaran = tahunAjaran,
+                    WaliKelasId = waliKelasId,
+                };
+                kelasSiswaDal.Insert(kelasSiswa);
+            }
+            kelasSiswaDetailDal.Delete(kelasId);
+            foreach (var item in kelasSiswaList)
+            {
+                var kelasSiswaDetail = new KelasSiswaDetailModel()
+                {
+                    KelasId = kelasId,
+                    SiswaId = item.SiswaId
+                };
+                kelasSiswaDetailDal.Insert(kelasSiswaDetail);
+            }
+            LoadData();
+            Perubahan = false;
         }
     }
 }

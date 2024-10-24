@@ -8,3 +8,6 @@
 			);
 
 			DROP TABLE Persensi;
+			select * from siswa
+
+			DELETE FROM KelasSiswaDetail

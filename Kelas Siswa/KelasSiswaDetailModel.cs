@@ -10,6 +10,6 @@ namespace SistemInformasiSekolah
     {
         public int KelasId {  get; set; }
         public int SiswaId {  get; set; }
-        public string SiswaName {  get; set; }
+        public string NamaLengkap {  get; set; }
     }
 }
