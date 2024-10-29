@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            txtFilter = new TextBox();
             gridKelasSiswa = new DataGridView();
             gridSiswa = new DataGridView();
             panel2 = new Panel();
@@ -53,7 +53,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtFilter);
             panel1.Controls.Add(gridKelasSiswa);
             panel1.Controls.Add(gridSiswa);
             panel1.Location = new Point(12, 12);
@@ -61,13 +61,13 @@
             panel1.Size = new Size(616, 479);
             panel1.TabIndex = 0;
             // 
-            // textBox1
+            // txtFilter
             // 
-            textBox1.Location = new Point(13, 12);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Masukkan Kata Kunci Pencarian";
-            textBox1.Size = new Size(226, 23);
-            textBox1.TabIndex = 2;
+            txtFilter.Location = new Point(13, 12);
+            txtFilter.Name = "txtFilter";
+            txtFilter.PlaceholderText = " Masukkan Kata Kunci Pencarian";
+            txtFilter.Size = new Size(226, 23);
+            txtFilter.TabIndex = 2;
             // 
             // gridKelasSiswa
             // 
@@ -238,7 +238,7 @@
         private DataGridView gridSiswa;
         private Button btnSave;
         private TextBox txtTahunAjaran;
-        private TextBox textBox1;
+        private TextBox txtFilter;
         private DataGridView gridKelasSiswa;
     }
 }

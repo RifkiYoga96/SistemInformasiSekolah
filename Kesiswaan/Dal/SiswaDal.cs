@@ -114,12 +114,11 @@ namespace SistemInformasiSekolah.Dal
             var get = koneksi.QuerySingleOrDefault<SiswaModel>(sql, new {SiswaId=SiswaId});
             return get;
         } 
-        public IEnumerable<SiswaModel> ListData()
+        public IEnumerable<SiswaModel> ListData(string NamaLengkap)
         {
-            string sql = @"SELECT * FROM Siswa";
+            string sql = @"SELECT * FROM Siswa WHERE NamaLengkap LIKE '%'+@NamaLengkap+'%'";
             using var koneksi = new SqlConnection(DbDal.DB());
-            var listSiswa = koneksi.Query<SiswaModel>(sql);
-            return listSiswa;
+            return koneksi.Query<SiswaModel>(sql, new {NamaLengkap=NamaLengkap});
         }
     }
 }

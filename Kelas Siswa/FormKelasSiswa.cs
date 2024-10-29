@@ -66,6 +66,12 @@ namespace SistemInformasiSekolah
             kelasCombo.SelectedIndexChanged += KelasCombo_SelectedIndexChanged;
             gridSiswa.CellDoubleClick += GridSiswa_CellDoubleClick;
             gridKelasSiswa.CellDoubleClick += GridKelasSiswa_CellDoubleClick;
+            txtFilter.TextChanged += TxtFilter_TextChanged;
+        }
+
+        private void TxtFilter_TextChanged(object? sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void GridKelasSiswa_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
@@ -105,13 +111,14 @@ namespace SistemInformasiSekolah
             if (kelasCombo.SelectedIndex == -1) return;
             int kelasId = (int)kelasCombo.SelectedValue;
             var kelasSiswa = kelasSiswaDal.GetData(kelasId);
+            string filter = txtFilter.Text;
             if(kelasSiswa is null)
             {
                 ClearFrom();
             }
             txtTahunAjaran.Text = kelasSiswa?.TahunAjaran ?? string.Empty;
             waliKelasCombo.SelectedValue = kelasSiswa?.WaliKelasId ?? -1;
-            var allSiswa = siswaDal.ListData()?.ToList() ?? new();
+            var allSiswa = siswaDal.ListData(filter)?.ToList() ?? new();
             var siswaInKelas = kelasSiswaDetailDal.ListData()?.ToList() ?? new();
             var siswaIdInKelas = siswaInKelas.Select(x => x.SiswaId)?.ToList() ?? new();
 
@@ -136,7 +143,7 @@ namespace SistemInformasiSekolah
             kelasSiswaList.Clear();
            
         }
-        private void ListKelasTersedia()
+/*        private void ListKelasTersedia()
         {
             var allSiswa = siswaDal.ListData()?.ToList() ?? new List<SiswaModel>();
             var siswaInKelas = kelasSiswaDetailDal.ListData()?.ToList() ?? new List<KelasSiswaDetailModel>();
@@ -148,7 +155,7 @@ namespace SistemInformasiSekolah
             var listSiswaTemp = allSiswa.Select(x => new SiswaDto(x.SiswaId,x.NamaLengkap))?.ToList() ?? new List<SiswaDto>();
             foreach (var item in listSiswaTemp) allSiswaList.Add(item);
             gridSiswa.Refresh();
-        }
+        }*/
         private void BtnSave_Click(object? sender, EventArgs e)
         {
             SaveData(kelasIdGlobal);
