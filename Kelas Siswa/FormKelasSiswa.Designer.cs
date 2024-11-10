@@ -138,7 +138,7 @@
             // 
             txtTahunAjaran.Location = new Point(29, 111);
             txtTahunAjaran.Name = "txtTahunAjaran";
-            txtTahunAjaran.Size = new Size(258, 23);
+            txtTahunAjaran.Size = new Size(254, 23);
             txtTahunAjaran.TabIndex = 23;
             // 
             // label6
