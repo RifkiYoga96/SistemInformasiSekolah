@@ -225,6 +225,7 @@
             label87 = new Label();
             txtNamaIbu = new TextBox();
             panel9 = new Panel();
+            label54 = new Label();
             label88 = new Label();
             groupBox4 = new GroupBox();
             radioWNIAyah = new RadioButton();
@@ -372,7 +373,9 @@
             // 
             photoSiswaBox.Anchor = AnchorStyles.Top;
             photoSiswaBox.BackColor = Color.White;
+            photoSiswaBox.BackgroundImageLayout = ImageLayout.Zoom;
             photoSiswaBox.BorderStyle = BorderStyle.FixedSingle;
+            photoSiswaBox.Image = Properties.Resources.Propil;
             photoSiswaBox.Location = new Point(11, 12);
             photoSiswaBox.Name = "photoSiswaBox";
             photoSiswaBox.Size = new Size(248, 312);
@@ -393,10 +396,10 @@
             // 
             lblNamaSiswa.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblNamaSiswa.AutoSize = true;
-            lblNamaSiswa.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNamaSiswa.Location = new Point(69, 17);
+            lblNamaSiswa.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNamaSiswa.Location = new Point(81, 17);
             lblNamaSiswa.Name = "lblNamaSiswa";
-            lblNamaSiswa.Size = new Size(129, 23);
+            lblNamaSiswa.Size = new Size(123, 21);
             lblNamaSiswa.TabIndex = 7;
             lblNamaSiswa.Text = "[ Nama Siswa ]";
             // 
@@ -480,7 +483,6 @@
             dataGridView2.TabIndex = 0;
             dataGridView2.CellClick += dataGridView2_CellClick;
             dataGridView2.RowEnter += dataGridView2_RowEnter;
-            dataGridView2.SelectionChanged += dataGridView2_SelectionChanged;
             dataGridView2.Click += dataGridView2_Click;
             dataGridView2.DoubleClick += dataGridView2_DoubleClick;
             // 
@@ -1809,6 +1811,7 @@
             // 
             // panel6
             // 
+            panel6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel6.BackColor = Color.LightGray;
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(label38);
@@ -2113,6 +2116,7 @@
             // 
             // panel7
             // 
+            panel7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panel7.BackColor = Color.LightGray;
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(label73);
@@ -2464,8 +2468,10 @@
             // 
             // panel9
             // 
+            panel9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel9.BackColor = Color.LightGray;
             panel9.BorderStyle = BorderStyle.FixedSingle;
+            panel9.Controls.Add(label54);
             panel9.Controls.Add(label88);
             panel9.Controls.Add(groupBox4);
             panel9.Controls.Add(numericGajiAyah);
@@ -2501,6 +2507,18 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(341, 570);
             panel9.TabIndex = 171;
+            // 
+            // label54
+            // 
+            label54.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label54.AutoSize = true;
+            label54.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label54.Location = new Point(12, 539);
+            label54.Margin = new Padding(2, 0, 2, 0);
+            label54.Name = "label54";
+            label54.Size = new Size(171, 15);
+            label54.TabIndex = 169;
+            label54.Text = " NB: *Kosongi Yang Tidak Perlu";
             // 
             // label88
             // 
@@ -2815,6 +2833,7 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button3.BackColor = Color.Blue;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -2857,6 +2876,7 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button4.BackColor = Color.Blue;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -2872,6 +2892,7 @@
             // 
             // panel8
             // 
+            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel8.BackColor = Color.LightGray;
             panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(numericPendapatan);
@@ -3324,5 +3345,6 @@
         private Panel panel11;
         private Panel panel12;
         private Panel panel13;
+        private Label label54;
     }
 }

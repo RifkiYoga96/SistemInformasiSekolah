@@ -52,10 +52,10 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 12);
+            dataGridView1.Location = new Point(10, 10);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(487, 360);
+            dataGridView1.Size = new Size(495, 364);
             dataGridView1.TabIndex = 0;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
@@ -212,9 +212,9 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Location = new Point(12, 11);
+            panel3.Location = new Point(10, 9);
             panel3.Name = "panel3";
-            panel3.Size = new Size(265, 312);
+            panel3.Size = new Size(269, 312);
             panel3.TabIndex = 16;
             // 
             // panel2

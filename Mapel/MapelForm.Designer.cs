@@ -65,10 +65,10 @@
             dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.DimGray;
-            dataGridView1.Location = new Point(11, 11);
+            dataGridView1.Location = new Point(10, 10);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(512, 384);
+            dataGridView1.Size = new Size(514, 387);
             dataGridView1.TabIndex = 1;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
@@ -99,7 +99,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(12, 363);
+            btnNew.Location = new Point(12, 365);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 6;
@@ -116,7 +116,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(100, 363);
+            btnDelete.Location = new Point(100, 365);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 5;
@@ -133,7 +133,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(188, 363);
+            btnSave.Location = new Point(188, 365);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 4;
@@ -189,9 +189,9 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Location = new Point(11, 10);
+            panel3.Location = new Point(10, 9);
             panel3.Name = "panel3";
-            panel3.Size = new Size(259, 343);
+            panel3.Size = new Size(260, 344);
             panel3.TabIndex = 7;
             // 
             // panel2

@@ -3,6 +3,7 @@ using SistemInformasiSekolah.Dal;
 using SistemInformasiSekolah.Kesiswaan.Dal;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Reflection;
 using System.Web;
 
 namespace SistemInformasiSekolah
@@ -784,8 +785,11 @@ namespace SistemInformasiSekolah
             }
             else
             {
-                photoSiswaBox.Image = null;
+                photoSiswaBox.Image = Properties.Resources.Propil;
             }
+
+            lblNamaSiswa.Location = new Point(panel12.Width/2 - lblNamaSiswa.Width/2,lblNamaSiswa.Location.Y);
+
 
             /*
              if(siswa == null)

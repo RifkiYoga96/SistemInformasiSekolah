@@ -74,10 +74,10 @@
             dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Silver;
-            dataGridView1.Location = new Point(13, 12);
+            dataGridView1.Location = new Point(10, 10);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(420, 375);
+            dataGridView1.Size = new Size(425, 379);
             dataGridView1.TabIndex = 2;
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
@@ -86,6 +86,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.BackColor = SystemColors.ControlLight;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -112,9 +113,9 @@
             panel3.Controls.Add(radio12);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(radio11);
-            panel3.Location = new Point(12, 12);
+            panel3.Location = new Point(10, 9);
             panel3.Name = "panel3";
-            panel3.Size = new Size(288, 319);
+            panel3.Size = new Size(291, 330);
             panel3.TabIndex = 5;
             // 
             // flagTxt
@@ -253,7 +254,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(43, 357);
+            btnNew.Location = new Point(43, 355);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 13;
@@ -270,7 +271,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(131, 357);
+            btnDelete.Location = new Point(131, 355);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 12;
@@ -287,7 +288,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(219, 357);
+            btnSave.Location = new Point(219, 355);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 11;

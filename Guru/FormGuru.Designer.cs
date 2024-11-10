@@ -87,10 +87,10 @@
             dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Gainsboro;
-            dataGridView1.Location = new Point(13, 51);
+            dataGridView1.Location = new Point(10, 52);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(369, 523);
+            dataGridView1.Size = new Size(373, 523);
             dataGridView1.TabIndex = 5;
             // 
             // panel1
@@ -143,7 +143,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(347, 542);
+            btnNew.Location = new Point(349, 543);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 47;
@@ -159,7 +159,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(435, 542);
+            btnDelete.Location = new Point(437, 543);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 46;
@@ -175,7 +175,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(523, 542);
+            btnSave.Location = new Point(525, 543);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 45;
@@ -384,9 +384,9 @@
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(pictureBox1);
-            panel3.Location = new Point(12, 15);
+            panel3.Location = new Point(10, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(593, 513);
+            panel3.Size = new Size(597, 516);
             panel3.TabIndex = 49;
             // 
             // pictureBox1

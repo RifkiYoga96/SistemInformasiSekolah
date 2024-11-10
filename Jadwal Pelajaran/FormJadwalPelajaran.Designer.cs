@@ -94,7 +94,7 @@
             panel6.Controls.Add(label1);
             panel6.Location = new Point(10, 103);
             panel6.Name = "panel6";
-            panel6.Size = new Size(325, 134);
+            panel6.Size = new Size(326, 134);
             panel6.TabIndex = 10;
             // 
             // comboJenisJadwal
@@ -146,7 +146,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(77, 503);
+            btnNew.Location = new Point(78, 504);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 11;
@@ -162,7 +162,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(165, 503);
+            btnDelete.Location = new Point(166, 504);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 10;
@@ -178,7 +178,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(253, 503);
+            btnSave.Location = new Point(254, 504);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 9;
@@ -202,7 +202,7 @@
             panel4.Controls.Add(label6);
             panel4.Location = new Point(10, 244);
             panel4.Name = "panel4";
-            panel4.Size = new Size(325, 247);
+            panel4.Size = new Size(326, 247);
             panel4.TabIndex = 8;
             // 
             // guruCombo
@@ -322,7 +322,7 @@
             panel3.Controls.Add(label3);
             panel3.Location = new Point(10, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(325, 86);
+            panel3.Size = new Size(326, 86);
             panel3.TabIndex = 7;
             // 
             // btnKelas
@@ -421,10 +421,10 @@
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(11, 48);
+            dataGridView1.Location = new Point(10, 48);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(619, 489);
+            dataGridView1.Size = new Size(622, 489);
             dataGridView1.TabIndex = 1;
             // 
             // FormJadwalPelajaran
