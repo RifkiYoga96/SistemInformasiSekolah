@@ -40,8 +40,8 @@
             label3 = new Label();
             idJurusanTxt = new TextBox();
             label2 = new Label();
-            panel2 = new Panel();
             panel3 = new Panel();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -50,6 +50,7 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(14, 12);
             dataGridView1.Name = "dataGridView1";
@@ -206,22 +207,25 @@
             label2.Text = "ID Jurusan";
             label2.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            panel3.BackColor = SystemColors.InactiveCaption;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Location = new Point(12, 11);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(265, 312);
+            panel3.TabIndex = 16;
+            // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = SystemColors.ButtonFace;
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(12, 64);
             panel2.Name = "panel2";
             panel2.Size = new Size(515, 384);
             panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.InactiveCaption;
-            panel3.Location = new Point(12, 11);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(265, 312);
-            panel3.TabIndex = 16;
             // 
             // JurusanForm
             // 

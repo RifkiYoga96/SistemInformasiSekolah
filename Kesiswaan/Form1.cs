@@ -20,6 +20,7 @@ namespace SistemInformasiSekolah
         private readonly BindingList<ListBeaDTO> beaSiswaList;
 
         public string lokasiPhoto = string.Empty;
+        private int SiswaIdGlobal = 0;
 
         public Form1()
         {
@@ -288,7 +289,7 @@ namespace SistemInformasiSekolah
 
         private void UpdatePhotoSiswa()
         {
-            var siswa = siswaDal.GetData(Convert.ToInt16(lblID.Text));
+            var siswa = siswaDal.GetData(SiswaIdGlobal);
             if (siswa is null)
             {
                 photoSiswaBox.Image = null;
@@ -748,7 +749,7 @@ namespace SistemInformasiSekolah
                 string siswaId = selectedRow.Cells[0].Value?.ToString() ?? string.Empty;
                 string siswaName = selectedRow.Cells[1].Value?.ToString() ?? "[Nama Siswa Kosong]";
 
-                lblID.Text = siswaId;
+                SiswaIdGlobal = Convert.ToInt32(siswaId);
                 lblNamaSiswa.Text = siswaName;
 
                 var siswa = siswaDal.GetData(Convert.ToInt16(siswaId));
@@ -771,7 +772,7 @@ namespace SistemInformasiSekolah
             var siswaId = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
             var siswaName = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-            lblID.Text = siswaId;
+            SiswaIdGlobal = Convert.ToInt32(siswaId);
             lblNamaSiswa.Text = siswaName;
 
             var siswa = siswaDal.GetData(Convert.ToInt16(siswaId)); // info di bawah
@@ -807,7 +808,7 @@ namespace SistemInformasiSekolah
             var konfirmasi = MessageBox.Show("Hapus Photo?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (konfirmasi == DialogResult.No) return;
 
-            int siswaId = Convert.ToInt16(lblID.Text);
+            int siswaId = SiswaIdGlobal;
             int index = dataGridView2.CurrentRow.Index;
 
             siswaDal.DeletePhoto(siswaId);
@@ -819,6 +820,11 @@ namespace SistemInformasiSekolah
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
         {
 
         }

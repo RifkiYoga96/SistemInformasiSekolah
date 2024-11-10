@@ -34,41 +34,35 @@ namespace SistemInformasiSekolah
             BukaForm(f1);
         }
 
-        private void mapelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MapelForm mf = new MapelForm();
-            BukaForm(mf);
-        }
-
-        private void jurusanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            JurusanForm jf = new JurusanForm();
-            BukaForm(jf);
-        }
-
-        private void kelasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            KelasForm kf = new KelasForm();
-            BukaForm(kf);
-        }
-
-        private void guruToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormGuru fg = new FormGuru();
-            BukaForm(fg);
-        }
-
-        private void jadwalPelajaranToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormJadwalPelajaran fjp = new FormJadwalPelajaran();
-
-            BukaForm(fjp);
-        }
-
         private void kelasSiswaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormKelasSiswa kelasSiswa = new FormKelasSiswa();
             BukaForm(kelasSiswa);
+        }
+
+        private void mapelToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BukaForm(new MapelForm());
+        }
+
+        private void jurusanToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BukaForm(new JurusanForm());
+        }
+
+        private void kelasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BukaForm(new KelasForm());
+        }
+
+        private void guruToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BukaForm(new FormGuru());
+        }
+
+        private void jadwalPelajaranToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BukaForm(new FormJadwalPelajaran());
         }
     }
 }

@@ -38,6 +38,7 @@
             label3 = new Label();
             idMapelTxt = new TextBox();
             label2 = new Label();
+            panel3 = new Panel();
             panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -60,7 +61,10 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.DimGray;
             dataGridView1.Location = new Point(11, 11);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
@@ -70,7 +74,8 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            panel1.BackColor = Color.LightGray;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -79,6 +84,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(idMapelTxt);
             panel1.Controls.Add(label2);
+            panel1.Controls.Add(panel3);
             panel1.Location = new Point(552, 63);
             panel1.Name = "panel1";
             panel1.Size = new Size(282, 407);
@@ -138,7 +144,7 @@
             // namaMapelTxt
             // 
             namaMapelTxt.Anchor = AnchorStyles.Top;
-            namaMapelTxt.Location = new Point(21, 117);
+            namaMapelTxt.Location = new Point(21, 120);
             namaMapelTxt.Name = "namaMapelTxt";
             namaMapelTxt.Size = new Size(225, 23);
             namaMapelTxt.TabIndex = 3;
@@ -147,8 +153,9 @@
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
+            label3.BackColor = SystemColors.InactiveCaption;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(21, 94);
+            label3.Location = new Point(21, 97);
             label3.Name = "label3";
             label3.Size = new Size(97, 20);
             label3.TabIndex = 2;
@@ -168,6 +175,7 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
+            label2.BackColor = SystemColors.InactiveCaption;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(21, 41);
             label2.Name = "label2";
@@ -176,10 +184,20 @@
             label2.Text = "ID Mapel";
             label2.TextAlign = ContentAlignment.BottomLeft;
             // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            panel3.BackColor = SystemColors.InactiveCaption;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Location = new Point(11, 10);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(259, 343);
+            panel3.TabIndex = 7;
+            // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.White;
+            panel2.BackColor = SystemColors.ButtonFace;
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(12, 63);
             panel2.Name = "panel2";
@@ -217,5 +235,6 @@
         private Button btnSave;
         private Button btnNew;
         private Panel panel2;
+        private Panel panel3;
     }
 }

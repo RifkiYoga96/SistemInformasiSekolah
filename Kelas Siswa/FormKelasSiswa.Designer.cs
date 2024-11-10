@@ -42,6 +42,7 @@
             label3 = new Label();
             kelasCombo = new ComboBox();
             label1 = new Label();
+            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridKelasSiswa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridSiswa).BeginInit();
@@ -52,13 +53,13 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.White;
+            panel1.BackColor = SystemColors.ButtonFace;
             panel1.Controls.Add(txtFilter);
             panel1.Controls.Add(gridKelasSiswa);
             panel1.Controls.Add(gridSiswa);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(12, 65);
             panel1.Name = "panel1";
-            panel1.Size = new Size(616, 479);
+            panel1.Size = new Size(616, 426);
             panel1.TabIndex = 0;
             // 
             // txtFilter
@@ -72,21 +73,23 @@
             // gridKelasSiswa
             // 
             gridKelasSiswa.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            gridKelasSiswa.BackgroundColor = Color.Silver;
             gridKelasSiswa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridKelasSiswa.Location = new Point(308, 41);
             gridKelasSiswa.Name = "gridKelasSiswa";
             gridKelasSiswa.RowTemplate.Height = 25;
-            gridKelasSiswa.Size = new Size(295, 425);
+            gridKelasSiswa.Size = new Size(295, 372);
             gridKelasSiswa.TabIndex = 1;
             // 
             // gridSiswa
             // 
-            gridSiswa.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            gridSiswa.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            gridSiswa.BackgroundColor = Color.Silver;
             gridSiswa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridSiswa.Location = new Point(13, 41);
             gridSiswa.Name = "gridSiswa";
             gridSiswa.RowTemplate.Height = 25;
-            gridSiswa.Size = new Size(289, 425);
+            gridSiswa.Size = new Size(289, 372);
             gridSiswa.TabIndex = 0;
             // 
             // panel2
@@ -96,9 +99,9 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnSave);
             panel2.Controls.Add(panel3);
-            panel2.Location = new Point(634, 12);
+            panel2.Location = new Point(634, 65);
             panel2.Name = "panel2";
-            panel2.Size = new Size(341, 479);
+            panel2.Size = new Size(341, 426);
             panel2.TabIndex = 1;
             // 
             // btnSave
@@ -110,7 +113,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(245, 431);
+            btnSave.Location = new Point(245, 378);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 48;
@@ -131,7 +134,7 @@
             panel3.Controls.Add(label1);
             panel3.Location = new Point(12, 12);
             panel3.Name = "panel3";
-            panel3.Size = new Size(315, 406);
+            panel3.Size = new Size(315, 353);
             panel3.TabIndex = 0;
             // 
             // txtTahunAjaran
@@ -204,12 +207,27 @@
             label1.Size = new Size(0, 15);
             label1.TabIndex = 16;
             // 
+            // label2
+            // 
+            label2.BackColor = SystemColors.Highlight;
+            label2.Dock = DockStyle.Top;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(987, 51);
+            label2.TabIndex = 2;
+            label2.Text = "Kelas - Siswa";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FormKelasSiswa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(987, 503);
+            Controls.Add(label2);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FormKelasSiswa";
@@ -240,5 +258,6 @@
         private TextBox txtTahunAjaran;
         private TextBox txtFilter;
         private DataGridView gridKelasSiswa;
+        private Label label2;
     }
 }

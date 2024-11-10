@@ -62,7 +62,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.White;
+            panel1.BackColor = SystemColors.ButtonFace;
             panel1.Controls.Add(btnSave);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(textBox4);
@@ -138,6 +138,7 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
@@ -194,6 +195,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel4.BackColor = SystemColors.InactiveCaption;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(label6);
             panel4.Controls.Add(guruCombo);
             panel4.Controls.Add(label5);
@@ -275,6 +277,7 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel3.BackColor = SystemColors.InactiveCaption;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(txtJam);

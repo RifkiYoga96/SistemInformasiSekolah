@@ -372,7 +372,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.White;
+            panel2.BackColor = SystemColors.ButtonFace;
             panel2.Controls.Add(radioKhusus);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(radioUmum);
@@ -426,7 +426,6 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(619, 489);
             dataGridView1.TabIndex = 1;
- 
             // 
             // FormJadwalPelajaran
             // 
