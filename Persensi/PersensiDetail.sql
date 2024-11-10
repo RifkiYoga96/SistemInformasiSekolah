@@ -4,3 +4,12 @@
 			);
 
 DROP TABLE PersensiDetail;
+
+
+SELECT 
+                    gm.GuruId, gm.MapelId,m.NamaMapel
+                FROM 
+                    GuruMapel gm
+                    LEFT JOIN Mapel m ON gm.MapelId = m.MapelId
+                WHERE
+                    GuruId = 8

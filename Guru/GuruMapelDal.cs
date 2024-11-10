@@ -15,8 +15,7 @@ namespace SistemInformasiSekolah.Dal
         {
             const string sql = @"
                 SELECT 
-                    gm.GuruId, gm.MapelId,
-                    ISNULL(m.NamaMapel, '') AS NamaMapel
+                    gm.GuruId, gm.MapelId,m.NamaMapel
                 FROM 
                     GuruMapel gm
                     LEFT JOIN Mapel m ON gm.MapelId = m.MapelId
@@ -27,7 +26,7 @@ namespace SistemInformasiSekolah.Dal
             dp.Add("@GuruId", guruId);
 
             using var conn = new SqlConnection(DbDal.DB());
-            return conn.Query<GuruMapelModel>(sql, dp).ToList();
+            return conn.Query<GuruMapelModel>(sql, dp);
         }
         public void Insert(IEnumerable<GuruMapelModel> listMapel, int id)
         {

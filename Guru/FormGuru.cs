@@ -33,8 +33,8 @@ namespace SistemInformasiSekolah
                 DataSource = _listMapel
             };
             RegisterControlEvent();
-            RefreshData();
             InitGrid();
+            RefreshData();
         }
         private void RegisterControlEvent()
         {
@@ -44,15 +44,14 @@ namespace SistemInformasiSekolah
 
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             gridMapel.KeyDown += gridMapel_KeyDown;
-            gridMapel.CellValidated += gridMapel_CellValidated;
+           // gridMapel.CellValidated += gridMapel_CellValidated;
 
             txtFilter.TextChanged += txtFilter_TextChanged;
         }
 
         private void txtFilter_TextChanged(object? sender, EventArgs e)
         {
-            RefreshData();
-
+           RefreshData();
         }
         private void BtnDelete_Click(object? sender, EventArgs e)
         {
@@ -65,6 +64,51 @@ namespace SistemInformasiSekolah
             {
                 _guruDal.Delete(delete);
                 RefreshData();
+            }
+        }
+
+        private void LoadData(int guruId)
+        {
+            var guru = _guruDal.GetData(guruId);
+            if (guru is null)
+            {
+                ClearInput();
+                return;
+            };
+            txtIdGuru.Text = guru.GuruId.ToString();
+            txtNamaGuru.Text = guru.GuruName;
+            tglLahir.Value = guru.TglLahir;
+            if (guru.TingkatPendidikan == "D3") radioD3.Checked = true;
+            if (guru.TingkatPendidikan == "S1") radioS1.Checked = true;
+            if (guru.TingkatPendidikan == "S2") radioS2.Checked = true;
+            if (guru.TingkatPendidikan == "S3") radioS3.Checked = true;
+            txtJurusanPendidikan.Text = guru.JurusanPendidikan;
+            txtInstansiPendidikan.Text = guru.InstansiPendidikan;
+            txtTahunLulus.Text = guru.TahunLulus;
+            txtKota.Text = guru.KotaPendidikan;
+
+            /* var listMapel = _guruMapelDal.ListData(guruId)?.ToList() ?? new List<GuruMapelModel>();
+             _listMapel.Clear();
+
+             listMapel.ForEach(x => _listMapel.Add(new MapelDto
+             {
+                 Id = x.MapelId,
+                 Mapel = x.MapelName
+             }));*/
+
+
+            var listMapel = _guruMapelDal.ListData(guruId);
+            _listMapel.Clear();
+
+            foreach (var x in listMapel)
+            {
+                //MessageBox.Show($"guruId={guruId},mapelId = {x.MapelId},mapelName={x.MapelName}");
+                string mapelName = _mapelDal.GetData(x.MapelId)?.NamaMapel ?? "";
+                    _listMapel.Add(new MapelDto
+                    {
+                        Id = x.MapelId,
+                        Mapel = mapelName
+                    });
             }
         }
         private void gridMapel_CellValidated(object? sender, DataGridViewCellEventArgs e)
@@ -81,7 +125,7 @@ namespace SistemInformasiSekolah
                     var mapel = _mapelDal.GetData(Convert.ToInt32(getIdMapel));
                     if (mapel == null)
                     {
-                        _listMapel[e.RowIndex].Mapel = " ";
+                        _listMapel[e.RowIndex].Mapel = "";
                         return;
                     }
 
@@ -91,7 +135,6 @@ namespace SistemInformasiSekolah
                     break;
             }
         }
-
         private void InitGrid()
         {
             gridMapel.DataSource = _listMapelBinding;
@@ -189,33 +232,9 @@ namespace SistemInformasiSekolah
             return guruId;
         }
 
-        private void LoadData(int guruId)
-        {
-            var guru = _guruDal.GetData(guruId);
-            if (guru is null)
-            {
-                return;
-            };
-            txtIdGuru.Text = guru.GuruId.ToString();
-            txtNamaGuru.Text = guru.GuruName;
-            tglLahir.Value = guru.TglLahir;
-            if (guru.TingkatPendidikan == "D3") radioD3.Checked = true;
-            if (guru.TingkatPendidikan == "S1") radioS1.Checked = true;
-            if (guru.TingkatPendidikan == "S2") radioS2.Checked = true;
-            if (guru.TingkatPendidikan == "S3") radioS3.Checked = true;
-            txtJurusanPendidikan.Text = guru.JurusanPendidikan;
-            txtInstansiPendidikan.Text = guru.InstansiPendidikan;
-            txtTahunLulus.Text = guru.TahunLulus;
-            txtKota.Text = guru.KotaPendidikan;
+       
 
-            var listMapel = _guruMapelDal.ListData(guruId)?.ToList() ?? new List<GuruMapelModel>();
-            _listMapel.Clear();
-            listMapel.ForEach(x => _listMapel.Add(new MapelDto
-            {
-                Id = x.MapelId,
-                Mapel = x.MapelName
-            }));
-        }
+
         private void RefreshData()
         {
             string sqlc = Filter(txtFilter.Text);
@@ -229,7 +248,6 @@ namespace SistemInformasiSekolah
                 Pendidikan = $"{x.TingkatPendidikan} - {x.JurusanPendidikan}"
             }).ToList();
             dataGridView1.DataSource = dataSource;
-            dataGridView1.Refresh();
         }
 
         private string Filter(string namaGuru)
