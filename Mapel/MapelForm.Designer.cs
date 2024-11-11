@@ -62,20 +62,20 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.Silver;
+            dataGridView1.BackgroundColor = Color.Gainsboro;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.DimGray;
-            dataGridView1.Location = new Point(10, 10);
+            dataGridView1.Location = new Point(6, 6);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(514, 387);
+            dataGridView1.Size = new Size(509, 393);
             dataGridView1.TabIndex = 1;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = Color.LightGray;
+            panel1.BackColor = Color.Silver;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -189,26 +189,27 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Location = new Point(10, 9);
+            panel3.Location = new Point(6, 6);
             panel3.Name = "panel3";
-            panel3.Size = new Size(260, 344);
+            panel3.Size = new Size(268, 344);
             panel3.TabIndex = 7;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = SystemColors.ButtonFace;
+            panel2.BackColor = Color.Silver;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(12, 63);
             panel2.Name = "panel2";
-            panel2.Size = new Size(534, 407);
+            panel2.Size = new Size(523, 407);
             panel2.TabIndex = 3;
             // 
             // MapelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(847, 483);
             Controls.Add(panel1);
             Controls.Add(label1);

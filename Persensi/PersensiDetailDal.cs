@@ -10,6 +10,8 @@ namespace SistemInformasiSekolah.Persensi
 {
     public class PersensiDetailDal
     {
+
+ 
         public void Insert(PersensiDetailModel persensiDetail)
         {
             const string sql = @"INSERT INTO PersensiDetail(

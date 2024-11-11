@@ -10,7 +10,7 @@ namespace SistemInformasiSekolah
     {
         public int PersensiId { get; set; }
         public DateTime Tgl { get; set; }
-        public TimeSpan Jam { get; set; }
+        public string Jam { get; set; }
         public int KelasId { get; set; }
         public string KelasName { get; set; }
         public int MapelId { get; set; }

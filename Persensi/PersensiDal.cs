@@ -10,11 +10,24 @@ namespace SistemInformasiSekolah
 {
     public class PersensiDal
     {
-        public IEnumerable<PersensiModel> ListData()
+        public PersensiModel? GetData(int KelasId, DateTime Tgl, string Jam)
         {
-            const string sql = @"SELECT * FROM Persensi";
-            var koneksi = new SqlConnection(sql);
-            return koneksi.Query<PersensiModel>(sql);
+            const string sql = @"SELECT p.PersensiId,p.Tgl,p.Jam,k.KelasId
+                                        k.KelasName, m.MapelId,m.MapelName,
+                                        g.GuruId, g.GuruName
+                                FROM Persensi p
+                                        INNER JOIN Kelas k ON p.KelasId = k.KelasId
+                                        INNER JOIN Mapel m ON m.MapelId = p.MapelId
+                                        INNER JOIN Guru g ON p.GuruId = g.GuruId
+                                WHERE 
+                                        k.KelasId = @KelasId AND p.Tgl = @Tgl AND p.Jam = @Jam";
+            var dp = new DynamicParameters();
+            dp.Add("@KelasId",KelasId, System.Data.DbType.Int16);
+            dp.Add("@Tgl",Tgl, System.Data.DbType.DateTime);
+            dp.Add("@Jam",Jam, System.Data.DbType.String);
+
+            var koneksi = new SqlConnection();
+            return koneksi.QueryFirstOrDefault<PersensiModel>(sql,dp);
         }
         public int Insert(PersensiModel persensi)
         {

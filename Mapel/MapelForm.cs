@@ -27,6 +27,13 @@ namespace SistemInformasiSekolah
             dataGridView1.Columns["MapelId"].Width = 200;
             dataGridView1.Columns["NamaMapel"].Width = 200;
 
+            var color = Color.FromArgb(211, 225, 239);
+            panel3.BackColor = color;
+            label2.BackColor = color;
+            label3.BackColor = color;
+
+          
+
         }
 
         private void SaveData()

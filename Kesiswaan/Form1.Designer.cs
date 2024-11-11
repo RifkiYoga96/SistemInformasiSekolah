@@ -40,7 +40,10 @@
             btnDelete = new Button();
             btnNew = new Button();
             panel10 = new Panel();
+            txtSearch = new TextBox();
+            label106 = new Label();
             dataGridView2 = new DataGridView();
+            panel14 = new Panel();
             tabPage2 = new TabPage();
             button1 = new Button();
             panel2 = new Panel();
@@ -376,7 +379,7 @@
             photoSiswaBox.BackgroundImageLayout = ImageLayout.Zoom;
             photoSiswaBox.BorderStyle = BorderStyle.FixedSingle;
             photoSiswaBox.Image = Properties.Resources.Propil;
-            photoSiswaBox.Location = new Point(11, 12);
+            photoSiswaBox.Location = new Point(12, 12);
             photoSiswaBox.Name = "photoSiswaBox";
             photoSiswaBox.Size = new Size(248, 312);
             photoSiswaBox.TabIndex = 3;
@@ -462,29 +465,57 @@
             panel10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel10.BackColor = Color.DarkGray;
             panel10.BorderStyle = BorderStyle.FixedSingle;
+            panel10.Controls.Add(txtSearch);
+            panel10.Controls.Add(label106);
             panel10.Controls.Add(dataGridView2);
+            panel10.Controls.Add(panel14);
             panel10.Location = new Point(8, 8);
             panel10.Name = "panel10";
             panel10.Size = new Size(740, 593);
             panel10.TabIndex = 8;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(84, 26);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = " Masukkan Kata Kunci Pencarian";
+            txtSearch.Size = new Size(251, 23);
+            txtSearch.TabIndex = 2;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.BackColor = Color.Silver;
+            label106.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label106.Location = new Point(15, 26);
+            label106.Name = "label106";
+            label106.Size = new Size(63, 20);
+            label106.TabIndex = 1;
+            label106.Text = "Search :";
             // 
             // dataGridView2
             // 
             dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView2.BackgroundColor = Color.Silver;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.GridColor = Color.DimGray;
-            dataGridView2.Location = new Point(6, 6);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Location = new Point(6, 73);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(726, 579);
+            dataGridView2.RowTemplate.Height = 25;
+            dataGridView2.Size = new Size(726, 512);
             dataGridView2.TabIndex = 0;
-            dataGridView2.CellClick += dataGridView2_CellClick;
             dataGridView2.RowEnter += dataGridView2_RowEnter;
-            dataGridView2.Click += dataGridView2_Click;
-            dataGridView2.DoubleClick += dataGridView2_DoubleClick;
+            dataGridView2.DoubleClick += dataGridView2_DoubleClick_1;
+            // 
+            // panel14
+            // 
+            panel14.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel14.BackColor = Color.Silver;
+            panel14.BorderStyle = BorderStyle.FixedSingle;
+            panel14.Location = new Point(6, 6);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(726, 61);
+            panel14.TabIndex = 3;
             // 
             // tabPage2
             // 
@@ -1381,7 +1412,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(515, 570);
             panel5.TabIndex = 5;
-            panel5.Paint += panel5_Paint;
             // 
             // groupBox1
             // 
@@ -3052,6 +3082,7 @@
             panel12.ResumeLayout(false);
             panel12.PerformLayout();
             panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage2.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -3225,7 +3256,6 @@
         private Label label50;
         private TextBox txtNamaPanggil;
         private DateTimePicker tglTamatBelajar;
-        private DataGridView dataGridView2;
         private ComboBox statusTinggalCombo;
         private RadioButton ORadio;
         private RadioButton ABRadio;
@@ -3346,5 +3376,9 @@
         private Panel panel12;
         private Panel panel13;
         private Label label54;
+        private DataGridView dataGridView2;
+        private Label label106;
+        private Panel panel14;
+        private TextBox txtSearch;
     }
 }

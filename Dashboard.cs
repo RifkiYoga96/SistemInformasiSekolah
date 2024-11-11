@@ -64,5 +64,10 @@ namespace SistemInformasiSekolah
         {
             BukaForm(new FormJadwalPelajaran());
         }
+
+        private void persensiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BukaForm(new FormPersensi());
+        }
     }
 }

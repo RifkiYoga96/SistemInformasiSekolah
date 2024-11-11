@@ -1,5 +1,6 @@
 ﻿using SistemInformasiSekolah.Dal;
 using SistemInformasiSekolah.Kelas_Siswa;
+using SistemInformasiSekolah.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,13 +51,25 @@ namespace SistemInformasiSekolah
         }
         private void InitCombo()
         {
-            kelasCombo.DataSource = kelasDal.ListData()
-                .Select(x => new {KelasId=x.KelasId,NamaKelas=x.NamaKelas}).ToList();
+            var listKelas = new List<KelasModel>
+            { 
+                new KelasModel { KelasId= -1, NamaKelas = "---Pilih Kelas---" }
+            };
+            var kelas = kelasDal.ListData()
+                .Select(x => new KelasModel{KelasId=x.KelasId,NamaKelas=x.NamaKelas}).ToList();
+            listKelas.AddRange(kelas);
+            kelasCombo.DataSource = listKelas;
             kelasCombo.DisplayMember = "NamaKelas";
             kelasCombo.ValueMember = "KelasId";
 
-            waliKelasCombo.DataSource = guruDal.ListData(string.Empty, new {})
-                .Select(x => new {GuruId=x.GuruId,GuruName=x.GuruName}).ToList();
+            var listGuru = new List<GuruModel>
+            {
+                new GuruModel {GuruId = -1, GuruName = "---Pilih Guru---"}
+            };
+            var guru = guruDal.ListData(string.Empty, new {})
+                .Select(x => new GuruModel{GuruId=x.GuruId,GuruName=x.GuruName}).ToList();
+            listGuru.AddRange(guru);
+            waliKelasCombo.DataSource = listGuru;
             waliKelasCombo.DisplayMember = "GuruName";
             waliKelasCombo.ValueMember = "GuruId";
         }
@@ -130,7 +143,7 @@ namespace SistemInformasiSekolah
                 allSiswaList.Add(item);
 
             kelasSiswaList.Clear();
-            var kelasSiswaDetail = kelasSiswaDetailDal.ListDataa(kelasId);
+            var kelasSiswaDetail = kelasSiswaDetailDal.ListData(kelasId);
             var kelasSiswaListTemp = kelasSiswaDetail.Select(x => new SiswaDto(x.SiswaId, x.NamaLengkap))?.ToList() ?? new();
             foreach (var item in kelasSiswaListTemp)
                 kelasSiswaList.Add(item);
@@ -162,6 +175,7 @@ namespace SistemInformasiSekolah
         }
         private void SaveData(int kelasId)
         {
+           
             int waliKelasId = waliKelasCombo.SelectedIndex < 0 ? -1 : (int)waliKelasCombo.SelectedValue;
             string tahunAjaran = txtTahunAjaran.Text;
             if (kelasId < 0 || waliKelasId < 0 || tahunAjaran == "")
@@ -179,7 +193,7 @@ namespace SistemInformasiSekolah
                     TahunAjaran = tahunAjaran,
                     WaliKelasId = waliKelasId,
                 };
-                kelasSiswaDal.Insert(kelasSiswa);
+                //kelasSiswaDal.Insert(kelasSiswa);
             }
             kelasSiswaDetailDal.Delete(kelasId);
             foreach (var item in kelasSiswaList)

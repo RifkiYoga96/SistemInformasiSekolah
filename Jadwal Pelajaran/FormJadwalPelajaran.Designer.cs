@@ -54,22 +54,24 @@
             label3 = new Label();
             btn = new Button();
             panel2 = new Panel();
+            dataGridView1 = new DataGridView();
+            panel5 = new Panel();
             radioKhusus = new RadioButton();
             label10 = new Label();
             radioUmum = new RadioButton();
-            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = Color.LightGray;
+            panel1.BackColor = Color.Silver;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(btnNew);
@@ -78,7 +80,7 @@
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(btn);
-            panel1.Location = new Point(660, 12);
+            panel1.Location = new Point(667, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 548);
             panel1.TabIndex = 4;
@@ -92,9 +94,9 @@
             panel6.Controls.Add(label4);
             panel6.Controls.Add(comboHari);
             panel6.Controls.Add(label1);
-            panel6.Location = new Point(10, 103);
+            panel6.Location = new Point(6, 98);
             panel6.Name = "panel6";
-            panel6.Size = new Size(326, 134);
+            panel6.Size = new Size(334, 134);
             panel6.TabIndex = 10;
             // 
             // comboJenisJadwal
@@ -110,6 +112,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = SystemColors.InactiveCaption;
             label4.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(22, 17);
             label4.Name = "label4";
@@ -129,6 +132,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.InactiveCaption;
             label1.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(22, 66);
             label1.Name = "label1";
@@ -187,7 +191,7 @@
             // 
             // panel4
             // 
-            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel4.BackColor = SystemColors.InactiveCaption;
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(guruCombo);
@@ -200,9 +204,9 @@
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label6);
-            panel4.Location = new Point(10, 244);
+            panel4.Location = new Point(6, 238);
             panel4.Name = "panel4";
-            panel4.Size = new Size(326, 247);
+            panel4.Size = new Size(334, 247);
             panel4.TabIndex = 8;
             // 
             // guruCombo
@@ -223,7 +227,6 @@
             // 
             // txtKeterangan
             // 
-            txtKeterangan.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             txtKeterangan.Location = new Point(22, 185);
             txtKeterangan.Name = "txtKeterangan";
             txtKeterangan.Size = new Size(262, 23);
@@ -231,8 +234,8 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
+            label2.BackColor = SystemColors.InactiveCaption;
             label2.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(22, 164);
             label2.Name = "label2";
@@ -243,7 +246,6 @@
             // 
             // jamSelesaiDT
             // 
-            jamSelesaiDT.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             jamSelesaiDT.CustomFormat = " HH:mm";
             jamSelesaiDT.Format = DateTimePickerFormat.Custom;
             jamSelesaiDT.Location = new Point(171, 37);
@@ -254,7 +256,6 @@
             // 
             // jamMulaiDT
             // 
-            jamMulaiDT.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             jamMulaiDT.CalendarMonthBackground = Color.White;
             jamMulaiDT.CustomFormat = " HH:mm";
             jamMulaiDT.Format = DateTimePickerFormat.Custom;
@@ -266,8 +267,8 @@
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
+            label7.BackColor = SystemColors.InactiveCaption;
             label7.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(22, 114);
             label7.Name = "label7";
@@ -278,8 +279,8 @@
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label8.AutoSize = true;
+            label8.BackColor = SystemColors.InactiveCaption;
             label8.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(22, 66);
             label8.Name = "label8";
@@ -290,8 +291,8 @@
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
+            label5.BackColor = SystemColors.InactiveCaption;
             label5.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(171, 16);
             label5.Name = "label5";
@@ -302,8 +303,8 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
+            label6.BackColor = SystemColors.InactiveCaption;
             label6.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(22, 16);
             label6.Name = "label6";
@@ -320,9 +321,9 @@
             panel3.Controls.Add(btnKelas);
             panel3.Controls.Add(namaKelasTxt);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(10, 10);
+            panel3.Location = new Point(6, 6);
             panel3.Name = "panel3";
-            panel3.Size = new Size(326, 86);
+            panel3.Size = new Size(334, 86);
             panel3.TabIndex = 7;
             // 
             // btnKelas
@@ -345,6 +346,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = SystemColors.InactiveCaption;
             label3.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(22, 15);
             label3.Name = "label3";
@@ -372,21 +374,44 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = SystemColors.ButtonFace;
-            panel2.Controls.Add(radioKhusus);
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(radioUmum);
+            panel2.BackColor = Color.Silver;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(panel5);
             panel2.Location = new Point(12, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(642, 548);
+            panel2.Size = new Size(640, 548);
             panel2.TabIndex = 5;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.Gainsboro;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(6, 64);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(626, 476);
+            dataGridView1.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel5.BackColor = Color.Gainsboro;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(radioKhusus);
+            panel5.Controls.Add(label10);
+            panel5.Controls.Add(radioUmum);
+            panel5.Location = new Point(6, 6);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(626, 52);
+            panel5.TabIndex = 51;
             // 
             // radioKhusus
             // 
             radioKhusus.AutoSize = true;
             radioKhusus.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            radioKhusus.Location = new Point(224, 11);
+            radioKhusus.Location = new Point(219, 13);
             radioKhusus.Name = "radioKhusus";
             radioKhusus.Size = new Size(75, 24);
             radioKhusus.TabIndex = 50;
@@ -398,7 +423,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(21, 13);
+            label10.Location = new Point(16, 15);
             label10.Name = "label10";
             label10.Size = new Size(100, 20);
             label10.TabIndex = 49;
@@ -409,7 +434,7 @@
             // 
             radioUmum.AutoSize = true;
             radioUmum.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            radioUmum.Location = new Point(136, 11);
+            radioUmum.Location = new Point(131, 13);
             radioUmum.Name = "radioUmum";
             radioUmum.Size = new Size(73, 24);
             radioUmum.TabIndex = 2;
@@ -417,22 +442,12 @@
             radioUmum.Text = "Umum";
             radioUmum.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 48);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(622, 489);
-            dataGridView1.TabIndex = 1;
-            // 
             // FormJadwalPelajaran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1020, 571);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(1027, 571);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormJadwalPelajaran";
@@ -445,8 +460,9 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -482,5 +498,6 @@
         private Label label2;
         private ComboBox guruCombo;
         private ComboBox mapelCombo;
+        private Panel panel5;
     }
 }

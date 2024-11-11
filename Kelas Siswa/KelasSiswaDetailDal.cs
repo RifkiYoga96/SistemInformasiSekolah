@@ -43,7 +43,7 @@ namespace SistemInformasiSekolah.Kelas_Siswa
             var koneksi = new SqlConnection(DbDal.DB());
             return koneksi.Query<KelasSiswaDetailModel>(sql);
         }
-        public IEnumerable<KelasSiswaDetailModel> ListDataa(int kelasId)
+        public IEnumerable<KelasSiswaDetailModel> ListData(int kelasId)
         {
             const string sql = @"
                     SELECT

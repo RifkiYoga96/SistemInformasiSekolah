@@ -75,6 +75,13 @@ namespace SistemInformasiSekolah
             /*  BeasiswaGrid.Columns["Tahun"].Width = 50;
               BeasiswaGrid.Columns["Kelas"].Width = 50;
               BeasiswaGrid.Columns["Penyedia"].Width = 200;*/
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView2.ColumnHeadersHeight = 30;
         }
         #endregion
 
@@ -624,22 +631,18 @@ namespace SistemInformasiSekolah
             tglBekerja.Value = DateTime.Today;
             txtNamaPerusahaan.Clear();
             numericPendapatan.Value = 0;
-
         }
 
 
         public void LoadData()
         {
-            const string sql = @"SELECT SiswaID,NamaLengkap,Alamat FROM Siswa";
+            string search = txtSearch.Text;
+            string sql = @"SELECT SiswaID,NamaLengkap,Alamat FROM Siswa";
+            if (search != "") sql += " WHERE NamaLengkap LIKE '%'+@search+'%'";
             var koneksi = new SqlConnection(DbDal.DB());
-            var load = koneksi.Query<ListDataModel>(sql);
+            var load = koneksi.Query<ListDataModel>(sql, new {search=search});
             dataGridView2.DataSource = load;
-            if (dataGridView2.Rows.Count > 0)
-            {
-                dataGridView2.Rows[1].Selected = true;
-            }
         }
-
 
 
         #endregion
@@ -663,7 +666,7 @@ namespace SistemInformasiSekolah
             GetData(int.Parse(siswaID));
         }
 
-        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        private void dataGridView2_DoubleClick_1(object sender, EventArgs e)
         {
             GetFromDGV();
             tabControl1.SelectedIndex = 1;
@@ -712,16 +715,6 @@ namespace SistemInformasiSekolah
 
         }
 
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_Click(object sender, EventArgs e)
-        {
-            GetFromDGV();
-        }
-
         private void btnPilihPhoto_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog()
@@ -768,6 +761,22 @@ namespace SistemInformasiSekolah
             }
         }
 
+        private void btnHapusPhoto_Click(object sender, EventArgs e)
+        {
+            var konfirmasi = MessageBox.Show("Hapus Photo?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (konfirmasi == DialogResult.No) return;
+
+            int siswaId = SiswaIdGlobal;
+            int index = dataGridView2.CurrentRow.Index;
+
+            siswaDal.DeletePhoto(siswaId);
+            photoSiswaBox.Image = null;
+            if (dataGridView2.Rows.Count > 0)
+            {
+                dataGridView2.Rows[index].Selected = true;
+            }
+        }
+
         private void dataGridView2_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             var siswaId = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -788,49 +797,12 @@ namespace SistemInformasiSekolah
                 photoSiswaBox.Image = Properties.Resources.Propil;
             }
 
-            lblNamaSiswa.Location = new Point(panel12.Width/2 - lblNamaSiswa.Width/2,lblNamaSiswa.Location.Y);
-
-
-            /*
-             if(siswa == null)
-            {
-                lokasiPhoto = string.Empty;
-            } else if(siswa.LokasiPhoto == null)
-            {
-                lokasiPhoto = string.Empty;
-            }else
-            {
-                lokasiPhoto = siswa.LokasiPhoto;
-            }
-                    
-             */
-
+            lblNamaSiswa.Location = new Point(panel12.Width / 2 - lblNamaSiswa.Width / 2, lblNamaSiswa.Location.Y);
         }
 
-        private void btnHapusPhoto_Click(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            var konfirmasi = MessageBox.Show("Hapus Photo?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (konfirmasi == DialogResult.No) return;
-
-            int siswaId = SiswaIdGlobal;
-            int index = dataGridView2.CurrentRow.Index;
-
-            siswaDal.DeletePhoto(siswaId);
-            photoSiswaBox.Image = null;
-            if (dataGridView2.Rows.Count > 0)
-            {
-                dataGridView2.Rows[index].Selected = true;
-            }
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
+            LoadData();
         }
     }
 }

@@ -150,6 +150,7 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.LightGray;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnListSiswa);
             panel2.Controls.Add(btnNew);
             panel2.Controls.Add(panel4);
@@ -168,7 +169,7 @@
             btnListSiswa.FlatStyle = FlatStyle.Flat;
             btnListSiswa.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnListSiswa.ForeColor = Color.White;
-            btnListSiswa.Location = new Point(12, 464);
+            btnListSiswa.Location = new Point(10, 462);
             btnListSiswa.Name = "btnListSiswa";
             btnListSiswa.Size = new Size(95, 31);
             btnListSiswa.TabIndex = 13;
@@ -184,7 +185,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(246, 464);
+            btnNew.Location = new Point(244, 462);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 12;
@@ -203,9 +204,9 @@
             panel4.Controls.Add(label3);
             panel4.Controls.Add(kelasCombo);
             panel4.Controls.Add(label1);
-            panel4.Location = new Point(11, 119);
+            panel4.Location = new Point(9, 119);
             panel4.Name = "panel4";
-            panel4.Size = new Size(316, 332);
+            panel4.Size = new Size(316, 330);
             panel4.TabIndex = 1;
             // 
             // label6
@@ -275,14 +276,14 @@
             // 
             // panel3
             // 
-            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(txtJam);
             panel3.Controls.Add(tglDT);
-            panel3.Location = new Point(11, 12);
+            panel3.Location = new Point(9, 12);
             panel3.Name = "panel3";
             panel3.Size = new Size(316, 100);
             panel3.TabIndex = 0;

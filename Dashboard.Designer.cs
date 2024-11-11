@@ -142,6 +142,7 @@
             persensiToolStripMenuItem1.Name = "persensiToolStripMenuItem1";
             persensiToolStripMenuItem1.Size = new Size(196, 38);
             persensiToolStripMenuItem1.Text = "Persensi";
+            persensiToolStripMenuItem1.Click += persensiToolStripMenuItem1_Click;
             // 
             // Dashboard
             // 
