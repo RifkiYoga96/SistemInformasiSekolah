@@ -67,7 +67,7 @@ namespace SistemInformasiSekolah
         private void BtnListSiswa_Click1(object? sender, EventArgs e)
         {
             //masih Bug
-            //ValidasiInput();
+            ValidasiInput();
         }
 
         private void BtnSave_Click(object? sender, EventArgs e)
@@ -84,6 +84,7 @@ namespace SistemInformasiSekolah
         }
         private void DataGridView1_CellValueChanged(object? sender, DataGridViewCellEventArgs e)
         {
+            if (dataGridView1.Columns[e.ColumnIndex].ValueType != typeof(bool)) return;
             if (Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value))
                 for (int i = 2; i <= 5; i++)
                     if (i != e.ColumnIndex)

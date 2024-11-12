@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
             btnSave = new Button();
             label7 = new Label();
             txtA = new TextBox();
@@ -52,10 +56,6 @@
             label4 = new Label();
             txtJam = new TextBox();
             tglDT = new DateTimePicker();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -82,6 +82,54 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(716, 509);
             panel1.TabIndex = 0;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Bottom;
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(439, 433);
+            label11.Name = "label11";
+            label11.Size = new Size(17, 17);
+            label11.TabIndex = 18;
+            label11.Text = "A";
+            label11.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Bottom;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(395, 433);
+            label10.Name = "label10";
+            label10.Size = new Size(12, 17);
+            label10.TabIndex = 17;
+            label10.Text = "I";
+            label10.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Bottom;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(347, 433);
+            label9.Name = "label9";
+            label9.Size = new Size(15, 17);
+            label9.TabIndex = 16;
+            label9.Text = "S";
+            label9.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Bottom;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(280, 432);
+            label8.Name = "label8";
+            label8.Size = new Size(41, 17);
+            label8.TabIndex = 15;
+            label8.Text = "Hadir";
+            label8.TextAlign = ContentAlignment.BottomLeft;
             // 
             // btnSave
             // 
@@ -146,7 +194,7 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.Silver;
+            dataGridView1.BackgroundColor = Color.LightGray;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(10, 10);
             dataGridView1.Name = "dataGridView1";
@@ -158,7 +206,6 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.LightGray;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnListSiswa);
             panel2.Controls.Add(btnNew);
             panel2.Controls.Add(panel4);
@@ -177,7 +224,7 @@
             btnListSiswa.FlatStyle = FlatStyle.Flat;
             btnListSiswa.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnListSiswa.ForeColor = Color.White;
-            btnListSiswa.Location = new Point(10, 462);
+            btnListSiswa.Location = new Point(12, 464);
             btnListSiswa.Name = "btnListSiswa";
             btnListSiswa.Size = new Size(95, 31);
             btnListSiswa.TabIndex = 13;
@@ -193,7 +240,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(244, 462);
+            btnNew.Location = new Point(246, 464);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 12;
@@ -212,9 +259,9 @@
             panel4.Controls.Add(label3);
             panel4.Controls.Add(kelasCombo);
             panel4.Controls.Add(label1);
-            panel4.Location = new Point(9, 118);
+            panel4.Location = new Point(11, 118);
             panel4.Name = "panel4";
-            panel4.Size = new Size(319, 330);
+            panel4.Size = new Size(319, 332);
             panel4.TabIndex = 1;
             // 
             // label6
@@ -291,7 +338,7 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(txtJam);
             panel3.Controls.Add(tglDT);
-            panel3.Location = new Point(9, 9);
+            panel3.Location = new Point(11, 9);
             panel3.Name = "panel3";
             panel3.Size = new Size(319, 100);
             panel3.TabIndex = 0;
@@ -332,54 +379,6 @@
             tglDT.Name = "tglDT";
             tglDT.Size = new Size(115, 23);
             tglDT.TabIndex = 0;
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.Bottom;
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(280, 432);
-            label8.Name = "label8";
-            label8.Size = new Size(41, 17);
-            label8.TabIndex = 15;
-            label8.Text = "Hadir";
-            label8.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Bottom;
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(347, 433);
-            label9.Name = "label9";
-            label9.Size = new Size(15, 17);
-            label9.TabIndex = 16;
-            label9.Text = "S";
-            label9.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // label10
-            // 
-            label10.Anchor = AnchorStyles.Bottom;
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(395, 433);
-            label10.Name = "label10";
-            label10.Size = new Size(12, 17);
-            label10.TabIndex = 17;
-            label10.Text = "I";
-            label10.TextAlign = ContentAlignment.BottomLeft;
-            // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.Bottom;
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(439, 433);
-            label11.Name = "label11";
-            label11.Size = new Size(17, 17);
-            label11.TabIndex = 18;
-            label11.Text = "A";
-            label11.TextAlign = ContentAlignment.BottomLeft;
             // 
             // FormPersensi
             // 
