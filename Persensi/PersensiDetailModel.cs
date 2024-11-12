@@ -11,7 +11,7 @@ namespace SistemInformasiSekolah
         public int PersensiId {  get; set; }
         public int NoUrut { get; set; }
         public int SiswaId { get; set; }
-        public string SiswaName { get; set; }
+        public string NamaLengkap { get; set; }
         public string StatusPersensi { get; set; }
         public string Keterangan {  get; set; }
     }

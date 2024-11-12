@@ -12,8 +12,8 @@ namespace SistemInformasiSekolah
     {
         public PersensiModel? GetData(int KelasId, DateTime Tgl, string Jam)
         {
-            const string sql = @"SELECT p.PersensiId,p.Tgl,p.Jam,k.KelasId
-                                        k.KelasName, m.MapelId,m.MapelName,
+            const string sql = @"SELECT p.PersensiId,p.Tgl,p.Jam,k.KelasId,
+                                        k.NamaKelas, m.MapelId,m.NamaMapel,
                                         g.GuruId, g.GuruName
                                 FROM Persensi p
                                         INNER JOIN Kelas k ON p.KelasId = k.KelasId
@@ -26,7 +26,7 @@ namespace SistemInformasiSekolah
             dp.Add("@Tgl",Tgl, System.Data.DbType.DateTime);
             dp.Add("@Jam",Jam, System.Data.DbType.String);
 
-            var koneksi = new SqlConnection();
+            var koneksi = new SqlConnection(DbDal.DB());
             return koneksi.QueryFirstOrDefault<PersensiModel>(sql,dp);
         }
         public int Insert(PersensiModel persensi)
@@ -36,7 +36,7 @@ namespace SistemInformasiSekolah
                                 VALUES (@Tgl,@Jam,@KelasId,@MapelId,@GuruId)";
             var dp = new DynamicParameters();
             dp.Add("@Tgl",persensi.Tgl, System.Data.DbType.Date);
-            dp.Add("@Jam",persensi.Jam, System.Data.DbType.Time);
+            dp.Add("@Jam",persensi.Jam, System.Data.DbType.String);
             dp.Add("@KelasId",persensi.KelasId, System.Data.DbType.Int16);
             dp.Add("@MapelId",persensi.MapelId, System.Data.DbType.Int32);
             dp.Add("@GuruId",persensi.GuruId, System.Data.DbType.Int32);
