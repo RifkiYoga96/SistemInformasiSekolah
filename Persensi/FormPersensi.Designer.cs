@@ -195,7 +195,7 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.LightGray;
+            dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(9, 9);
             dataGridView1.Name = "dataGridView1";
@@ -236,7 +236,7 @@
             // 
             btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
+            btnNew.BackColor = Color.FromArgb(0, 192, 0);
             btnNew.FlatAppearance.BorderSize = 0;
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -279,10 +279,11 @@
             // guruCombo
             // 
             guruCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            guruCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             guruCombo.FormattingEnabled = true;
             guruCombo.Location = new Point(27, 166);
             guruCombo.Name = "guruCombo";
-            guruCombo.Size = new Size(258, 23);
+            guruCombo.Size = new Size(258, 25);
             guruCombo.TabIndex = 14;
             // 
             // label5
@@ -299,10 +300,11 @@
             // mapelCombo
             // 
             mapelCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            mapelCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             mapelCombo.FormattingEnabled = true;
             mapelCombo.Location = new Point(27, 104);
             mapelCombo.Name = "mapelCombo";
-            mapelCombo.Size = new Size(258, 23);
+            mapelCombo.Size = new Size(258, 25);
             mapelCombo.TabIndex = 12;
             // 
             // label3
@@ -319,10 +321,11 @@
             // kelasCombo
             // 
             kelasCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            kelasCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             kelasCombo.FormattingEnabled = true;
             kelasCombo.Location = new Point(27, 41);
             kelasCombo.Name = "kelasCombo";
-            kelasCombo.Size = new Size(258, 23);
+            kelasCombo.Size = new Size(258, 25);
             kelasCombo.TabIndex = 1;
             // 
             // label1
@@ -371,17 +374,19 @@
             // 
             // txtJam
             // 
+            txtJam.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtJam.Location = new Point(170, 46);
             txtJam.Name = "txtJam";
-            txtJam.Size = new Size(115, 23);
+            txtJam.Size = new Size(115, 25);
             txtJam.TabIndex = 1;
             // 
             // tglDT
             // 
+            tglDT.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             tglDT.Format = DateTimePickerFormat.Short;
             tglDT.Location = new Point(27, 46);
             tglDT.Name = "tglDT";
-            tglDT.Size = new Size(115, 23);
+            tglDT.Size = new Size(115, 25);
             tglDT.TabIndex = 0;
             // 
             // label12

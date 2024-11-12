@@ -31,20 +31,6 @@ namespace SistemInformasiSekolah
             LoadData();
             RegisterEvent();
             InitGrid();
-
-            //panel4.BackColor = Color.FromArgb(191,205,219);
-            var color = Color.FromArgb(201, 215, 229);
-            panel4.BackColor = color;
-            panel6.BackColor = color;
-            panel3.BackColor = color;
-            label1.BackColor = color;
-            label2.BackColor = color;
-            label3.BackColor = color;
-            label4.BackColor = color;
-            label5.BackColor = color;
-            label6.BackColor = color;
-            label7.BackColor = color;
-            label8.BackColor = color;
         }
         private void InitCombo()
         {

@@ -72,7 +72,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = Color.Silver;
+            panel1.BackColor = SystemColors.ButtonFace;
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -146,7 +146,7 @@
             // 
             btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
+            btnNew.BackColor = Color.FromArgb(0, 192, 0);
             btnNew.FlatAppearance.BorderSize = 0;
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -377,7 +377,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.Silver;
+            panel2.BackColor = SystemColors.ButtonFace;
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(panel5);
             panel2.Location = new Point(12, 64);
@@ -388,8 +388,9 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.Gainsboro;
+            dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.Silver;
             dataGridView1.Location = new Point(9, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
@@ -399,7 +400,7 @@
             // panel5
             // 
             panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel5.BackColor = Color.Gainsboro;
+            panel5.BackColor = Color.Silver;
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(radioKhusus);
             panel5.Controls.Add(label10);

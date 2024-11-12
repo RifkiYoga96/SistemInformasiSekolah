@@ -62,13 +62,13 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.LightGray;
+            dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.DimGray;
             dataGridView1.Location = new Point(9, 9);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(570, 415);
+            dataGridView1.Size = new Size(561, 415);
             dataGridView1.TabIndex = 1;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
@@ -93,7 +93,7 @@
             // 
             btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
+            btnNew.BackColor = Color.FromArgb(0, 192, 0);
             btnNew.FlatAppearance.BorderSize = 0;
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -143,9 +143,10 @@
             // namaMapelTxt
             // 
             namaMapelTxt.Anchor = AnchorStyles.Top;
+            namaMapelTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             namaMapelTxt.Location = new Point(36, 120);
             namaMapelTxt.Name = "namaMapelTxt";
-            namaMapelTxt.Size = new Size(236, 23);
+            namaMapelTxt.Size = new Size(236, 25);
             namaMapelTxt.TabIndex = 3;
             // 
             // label3
@@ -153,10 +154,10 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.BackColor = SystemColors.InactiveCaption;
-            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(36, 97);
             label3.Name = "label3";
-            label3.Size = new Size(97, 20);
+            label3.Size = new Size(89, 19);
             label3.TabIndex = 2;
             label3.Text = "Nama Mapel";
             label3.TextAlign = ContentAlignment.BottomLeft;
@@ -164,10 +165,11 @@
             // idMapelTxt
             // 
             idMapelTxt.Anchor = AnchorStyles.Top;
+            idMapelTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             idMapelTxt.Location = new Point(36, 64);
             idMapelTxt.Name = "idMapelTxt";
             idMapelTxt.ReadOnly = true;
-            idMapelTxt.Size = new Size(236, 23);
+            idMapelTxt.Size = new Size(236, 25);
             idMapelTxt.TabIndex = 1;
             // 
             // label2
@@ -175,10 +177,10 @@
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.BackColor = SystemColors.InactiveCaption;
-            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(36, 41);
             label2.Name = "label2";
-            label2.Size = new Size(71, 20);
+            label2.Size = new Size(66, 19);
             label2.TabIndex = 0;
             label2.Text = "ID Mapel";
             label2.TextAlign = ContentAlignment.BottomLeft;
@@ -200,7 +202,7 @@
             panel2.Controls.Add(dataGridView1);
             panel2.Location = new Point(12, 63);
             panel2.Name = "panel2";
-            panel2.Size = new Size(588, 433);
+            panel2.Size = new Size(579, 433);
             panel2.TabIndex = 3;
             // 
             // MapelForm

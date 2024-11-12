@@ -85,8 +85,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = SystemColors.ControlLight;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.BackColor = SystemColors.ButtonFace;
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -113,43 +112,46 @@
             panel3.Controls.Add(radio12);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(radio11);
-            panel3.Location = new Point(10, 9);
+            panel3.Location = new Point(9, 9);
             panel3.Name = "panel3";
-            panel3.Size = new Size(291, 330);
+            panel3.Size = new Size(295, 332);
             panel3.TabIndex = 5;
             // 
             // flagTxt
             // 
+            flagTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             flagTxt.Location = new Point(18, 255);
             flagTxt.Name = "flagTxt";
-            flagTxt.Size = new Size(71, 23);
+            flagTxt.Size = new Size(71, 25);
             flagTxt.TabIndex = 23;
             flagTxt.TextChanged += flagTxt_TextChanged;
             // 
             // jurusanCombo
             // 
+            jurusanCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             jurusanCombo.FormattingEnabled = true;
             jurusanCombo.Location = new Point(18, 203);
             jurusanCombo.Name = "jurusanCombo";
-            jurusanCombo.Size = new Size(244, 23);
+            jurusanCombo.Size = new Size(244, 25);
             jurusanCombo.TabIndex = 18;
             jurusanCombo.SelectedIndexChanged += jurusanCombo_SelectedIndexChanged;
             // 
             // namaKelasTxt
             // 
+            namaKelasTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             namaKelasTxt.Location = new Point(18, 93);
             namaKelasTxt.Name = "namaKelasTxt";
             namaKelasTxt.ReadOnly = true;
-            namaKelasTxt.Size = new Size(244, 23);
+            namaKelasTxt.Size = new Size(244, 25);
             namaKelasTxt.TabIndex = 22;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(18, 17);
             label2.Name = "label2";
-            label2.Size = new Size(63, 20);
+            label2.Size = new Size(60, 19);
             label2.TabIndex = 7;
             label2.Text = "ID Kelas";
             label2.TextAlign = ContentAlignment.BottomLeft;
@@ -157,29 +159,30 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(20, 70);
             label6.Name = "label6";
-            label6.Size = new Size(89, 20);
+            label6.Size = new Size(83, 19);
             label6.TabIndex = 21;
             label6.Text = "Nama Kelas";
             label6.TextAlign = ContentAlignment.BottomLeft;
             // 
             // idKelasTxt
             // 
+            idKelasTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             idKelasTxt.Location = new Point(18, 40);
             idKelasTxt.Name = "idKelasTxt";
             idKelasTxt.ReadOnly = true;
-            idKelasTxt.Size = new Size(244, 23);
+            idKelasTxt.Size = new Size(244, 25);
             idKelasTxt.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(22, 180);
             label5.Name = "label5";
-            label5.Size = new Size(62, 20);
+            label5.Size = new Size(57, 19);
             label5.TabIndex = 19;
             label5.Text = "Jurusan";
             label5.TextAlign = ContentAlignment.BottomLeft;
@@ -187,10 +190,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(19, 232);
             label3.Name = "label3";
-            label3.Size = new Size(38, 20);
+            label3.Size = new Size(35, 19);
             label3.TabIndex = 9;
             label3.Text = "Flag";
             label3.TextAlign = ContentAlignment.BottomLeft;
@@ -224,10 +227,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(19, 122);
             label4.Name = "label4";
-            label4.Size = new Size(60, 20);
+            label4.Size = new Size(56, 19);
             label4.TabIndex = 15;
             label4.Text = "Tingkat";
             label4.TextAlign = ContentAlignment.BottomLeft;
@@ -249,12 +252,12 @@
             // 
             btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
+            btnNew.BackColor = Color.FromArgb(0, 192, 0);
             btnNew.FlatAppearance.BorderSize = 0;
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(43, 355);
+            btnNew.Location = new Point(45, 357);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 13;
@@ -271,7 +274,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(131, 355);
+            btnDelete.Location = new Point(133, 357);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 12;
@@ -288,7 +291,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(219, 355);
+            btnSave.Location = new Point(221, 357);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 11;

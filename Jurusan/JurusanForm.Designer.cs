@@ -52,10 +52,10 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 10);
+            dataGridView1.Location = new Point(9, 9);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(495, 364);
+            dataGridView1.Size = new Size(497, 366);
             dataGridView1.TabIndex = 0;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
@@ -75,8 +75,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = Color.Gainsboro;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.BackColor = SystemColors.ButtonFace;
             panel1.Controls.Add(codeTxt);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(btnNew);
@@ -95,9 +94,10 @@
             // codeTxt
             // 
             codeTxt.Anchor = AnchorStyles.Top;
-            codeTxt.Location = new Point(25, 171);
+            codeTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
+            codeTxt.Location = new Point(26, 171);
             codeTxt.Name = "codeTxt";
-            codeTxt.Size = new Size(72, 23);
+            codeTxt.Size = new Size(72, 25);
             codeTxt.TabIndex = 15;
             // 
             // label4
@@ -105,10 +105,10 @@
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.BackColor = SystemColors.InactiveCaption;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(25, 148);
+            label4.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(26, 148);
             label4.Name = "label4";
-            label4.Size = new Size(44, 20);
+            label4.Size = new Size(41, 19);
             label4.TabIndex = 14;
             label4.Text = "Code";
             label4.TextAlign = ContentAlignment.BottomLeft;
@@ -117,12 +117,12 @@
             // 
             btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
+            btnNew.BackColor = Color.FromArgb(0, 192, 0);
             btnNew.FlatAppearance.BorderSize = 0;
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(19, 340);
+            btnNew.Location = new Point(21, 342);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 13;
@@ -139,7 +139,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(107, 340);
+            btnDelete.Location = new Point(109, 342);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 12;
@@ -156,7 +156,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(195, 340);
+            btnSave.Location = new Point(197, 342);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 11;
@@ -167,9 +167,10 @@
             // namaJurusanTxt
             // 
             namaJurusanTxt.Anchor = AnchorStyles.Top;
-            namaJurusanTxt.Location = new Point(25, 119);
+            namaJurusanTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
+            namaJurusanTxt.Location = new Point(26, 119);
             namaJurusanTxt.Name = "namaJurusanTxt";
-            namaJurusanTxt.Size = new Size(225, 23);
+            namaJurusanTxt.Size = new Size(225, 25);
             namaJurusanTxt.TabIndex = 10;
             // 
             // label3
@@ -177,10 +178,10 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.BackColor = SystemColors.InactiveCaption;
-            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(25, 96);
+            label3.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(26, 96);
             label3.Name = "label3";
-            label3.Size = new Size(107, 20);
+            label3.Size = new Size(98, 19);
             label3.TabIndex = 9;
             label3.Text = "Nama Jurusan";
             label3.TextAlign = ContentAlignment.BottomLeft;
@@ -188,10 +189,11 @@
             // idJurusanTxt
             // 
             idJurusanTxt.Anchor = AnchorStyles.Top;
-            idJurusanTxt.Location = new Point(25, 66);
+            idJurusanTxt.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
+            idJurusanTxt.Location = new Point(26, 66);
             idJurusanTxt.Name = "idJurusanTxt";
             idJurusanTxt.ReadOnly = true;
-            idJurusanTxt.Size = new Size(225, 23);
+            idJurusanTxt.Size = new Size(225, 25);
             idJurusanTxt.TabIndex = 8;
             // 
             // label2
@@ -199,10 +201,10 @@
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.BackColor = SystemColors.InactiveCaption;
-            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(25, 43);
+            label2.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(26, 43);
             label2.Name = "label2";
-            label2.Size = new Size(81, 20);
+            label2.Size = new Size(75, 19);
             label2.TabIndex = 7;
             label2.Text = "ID Jurusan";
             label2.TextAlign = ContentAlignment.BottomLeft;
@@ -212,9 +214,9 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel3.BackColor = SystemColors.InactiveCaption;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Location = new Point(10, 9);
+            panel3.Location = new Point(11, 9);
             panel3.Name = "panel3";
-            panel3.Size = new Size(269, 312);
+            panel3.Size = new Size(271, 314);
             panel3.TabIndex = 16;
             // 
             // panel2

@@ -29,11 +29,6 @@ namespace SistemInformasiSekolah
 
         private void InitGrid()
         {
-            var color = Color.FromArgb(211, 225, 239);
-            panel3.BackColor = color;
-            label2.BackColor = color;
-            label3.BackColor = color;
-
             dataGridView1.EnableHeadersVisualStyles = false;
 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;

@@ -95,7 +95,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel2.BackColor = Color.LightGray;
+            panel2.BackColor = SystemColors.ButtonFace;
             panel2.Controls.Add(btnSave);
             panel2.Controls.Add(panel3);
             panel2.Location = new Point(634, 65);
@@ -138,9 +138,10 @@
             // 
             // txtTahunAjaran
             // 
+            txtTahunAjaran.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtTahunAjaran.Location = new Point(29, 111);
             txtTahunAjaran.Name = "txtTahunAjaran";
-            txtTahunAjaran.Size = new Size(258, 23);
+            txtTahunAjaran.Size = new Size(258, 25);
             txtTahunAjaran.TabIndex = 23;
             // 
             // label6
@@ -158,10 +159,11 @@
             // waliKelasCombo
             // 
             waliKelasCombo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            waliKelasCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             waliKelasCombo.FormattingEnabled = true;
             waliKelasCombo.Location = new Point(31, 173);
             waliKelasCombo.Name = "waliKelasCombo";
-            waliKelasCombo.Size = new Size(258, 23);
+            waliKelasCombo.Size = new Size(258, 25);
             waliKelasCombo.TabIndex = 21;
             // 
             // label5
@@ -191,10 +193,11 @@
             // kelasCombo
             // 
             kelasCombo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            kelasCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             kelasCombo.FormattingEnabled = true;
             kelasCombo.Location = new Point(31, 48);
             kelasCombo.Name = "kelasCombo";
-            kelasCombo.Size = new Size(258, 23);
+            kelasCombo.Size = new Size(258, 25);
             kelasCombo.TabIndex = 17;
             // 
             // label1

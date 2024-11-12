@@ -80,10 +80,11 @@
             // 
             // txtHasil
             // 
+            txtHasil.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtHasil.Location = new Point(22, 251);
             txtHasil.Name = "txtHasil";
             txtHasil.ReadOnly = true;
-            txtHasil.Size = new Size(201, 23);
+            txtHasil.Size = new Size(201, 25);
             txtHasil.TabIndex = 12;
             // 
             // label5
@@ -98,10 +99,11 @@
             // 
             // rombelCombo
             // 
+            rombelCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             rombelCombo.FormattingEnabled = true;
             rombelCombo.Location = new Point(22, 198);
             rombelCombo.Name = "rombelCombo";
-            rombelCombo.Size = new Size(201, 23);
+            rombelCombo.Size = new Size(201, 25);
             rombelCombo.TabIndex = 8;
             // 
             // label4
@@ -116,10 +118,11 @@
             // 
             // jurusanCombo
             // 
+            jurusanCombo.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             jurusanCombo.FormattingEnabled = true;
             jurusanCombo.Location = new Point(22, 144);
             jurusanCombo.Name = "jurusanCombo";
-            jurusanCombo.Size = new Size(201, 23);
+            jurusanCombo.Size = new Size(201, 25);
             jurusanCombo.TabIndex = 6;
             // 
             // label3

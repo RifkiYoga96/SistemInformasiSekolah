@@ -57,6 +57,7 @@
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            panel4 = new Panel();
             label10 = new Label();
             txtFilter = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -65,6 +66,7 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -84,13 +86,13 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.Gainsboro;
+            dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Gainsboro;
-            dataGridView1.Location = new Point(10, 52);
+            dataGridView1.Location = new Point(10, 82);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(375, 525);
+            dataGridView1.Size = new Size(375, 495);
             dataGridView1.TabIndex = 5;
             // 
             // panel1
@@ -128,16 +130,17 @@
             // 
             // tglLahir
             // 
+            tglLahir.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             tglLahir.Location = new Point(36, 159);
             tglLahir.Name = "tglLahir";
-            tglLahir.Size = new Size(257, 23);
+            tglLahir.Size = new Size(257, 25);
             tglLahir.TabIndex = 48;
             // 
             // btnNew
             // 
             btnNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnNew.AutoEllipsis = true;
-            btnNew.BackColor = Color.Green;
+            btnNew.BackColor = Color.FromArgb(0, 192, 0);
             btnNew.FlatAppearance.BorderSize = 0;
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -183,38 +186,40 @@
             // 
             // txtKota
             // 
+            txtKota.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtKota.Location = new Point(323, 321);
             txtKota.Name = "txtKota";
-            txtKota.Size = new Size(257, 23);
+            txtKota.Size = new Size(257, 25);
             txtKota.TabIndex = 44;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = SystemColors.InactiveCaption;
-            label8.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(323, 298);
             label8.Name = "label8";
-            label8.Size = new Size(40, 20);
+            label8.Size = new Size(38, 19);
             label8.TabIndex = 43;
             label8.Text = "Kota";
             label8.TextAlign = ContentAlignment.BottomLeft;
             // 
             // txtInstansiPendidikan
             // 
+            txtInstansiPendidikan.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtInstansiPendidikan.Location = new Point(323, 266);
             txtInstansiPendidikan.Name = "txtInstansiPendidikan";
-            txtInstansiPendidikan.Size = new Size(257, 23);
+            txtInstansiPendidikan.Size = new Size(257, 25);
             txtInstansiPendidikan.TabIndex = 42;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = SystemColors.InactiveCaption;
-            label9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label9.Location = new Point(323, 243);
             label9.Name = "label9";
-            label9.Size = new Size(140, 20);
+            label9.Size = new Size(130, 19);
             label9.TabIndex = 41;
             label9.Text = "Instansi Pendidikan";
             label9.TextAlign = ContentAlignment.BottomLeft;
@@ -231,38 +236,40 @@
             // 
             // txtTahunLulus
             // 
+            txtTahunLulus.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtTahunLulus.Location = new Point(36, 321);
             txtTahunLulus.Name = "txtTahunLulus";
-            txtTahunLulus.Size = new Size(257, 23);
+            txtTahunLulus.Size = new Size(257, 25);
             txtTahunLulus.TabIndex = 35;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = SystemColors.InactiveCaption;
-            label6.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(36, 298);
             label6.Name = "label6";
-            label6.Size = new Size(90, 20);
+            label6.Size = new Size(84, 19);
             label6.TabIndex = 34;
             label6.Text = "Tahun Lulus";
             label6.TextAlign = ContentAlignment.BottomLeft;
             // 
             // txtJurusanPendidikan
             // 
+            txtJurusanPendidikan.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtJurusanPendidikan.Location = new Point(36, 266);
             txtJurusanPendidikan.Name = "txtJurusanPendidikan";
-            txtJurusanPendidikan.Size = new Size(257, 23);
+            txtJurusanPendidikan.Size = new Size(257, 25);
             txtJurusanPendidikan.TabIndex = 33;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = SystemColors.InactiveCaption;
-            label7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(36, 243);
             label7.Name = "label7";
-            label7.Size = new Size(142, 20);
+            label7.Size = new Size(130, 19);
             label7.TabIndex = 32;
             label7.Text = "Jurusan Pendidikan";
             label7.TextAlign = ContentAlignment.BottomLeft;
@@ -319,10 +326,10 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.InactiveCaption;
-            label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(36, 192);
             label5.Name = "label5";
-            label5.Size = new Size(140, 20);
+            label5.Size = new Size(129, 19);
             label5.TabIndex = 27;
             label5.Text = "Tingkat Pendidikan";
             label5.TextAlign = ContentAlignment.BottomLeft;
@@ -331,49 +338,51 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.InactiveCaption;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(36, 136);
             label4.Name = "label4";
-            label4.Size = new Size(67, 20);
+            label4.Size = new Size(63, 19);
             label4.TabIndex = 25;
             label4.Text = "Tgl Lahir";
             label4.TextAlign = ContentAlignment.BottomLeft;
             // 
             // txtNamaGuru
             // 
+            txtNamaGuru.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtNamaGuru.Location = new Point(36, 105);
             txtNamaGuru.Name = "txtNamaGuru";
-            txtNamaGuru.Size = new Size(257, 23);
+            txtNamaGuru.Size = new Size(257, 25);
             txtNamaGuru.TabIndex = 24;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.InactiveCaption;
-            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(36, 82);
             label3.Name = "label3";
-            label3.Size = new Size(50, 20);
+            label3.Size = new Size(46, 19);
             label3.TabIndex = 23;
             label3.Text = "Nama";
             label3.TextAlign = ContentAlignment.BottomLeft;
             // 
             // txtIdGuru
             // 
+            txtIdGuru.Font = new Font("Segoe UI", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
             txtIdGuru.Location = new Point(36, 51);
             txtIdGuru.Name = "txtIdGuru";
             txtIdGuru.ReadOnly = true;
-            txtIdGuru.Size = new Size(257, 23);
+            txtIdGuru.Size = new Size(257, 25);
             txtIdGuru.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.InactiveCaption;
-            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(36, 28);
             label2.Name = "label2";
-            label2.Size = new Size(62, 20);
+            label2.Size = new Size(58, 19);
             label2.TabIndex = 4;
             label2.Text = "ID Guru";
             label2.TextAlign = ContentAlignment.BottomLeft;
@@ -402,19 +411,31 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = SystemColors.ButtonFace;
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(txtFilter);
             panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(panel4);
             panel2.Location = new Point(12, 62);
             panel2.Name = "panel2";
             panel2.Size = new Size(395, 587);
             panel2.TabIndex = 7;
             // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.BackColor = Color.Silver;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(label10);
+            panel4.Controls.Add(txtFilter);
+            panel4.Location = new Point(9, 9);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(376, 61);
+            panel4.TabIndex = 49;
+            // 
             // label10
             // 
             label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
             label10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(13, 15);
+            label10.Location = new Point(11, 18);
             label10.Name = "label10";
             label10.Size = new Size(63, 20);
             label10.TabIndex = 48;
@@ -423,10 +444,10 @@
             // 
             // txtFilter
             // 
-            txtFilter.Location = new Point(82, 15);
+            txtFilter.Location = new Point(80, 18);
             txtFilter.Name = "txtFilter";
             txtFilter.PlaceholderText = "Masukkan Nama Guru";
-            txtFilter.Size = new Size(300, 23);
+            txtFilter.Size = new Size(273, 23);
             txtFilter.TabIndex = 48;
             // 
             // FormGuru
@@ -447,7 +468,8 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -484,5 +506,6 @@
         private TextBox txtFilter;
         private DateTimePicker tglLahir;
         private Panel panel3;
+        private Panel panel4;
     }
 }

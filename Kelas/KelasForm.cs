@@ -102,7 +102,7 @@ namespace SistemInformasiSekolah
         {
             int tingkat = radio10.Checked ? 10 : radio11.Checked ? 11 : 12;
             var jurusanId = Convert.ToInt16(((JurusanModel)jurusanCombo.SelectedItem).JurusanId);
-            var jurusan = jurusanDal.GetData(jurusanId) ?? new JurusanModel { Code = "X"};
+            var jurusan = jurusanDal.GetData(jurusanId) ?? new JurusanModel { Code = "X" };
             string jurusanCode = jurusan.Code;
             string flag = flagTxt.Text;
 
