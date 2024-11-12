@@ -96,7 +96,6 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.LightGray;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnSave);
             panel2.Controls.Add(panel3);
             panel2.Location = new Point(634, 65);
@@ -113,7 +112,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(245, 382);
+            btnSave.Location = new Point(247, 384);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 48;
@@ -134,14 +133,14 @@
             panel3.Controls.Add(label1);
             panel3.Location = new Point(10, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(319, 362);
+            panel3.Size = new Size(321, 364);
             panel3.TabIndex = 0;
             // 
             // txtTahunAjaran
             // 
             txtTahunAjaran.Location = new Point(29, 111);
             txtTahunAjaran.Name = "txtTahunAjaran";
-            txtTahunAjaran.Size = new Size(254, 23);
+            txtTahunAjaran.Size = new Size(258, 23);
             txtTahunAjaran.TabIndex = 23;
             // 
             // label6
@@ -149,7 +148,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(29, 151);
+            label6.Location = new Point(31, 151);
             label6.Name = "label6";
             label6.Size = new Size(74, 19);
             label6.TabIndex = 22;
@@ -160,7 +159,7 @@
             // 
             waliKelasCombo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             waliKelasCombo.FormattingEnabled = true;
-            waliKelasCombo.Location = new Point(29, 173);
+            waliKelasCombo.Location = new Point(31, 173);
             waliKelasCombo.Name = "waliKelasCombo";
             waliKelasCombo.Size = new Size(258, 23);
             waliKelasCombo.TabIndex = 21;
@@ -170,7 +169,7 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(29, 89);
+            label5.Location = new Point(31, 89);
             label5.Name = "label5";
             label5.Size = new Size(91, 19);
             label5.TabIndex = 20;
@@ -182,7 +181,7 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(29, 26);
+            label3.Location = new Point(31, 26);
             label3.Name = "label3";
             label3.Size = new Size(42, 19);
             label3.TabIndex = 18;
@@ -193,7 +192,7 @@
             // 
             kelasCombo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             kelasCombo.FormattingEnabled = true;
-            kelasCombo.Location = new Point(29, 48);
+            kelasCombo.Location = new Point(31, 48);
             kelasCombo.Name = "kelasCombo";
             kelasCombo.Size = new Size(258, 23);
             kelasCombo.TabIndex = 17;
@@ -202,7 +201,7 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(61, 56);
+            label1.Location = new Point(63, 56);
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 16;

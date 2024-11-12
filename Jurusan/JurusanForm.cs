@@ -19,6 +19,7 @@ namespace SistemInformasiSekolah
             InitializeComponent();
             jurusanDal = new JurusanDal();
             LoadData();
+            InitGrid();
         }
 
         public void LoadData()
@@ -29,6 +30,22 @@ namespace SistemInformasiSekolah
             dataGridView1.Columns["JurusanId"].Width = 150;
             dataGridView1.Columns["NamaJurusan"].Width = 150;
             dataGridView1.Columns["Code"].Width = 100;
+        }
+
+        private void InitGrid()
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView1.ColumnHeadersHeight = 33;
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.Columns[0].Width = 70;
+            dataGridView1.Columns[1].Width = 250;
+            dataGridView1.Columns["JurusanId"].HeaderText = "Id";
+            dataGridView1.Columns["NamaJurusan"].HeaderText = "Nama Jurusan";
         }
 
         private void SaveData()

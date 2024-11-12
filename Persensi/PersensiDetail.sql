@@ -1,9 +1,11 @@
 ﻿CREATE TABLE PersensiDetail(
 			PersensiId INT,NoUrut INT, SiswaId INT,
-			StatusPersensi VARCHAR(5), Keterangan VARCHAR (2)
+			StatusPersensi VARCHAR(5), Keterangan VARCHAR (20)
 			);
 
 DROP TABLE PersensiDetail;
+
+Delete from persensi;
 
 
 SELECT 

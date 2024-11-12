@@ -84,20 +84,19 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.Silver;
+            dataGridView1.BackgroundColor = Color.Gainsboro;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Gainsboro;
             dataGridView1.Location = new Point(10, 52);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(373, 523);
+            dataGridView1.Size = new Size(375, 525);
             dataGridView1.TabIndex = 5;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel1.BackColor = SystemColors.ControlLight;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.BackColor = SystemColors.ButtonFace;
             panel1.Controls.Add(tglLahir);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -143,7 +142,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(349, 543);
+            btnNew.Location = new Point(351, 545);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 47;
@@ -159,7 +158,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(437, 543);
+            btnDelete.Location = new Point(439, 545);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 46;
@@ -175,7 +174,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(525, 543);
+            btnSave.Location = new Point(527, 545);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 45;
@@ -403,7 +402,6 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = SystemColors.ButtonFace;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label10);
             panel2.Controls.Add(txtFilter);
             panel2.Controls.Add(dataGridView1);
@@ -414,7 +412,6 @@
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label10.Location = new Point(13, 15);
@@ -426,7 +423,6 @@
             // 
             // txtFilter
             // 
-            txtFilter.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtFilter.Location = new Point(82, 15);
             txtFilter.Name = "txtFilter";
             txtFilter.PlaceholderText = "Masukkan Nama Guru";

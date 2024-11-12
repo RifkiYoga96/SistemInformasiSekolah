@@ -19,21 +19,33 @@ namespace SistemInformasiSekolah
             InitializeComponent();
             mapelDal = new MapelDal();
             LoadData();
+            InitGrid();
         }
 
         public void LoadData()
         {
             dataGridView1.DataSource = mapelDal.ListData();
-            dataGridView1.Columns["MapelId"].Width = 200;
-            dataGridView1.Columns["NamaMapel"].Width = 200;
+        }
 
+        private void InitGrid()
+        {
             var color = Color.FromArgb(211, 225, 239);
             panel3.BackColor = color;
             label2.BackColor = color;
             label3.BackColor = color;
 
-          
+            dataGridView1.EnableHeadersVisualStyles = false;
 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView1.ColumnHeadersHeight = 33;
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.Columns[0].Width = 70;
+            dataGridView1.Columns[1].Width = 180;
+            dataGridView1.Columns[0].HeaderText = "Id";
+            dataGridView1.Columns[1].HeaderText = "Nama Mapel";
         }
 
         private void SaveData()

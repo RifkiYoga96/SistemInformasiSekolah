@@ -30,9 +30,10 @@ namespace SistemInformasiSekolah
             InitCombo();
             LoadData();
             RegisterEvent();
+            InitGrid();
 
             //panel4.BackColor = Color.FromArgb(191,205,219);
-            var color = Color.FromArgb(211, 225, 239);
+            var color = Color.FromArgb(201, 215, 229);
             panel4.BackColor = color;
             panel6.BackColor = color;
             panel3.BackColor = color;
@@ -61,6 +62,22 @@ namespace SistemInformasiSekolah
 
             namaKelasTxt.Text = jadwalPelajaranDal.GetDataFirst(string.Empty, string.Empty)?.NamaKelas ?? string.Empty;
         }
+
+        private void InitGrid()
+        {
+            //Grid Utama
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView1.ColumnHeadersHeight = 33;
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.Columns[1].Width = 120;
+            dataGridView1.Columns[2].Width = 100;
+            dataGridView1.Columns[3].Width = 230;
+        }
         private void SaveData()
         {
             var jadwal = new JadwalPelajaranModel()
@@ -87,7 +104,6 @@ namespace SistemInformasiSekolah
                 if (MessageBox.Show("Insert Data?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
                 jadwalPelajaranDal.Insert(jadwal);
                 LoadData();
-
             }
             else
             {

@@ -26,6 +26,7 @@ namespace SistemInformasiSekolah
             kelasDal = new KelasDal();
             InitCombo();
             LoadData();
+            InitGrid();
         }
 
         public void LoadData()
@@ -37,18 +38,21 @@ namespace SistemInformasiSekolah
                     KelasId = x.KelasId,
                     Name = x.NamaKelas
                 }).ToList();
+        }
+        private void InitGrid()
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
 
-            if (dataGridView1.Rows.Count > 0)
-            {
-                dataGridView1.EnableHeadersVisualStyles = false;
-                dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-                dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
-                dataGridView1.Columns["KelasId"].Width = 100;
-                dataGridView1.Columns["Name"].Width = 150;
-                dataGridView1.RowTemplate.Height = 25;
-                dataGridView1.ColumnHeadersHeight = 25;
-            }
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView1.ColumnHeadersHeight = 33;
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.Columns[0].Width = 70;
+            dataGridView1.Columns[1].Width = 180;
+            dataGridView1.Columns[0].HeaderText = "Id";
+            dataGridView1.Columns[1].HeaderText = "Nama Kelas";
         }
 
         public void InitCombo()

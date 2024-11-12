@@ -39,7 +39,6 @@ namespace SistemInformasiSekolah
                 DataSource = beaSiswaList
             };
 
-
             initCombo();
             LoadData();
             InitGrid();
@@ -67,21 +66,23 @@ namespace SistemInformasiSekolah
             statusTinggalCombo.SelectedIndex = 0;
         }
 
-
         public void InitGrid()
         {
 
             BeasiswaGrid.DataSource = beasiswaBinding;
-            /*  BeasiswaGrid.Columns["Tahun"].Width = 50;
-              BeasiswaGrid.Columns["Kelas"].Width = 50;
-              BeasiswaGrid.Columns["Penyedia"].Width = 200;*/
             dataGridView2.EnableHeadersVisualStyles = false;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 
-            dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 9);
-            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
-            dataGridView2.ColumnHeadersHeight = 30;
+            dataGridView2.ColumnHeadersHeight = 33;
+            dataGridView2.RowTemplate.Height = 30;
+            dataGridView2.Columns[0].Width = 70;
+            dataGridView2.Columns[1].Width = 200;
+            dataGridView2.Columns[2].Width = 230;
+            dataGridView2.Columns[0].HeaderText = "Id";
+            dataGridView2.Columns[1].HeaderText = "Nama Siswa";
         }
         #endregion
 

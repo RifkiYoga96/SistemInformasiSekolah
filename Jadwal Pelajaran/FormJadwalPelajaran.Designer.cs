@@ -59,6 +59,7 @@
             radioKhusus = new RadioButton();
             label10 = new Label();
             radioUmum = new RadioButton();
+            label9 = new Label();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
             panel4.SuspendLayout();
@@ -72,7 +73,6 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.BackColor = Color.Silver;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(btnNew);
             panel1.Controls.Add(btnDelete);
@@ -80,9 +80,9 @@
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(btn);
-            panel1.Location = new Point(667, 12);
+            panel1.Location = new Point(667, 64);
             panel1.Name = "panel1";
-            panel1.Size = new Size(348, 548);
+            panel1.Size = new Size(348, 542);
             panel1.TabIndex = 4;
             // 
             // panel6
@@ -94,9 +94,9 @@
             panel6.Controls.Add(label4);
             panel6.Controls.Add(comboHari);
             panel6.Controls.Add(label1);
-            panel6.Location = new Point(6, 98);
+            panel6.Location = new Point(9, 103);
             panel6.Name = "panel6";
-            panel6.Size = new Size(334, 134);
+            panel6.Size = new Size(330, 131);
             panel6.TabIndex = 10;
             // 
             // comboJenisJadwal
@@ -123,6 +123,7 @@
             // 
             // comboHari
             // 
+            comboHari.DropDownStyle = ComboBoxStyle.DropDownList;
             comboHari.FormattingEnabled = true;
             comboHari.Location = new Point(22, 87);
             comboHari.Name = "comboHari";
@@ -150,7 +151,7 @@
             btnNew.FlatStyle = FlatStyle.Flat;
             btnNew.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
-            btnNew.Location = new Point(78, 504);
+            btnNew.Location = new Point(80, 497);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(82, 31);
             btnNew.TabIndex = 11;
@@ -166,7 +167,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(166, 504);
+            btnDelete.Location = new Point(168, 497);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(82, 31);
             btnDelete.TabIndex = 10;
@@ -182,7 +183,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(254, 504);
+            btnSave.Location = new Point(256, 497);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(82, 31);
             btnSave.TabIndex = 9;
@@ -204,13 +205,14 @@
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label6);
-            panel4.Location = new Point(6, 238);
+            panel4.Location = new Point(9, 242);
             panel4.Name = "panel4";
-            panel4.Size = new Size(334, 247);
+            panel4.Size = new Size(330, 237);
             panel4.TabIndex = 8;
             // 
             // guruCombo
             // 
+            guruCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             guruCombo.FormattingEnabled = true;
             guruCombo.Location = new Point(22, 135);
             guruCombo.Name = "guruCombo";
@@ -219,6 +221,7 @@
             // 
             // mapelCombo
             // 
+            mapelCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             mapelCombo.FormattingEnabled = true;
             mapelCombo.Location = new Point(22, 87);
             mapelCombo.Name = "mapelCombo";
@@ -321,9 +324,9 @@
             panel3.Controls.Add(btnKelas);
             panel3.Controls.Add(namaKelasTxt);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(6, 6);
+            panel3.Location = new Point(9, 9);
             panel3.Name = "panel3";
-            panel3.Size = new Size(334, 86);
+            panel3.Size = new Size(330, 86);
             panel3.TabIndex = 7;
             // 
             // btnKelas
@@ -364,7 +367,7 @@
             btn.FlatStyle = FlatStyle.Flat;
             btn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btn.ForeColor = Color.White;
-            btn.Location = new Point(246, 825);
+            btn.Location = new Point(248, 821);
             btn.Name = "btn";
             btn.Size = new Size(82, 31);
             btn.TabIndex = 5;
@@ -375,12 +378,11 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.Silver;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(panel5);
-            panel2.Location = new Point(12, 12);
+            panel2.Location = new Point(12, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(640, 548);
+            panel2.Size = new Size(649, 542);
             panel2.TabIndex = 5;
             // 
             // dataGridView1
@@ -388,10 +390,10 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.Gainsboro;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 64);
+            dataGridView1.Location = new Point(9, 69);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(626, 476);
+            dataGridView1.Size = new Size(631, 465);
             dataGridView1.TabIndex = 1;
             // 
             // panel5
@@ -402,9 +404,9 @@
             panel5.Controls.Add(radioKhusus);
             panel5.Controls.Add(label10);
             panel5.Controls.Add(radioUmum);
-            panel5.Location = new Point(6, 6);
+            panel5.Location = new Point(9, 9);
             panel5.Name = "panel5";
-            panel5.Size = new Size(626, 52);
+            panel5.Size = new Size(631, 52);
             panel5.TabIndex = 51;
             // 
             // radioKhusus
@@ -442,12 +444,27 @@
             radioUmum.Text = "Umum";
             radioUmum.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            label9.BackColor = SystemColors.Highlight;
+            label9.Dock = DockStyle.Top;
+            label9.FlatStyle = FlatStyle.Flat;
+            label9.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(0, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(1027, 51);
+            label9.TabIndex = 6;
+            label9.Text = "Jadwal Pelajaran";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FormJadwalPelajaran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(1027, 571);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(1027, 617);
+            Controls.Add(label9);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormJadwalPelajaran";
@@ -499,5 +516,6 @@
         private ComboBox guruCombo;
         private ComboBox mapelCombo;
         private Panel panel5;
+        private Label label9;
     }
 }

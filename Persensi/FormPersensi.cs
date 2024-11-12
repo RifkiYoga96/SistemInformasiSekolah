@@ -35,7 +35,6 @@ namespace SistemInformasiSekolah
 
         private int persensiIdGlobal = 0;
 
-        
         public FormPersensi()
         {
             InitializeComponent();
@@ -48,14 +47,13 @@ namespace SistemInformasiSekolah
             bindingSource.DataSource = listPersensi;
             InitComponen();
             RegisterEvent();
-            dataGridView1.AllowUserToAddRows = false;
-            SettingGrid();
             dataGridView1.DataSource = bindingSource;
+            SettingGrid();
         }
 
-        private void SettingGrid()
+        private void RegisterEvent()
         {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            btnListSiswa.Click += BtnListSiswa_Click;
             dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
             dataGridView1.CurrentCellDirtyStateChanged += DataGridView1_CurrentCellDirtyStateChanged;
             btnListSiswa.Click += BtnListSiswa_Click1;
@@ -63,6 +61,28 @@ namespace SistemInformasiSekolah
         }
 
 
+        private void SettingGrid()
+        {
+            dataGridView1.AllowUserToAddRows = false;
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            
+            dataGridView1.EnableHeadersVisualStyles = false;
+            
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.ColumnHeadersHeight = 33;
+            dataGridView1.Columns["SiswaId"].Visible = false;
+            dataGridView1.Columns["NoUrut"].Width = 80;
+            dataGridView1.Columns["Nama"].Width = 200;
+            dataGridView1.Columns["Hadir"].Width = 70;
+            dataGridView1.Columns["S"].Width = 40;
+            dataGridView1.Columns["I"].Width = 40;
+            dataGridView1.Columns["A"].Width = 40;
+            dataGridView1.Columns["Keterangan"].Width = 180;
+        }
 
         private void BtnListSiswa_Click1(object? sender, EventArgs e)
         {
@@ -162,10 +182,6 @@ namespace SistemInformasiSekolah
             mapelCombo.ValueMember = "MapelId";
         }
 
-        private void RegisterEvent()
-        {
-            btnListSiswa.Click += BtnListSiswa_Click;
-        }
         private void BtnListSiswa_Click(object? sender, EventArgs e)
         {
             LoadDataSiswa();
@@ -233,7 +249,7 @@ namespace SistemInformasiSekolah
                     S = x.StatusPersensi == "S",
                     I = x.StatusPersensi == "I",
                     A = x.StatusPersensi == "A",
-                    Keterangan = string.Empty,
+                    Keterangan = x.Keterangan,
                     SiswaId = x.SiswaId
                 });
                 listPersensi.Clear();

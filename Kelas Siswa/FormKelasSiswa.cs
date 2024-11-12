@@ -48,6 +48,7 @@ namespace SistemInformasiSekolah
 
             InitCombo();
             RegisterEvent();
+            InitGrid();
         }
         private void InitCombo()
         {
@@ -72,6 +73,37 @@ namespace SistemInformasiSekolah
             waliKelasCombo.DataSource = listGuru;
             waliKelasCombo.DisplayMember = "GuruName";
             waliKelasCombo.ValueMember = "GuruId";
+        }
+
+        private void InitGrid()
+        {
+            //Grid All
+            gridSiswa.EnableHeadersVisualStyles = false;
+
+            gridSiswa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            gridSiswa.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            gridSiswa.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            gridSiswa.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            gridSiswa.ColumnHeadersHeight = 33;
+            gridSiswa.RowTemplate.Height = 30;
+            gridSiswa.Columns[0].Width = 70;
+            gridSiswa.Columns[1].Width = 200;
+            gridSiswa.Columns[0].HeaderText = "Id";
+            gridSiswa.Columns[1].HeaderText = "Nama";
+
+            //Grid Kelas-Siswa
+            gridKelasSiswa.EnableHeadersVisualStyles = false;
+
+            gridKelasSiswa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            gridKelasSiswa.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            gridKelasSiswa.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            gridKelasSiswa.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue;
+            gridKelasSiswa.ColumnHeadersHeight = 33;
+            gridKelasSiswa.RowTemplate.Height = 30;
+            gridKelasSiswa.Columns[0].Width = 70;
+            gridKelasSiswa.Columns[1].Width = 200;
+            gridKelasSiswa.Columns[0].HeaderText = "Id";
+            gridKelasSiswa.Columns[1].HeaderText = "Nama";
         }
         private void RegisterEvent()
         {
