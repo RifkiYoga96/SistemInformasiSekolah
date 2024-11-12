@@ -33,6 +33,8 @@ namespace SistemInformasiSekolah
         private int MapelIdGlobal;
         private int GuruIdGlobal;
 
+        private int persensiIdGlobal = 0;
+
         
         public FormPersensi()
         {
@@ -60,9 +62,12 @@ namespace SistemInformasiSekolah
             btnSave.Click += BtnSave_Click;
         }
 
+
+
         private void BtnListSiswa_Click1(object? sender, EventArgs e)
         {
-            ValidasiInput();
+            //masih Bug
+            //ValidasiInput();
         }
 
         private void BtnSave_Click(object? sender, EventArgs e)
@@ -82,7 +87,31 @@ namespace SistemInformasiSekolah
             if (Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value))
                 for (int i = 2; i <= 5; i++)
                     if (i != e.ColumnIndex)
+                    {
                         dataGridView1.Rows[e.RowIndex].Cells[i].Value = false;
+                        UpdateTotalPersensi();
+                    }    
+        }
+
+        private void UpdateTotalPersensi()
+        {
+            int Hadir = 0;
+            int S = 0;
+            int I = 0;
+            int A = 0;
+            foreach(var item in listPersensi)
+            {
+                if (item.Hadir) Hadir++;
+                if (item.S) S++;
+                if (item.I) I++;
+                if (item.A) A++;
+            }
+
+            //set Total
+            txtHadir.Text = Hadir.ToString();
+            txtS.Text = S.ToString();
+            txtI.Text = I.ToString();
+            txtA.Text = A.ToString();
         }
 
         private void InitComponen()
@@ -149,20 +178,19 @@ namespace SistemInformasiSekolah
                 : JamGlobal != txtJam.Text ? true
                 : KelasIdGlobal != (int)kelasCombo.SelectedValue ? true
                 : MapelIdGlobal != (int)mapelCombo.SelectedValue ? true
-                : GuruIdGlobal != (int)mapelCombo.SelectedValue ? true : false;
+                : GuruIdGlobal != (int)guruCombo.SelectedValue ? true : false;
 
             if (Perubahan && LoadDataAwal != true)
             {
-                if (MessageBox.Show("Simpan Perubahan Sebelumnya?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
-                    return;
-                SaveData();
+                if (MessageBox.Show("Simpan Perubahan Sebelumnya?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    SaveData();
             }
 
             TglGlobal = tglDT.Value.Date;
             JamGlobal = txtJam.Text;
             KelasIdGlobal = (int)kelasCombo.SelectedValue;
             MapelIdGlobal = (int)mapelCombo.SelectedValue;
-            GuruIdGlobal = (int)mapelCombo.SelectedValue;
+            GuruIdGlobal = (int)guruCombo.SelectedValue;
             LoadDataAwal = false;
         }
 
@@ -174,7 +202,7 @@ namespace SistemInformasiSekolah
             string Jam = txtJam.Text;
 
             var data = persensiDal.GetData(kelasId, Tgl, Jam);
-            int persensiId = data == null ? 0 : data.PersensiId;
+            persensiIdGlobal = data == null ? 0 : data.PersensiId;
             if(data is null)
             {
                 var listSiswa = ksdDal.ListData(kelasId).
@@ -186,7 +214,8 @@ namespace SistemInformasiSekolah
                     S = false,
                     I = false,
                     A = false,
-                    Keterangan = ""
+                    Keterangan = "",
+                    SiswaId = x.SiswaId
                 });
                 listPersensi.Clear();
                 foreach (var item in listSiswa)
@@ -194,20 +223,22 @@ namespace SistemInformasiSekolah
             }
             else
             {
-                var listSiswa = persensiDetailDal.ListData(persensiId).
-                Select((x, index) => new PersensiDto
+                var listSiswa = persensiDetailDal.ListData(persensiIdGlobal).
+                Select(x => new PersensiDto
                 {
-                    NoUrut = index + 1,
+                    NoUrut = x.NoUrut,
                     Nama = x.NamaLengkap,
                     Hadir = x.StatusPersensi == "H",
                     S = x.StatusPersensi == "S",
                     I = x.StatusPersensi == "I",
                     A = x.StatusPersensi == "A",
-                    Keterangan = string.Empty
+                    Keterangan = string.Empty,
+                    SiswaId = x.SiswaId
                 });
                 listPersensi.Clear();
                 foreach (var item in listSiswa)
                     listPersensi.Add(item);
+                UpdateTotalPersensi();
             }
         }
 
@@ -218,18 +249,7 @@ namespace SistemInformasiSekolah
             int guruId = GuruIdGlobal;
             DateTime Tgl= TglGlobal;
             string Jam = JamGlobal;
-
-            int persensiId = 0;
-            string statusPersensi = "";
-            string keterangan = "";
-            foreach (var item in listPersensi)
-            {
-                statusPersensi = item.Hadir ? "H"
-                    : item.S ? "S"
-                    : item.I ? "I"
-                    : item.A ? "A" : string.Empty;
-                keterangan = item.Keterangan;
-            }
+            
 
             if (kelasId < 0 || mapelId < 0 || guruId < 0 || Jam == "")
             {
@@ -239,28 +259,34 @@ namespace SistemInformasiSekolah
 
             var Persensi = new PersensiModel()
             {
-                PersensiId = persensiId,
+                PersensiId = persensiIdGlobal,
                 Tgl = Tgl,
                 Jam = Jam,
                 KelasId = kelasId,
                 MapelId = mapelId,
                 GuruId = guruId,
-                ListPersensiDetail = ksdDal.ListData()
+                ListPersensiDetail = listPersensi
                    .Select((x, index) => new PersensiDetailModel
                    {
-                       NoUrut = index + 1,
+                       NoUrut = x.NoUrut,
                        SiswaId = x.SiswaId,
-                       StatusPersensi = statusPersensi,
-                       Keterangan = keterangan
+                       StatusPersensi = x.Hadir ? "H" 
+                                : x.S ? "S"
+                                :x.I ? "I"
+                                :x.A ? "A"
+                                :"",
+                       Keterangan = x.Keterangan,
                    }).ToList()
             };
 
             var cekData = persensiDal.GetData(kelasId, Tgl, Jam);
             if(cekData is null)
             {
-                persensiId = persensiDal.Insert(Persensi);
+                persensiIdGlobal = persensiDal.Insert(Persensi);
             }
-            persensiDetailDal.Insert(Persensi.ListPersensiDetail,persensiId);
+
+            persensiDetailDal.Delete(persensiIdGlobal);
+            persensiDetailDal.Insert(Persensi.ListPersensiDetail,persensiIdGlobal);
             LoadDataSiswa();
         }
     }
@@ -275,6 +301,7 @@ public class PersensiDto
     public bool I { get; set; } = false;
     public bool A { get; set; } = false;
     public string Keterangan {  get; set; }
+    public int SiswaId { get; set; }
 }
 
 

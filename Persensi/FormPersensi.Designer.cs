@@ -31,10 +31,10 @@
             panel1 = new Panel();
             btnSave = new Button();
             label7 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtA = new TextBox();
+            txtI = new TextBox();
+            txtS = new TextBox();
+            txtHadir = new TextBox();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
             btnListSiswa = new Button();
@@ -52,6 +52,10 @@
             label4 = new Label();
             txtJam = new TextBox();
             tglDT = new DateTimePicker();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -63,12 +67,16 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = SystemColors.ButtonFace;
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label8);
             panel1.Controls.Add(btnSave);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtA);
+            panel1.Controls.Add(txtI);
+            panel1.Controls.Add(txtS);
+            panel1.Controls.Add(txtHadir);
             panel1.Controls.Add(dataGridView1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
@@ -96,54 +104,54 @@
             label7.Anchor = AnchorStyles.Bottom;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 10.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(227, 453);
+            label7.Location = new Point(218, 453);
             label7.Name = "label7";
-            label7.Size = new Size(40, 19);
+            label7.Size = new Size(51, 19);
             label7.TabIndex = 11;
-            label7.Text = "Total";
+            label7.Text = "Total : ";
             label7.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // textBox4
+            // txtA
             // 
-            textBox4.Anchor = AnchorStyles.Bottom;
-            textBox4.Location = new Point(426, 452);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(40, 23);
-            textBox4.TabIndex = 4;
+            txtA.Anchor = AnchorStyles.Bottom;
+            txtA.Location = new Point(426, 452);
+            txtA.Name = "txtA";
+            txtA.Size = new Size(40, 23);
+            txtA.TabIndex = 4;
             // 
-            // textBox3
+            // txtI
             // 
-            textBox3.Anchor = AnchorStyles.Bottom;
-            textBox3.Location = new Point(380, 452);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(40, 23);
-            textBox3.TabIndex = 3;
+            txtI.Anchor = AnchorStyles.Bottom;
+            txtI.Location = new Point(380, 452);
+            txtI.Name = "txtI";
+            txtI.Size = new Size(40, 23);
+            txtI.TabIndex = 3;
             // 
-            // textBox2
+            // txtS
             // 
-            textBox2.Anchor = AnchorStyles.Bottom;
-            textBox2.Location = new Point(334, 452);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(40, 23);
-            textBox2.TabIndex = 2;
+            txtS.Anchor = AnchorStyles.Bottom;
+            txtS.Location = new Point(334, 452);
+            txtS.Name = "txtS";
+            txtS.Size = new Size(40, 23);
+            txtS.TabIndex = 2;
             // 
-            // textBox1
+            // txtHadir
             // 
-            textBox1.Anchor = AnchorStyles.Bottom;
-            textBox1.Location = new Point(273, 452);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(55, 23);
-            textBox1.TabIndex = 1;
+            txtHadir.Anchor = AnchorStyles.Bottom;
+            txtHadir.Location = new Point(273, 452);
+            txtHadir.Name = "txtHadir";
+            txtHadir.Size = new Size(55, 23);
+            txtHadir.TabIndex = 1;
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.Silver;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(10, 10);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(690, 407);
+            dataGridView1.Size = new Size(696, 407);
             dataGridView1.TabIndex = 0;
             // 
             // panel2
@@ -204,9 +212,9 @@
             panel4.Controls.Add(label3);
             panel4.Controls.Add(kelasCombo);
             panel4.Controls.Add(label1);
-            panel4.Location = new Point(9, 119);
+            panel4.Location = new Point(9, 118);
             panel4.Name = "panel4";
-            panel4.Size = new Size(316, 330);
+            panel4.Size = new Size(319, 330);
             panel4.TabIndex = 1;
             // 
             // label6
@@ -283,9 +291,9 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(txtJam);
             panel3.Controls.Add(tglDT);
-            panel3.Location = new Point(9, 12);
+            panel3.Location = new Point(9, 9);
             panel3.Name = "panel3";
-            panel3.Size = new Size(316, 100);
+            panel3.Size = new Size(319, 100);
             panel3.TabIndex = 0;
             // 
             // label2
@@ -324,6 +332,54 @@
             tglDT.Name = "tglDT";
             tglDT.Size = new Size(115, 23);
             tglDT.TabIndex = 0;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Bottom;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(280, 432);
+            label8.Name = "label8";
+            label8.Size = new Size(41, 17);
+            label8.TabIndex = 15;
+            label8.Text = "Hadir";
+            label8.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Bottom;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(347, 433);
+            label9.Name = "label9";
+            label9.Size = new Size(15, 17);
+            label9.TabIndex = 16;
+            label9.Text = "S";
+            label9.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Bottom;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(395, 433);
+            label10.Name = "label10";
+            label10.Size = new Size(12, 17);
+            label10.TabIndex = 17;
+            label10.Text = "I";
+            label10.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Bottom;
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(439, 433);
+            label11.Name = "label11";
+            label11.Size = new Size(17, 17);
+            label11.TabIndex = 18;
+            label11.Text = "A";
+            label11.TextAlign = ContentAlignment.BottomLeft;
             // 
             // FormPersensi
             // 
@@ -367,10 +423,14 @@
         private Button btnNew;
         private Button btnSave;
         private Label label7;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtA;
+        private TextBox txtI;
+        private TextBox txtS;
+        private TextBox txtHadir;
         private DataGridView dataGridView1;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
     }
 }

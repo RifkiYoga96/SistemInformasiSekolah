@@ -13,8 +13,8 @@ namespace SistemInformasiSekolah.Persensi
 
         public IEnumerable<PersensiDetailModel> ListData(int PersensiId)
         {
-            const string sql = @"SELECT s.NamaLengkap,pd.StatusPersensi,
-                                        pd.Keterangan
+            const string sql = @"SELECT s.NamaLengkap, s.SiswaId, pd.NoUrut,
+                                        pd.StatusPersensi, pd.Keterangan
                                  FROM PersensiDetail pd
                                       RIGHT JOIN Siswa s ON pd.SiswaId = s.SiswaId
                                  WHERE pd.PersensiId = @PersensiId";
@@ -55,6 +55,13 @@ namespace SistemInformasiSekolah.Persensi
             dp.Add("@Keterangan", persensiDetail.Keterangan, System.Data.DbType.String);
             using var koneksi = new SqlConnection(DbDal.DB());
             koneksi.Execute(sql, dp);
+        }
+
+        public void Delete(int persensiId)
+        {
+            const string sql = @"DELETE FROM PersensiDetail WHERE PersensiId = @PersensiId";
+            using var koneksi = new SqlConnection(DbDal.DB());
+            koneksi.Execute(sql, new {PersensiId=persensiId});
         }
     }
 }
